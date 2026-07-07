@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dhan-X — Your wealth. Across every border.</title>
-<meta name="description" content="The first AI-native wealth platform for global investors. Track US brokerages, India mutual funds, and real estate — all in one place.">
-<meta property="og:title" content="Dhan-X — Your wealth. Across every border.">
-<meta property="og:description" content="The AI-native wealth platform for global investors. US brokerages, India mutual funds, and real estate in one dashboard.">
+<title>Dhan-X — Your Personal Finance Coach</title>
+<meta name="description" content="Your personal finance coach for every account, every market, every decision. Track your India and US investments, calculate XIRR, screen stocks, and get AI-powered insights.">
+<meta property="og:title" content="Dhan-X — Your Personal Finance Coach">
+<meta property="og:description" content="For every account. Every market. Every decision.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dhan-x.com/">
 <meta property="og:image" content="https://app.dhan-x.com/assets/og-image.png">
@@ -15,267 +15,281 @@
 <meta property="og:image:type" content="image/png">
 <meta property="fb:app_id" content="1338222847748028">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dhan-X — Your wealth. Across every border.">
-<meta name="twitter:description" content="The AI-native wealth platform for global investors. US brokerages, India mutual funds, and real estate in one dashboard.">
+<meta name="twitter:title" content="Dhan-X — Your Personal Finance Coach">
+<meta name="twitter:description" content="For every account. Every market. Every decision.">
 <meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/[email protected]/dist/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="/" class="brand">
-      <span class="brand-badge">X</span>
-      <span>Dhan-X</span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#features">Features</a>
-      <a href="#security">Security</a>
-      <a href="#pricing">Pricing</a>
-    </nav>
-    <div class="nav-right">
-      <a href="https://app.dhan-x.com" class="btn btn-primary btn-nav-cta">Private beta access</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+<!-- SHARED NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/dhanx-logo.png" alt="Dhan-X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="nav-logo-fallback" style="display:none">
+      <div class="nav-logo-icon">X</div>
+      <div class="nav-logo-text">Dhan<span>-X</span></div>
     </div>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link active" href="index.html">Home</a>
+    <a class="nav-link" href="features.html">Features</a>
+    <a class="nav-link" href="#pricing">Pricing</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a>
   </div>
-</header>
+</nav>
 
+<!-- HOME -->
 <main>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="pill-badge"><i class="ti ti-sparkles"></i> Now with Claude AI integration</span>
-      <h1>Your wealth.<br><span class="serif-accent">Across every border.</span></h1>
-      <p class="hero-body">The first AI-native wealth platform for global investors. Track US brokerages, India mutual funds, and real estate — all in one place.</p>
-      <a href="https://app.dhan-x.com" class="btn btn-primary">Get private beta access <i class="ti ti-arrow-right"></i></a>
-      <div class="trust-row">
-        <span class="trust-item"><i class="ti ti-lock"></i> AES-256 encrypted</span>
-        <span class="trust-item"><i class="ti ti-shield-check"></i> SOC 2 partners</span>
-        <span class="trust-item"><i class="ti ti-key"></i> Zero credential storage</span>
-      </div>
+  <div class="hero">
+    <div class="badge">&#10024; Your personal finance coach</div>
+    <h1>For every account.<br>Every market.<br><span class="accent">Every decision.</span></h1>
+    <div class="hero-sub">YOUR WEALTH DESERVES THE X FACTOR</div>
+    <p>Dhan-X brings all your investments together — mutual funds, US stocks, real estate, gold — and gives you an AI coach to make sense of it all.</p>
+    <div class="hero-btns single">
+      <a class="btn-primary" href="https://app.dhan-x.com">Get Private Beta Access &rarr;</a>
     </div>
+    <div class="hero-trust">
+      <span class="trust-item"><span class="ic">&#128274;</span> AES-256 encrypted</span>
+      <span class="trust-item"><span class="ic">&#128737;&#65039;</span> SOC 2 certified partners</span>
+      <span class="trust-item"><span class="ic">&#128273;</span> Zero credential storage</span>
+    </div>
+  </div>
 
-    <div class="preview-card" aria-hidden="true">
-      <div class="preview-top">
-        <div class="preview-networth">
-          <span class="label">Total net worth</span>
-          <div class="preview-value">$2,364,289</div>
+  <!-- DASHBOARD PREVIEW -->
+  <div class="dashboard">
+    <div class="dash-card">
+      <div class="dash-top">
+        <div>
+          <div class="dash-label">Total net worth</div>
+          <div class="dash-value">$2,364,289</div>
         </div>
-        <span class="change-pill">+12.4% YTD</span>
+        <span class="dash-pill">+12.4% YTD</span>
       </div>
-      <div class="preview-breakdown">
-        <div class="breakdown-cell">
-          <span class="label">US Equity</span>
-          <div class="amt">$1.6M</div>
-        </div>
-        <div class="breakdown-cell">
-          <span class="label">India MF</span>
-          <div class="amt">$487K</div>
-        </div>
-        <div class="breakdown-cell">
-          <span class="label">Real estate</span>
-          <div class="amt">$275K</div>
-        </div>
+      <div class="dash-breakdown">
+        <div class="dash-cell"><div class="k">US Equity</div><div class="v">$1.6M</div></div>
+        <div class="dash-cell"><div class="k">India MF</div><div class="v">$487K</div></div>
+        <div class="dash-cell"><div class="k">Real estate</div><div class="v">$275K</div></div>
+        <div class="dash-cell"><div class="k">ETFs</div><div class="v">$312K</div></div>
       </div>
-      <div class="ai-strip">
-        <i class="ti ti-robot"></i>
-        <p><strong>AI Insight:</strong> AAPL represents 31% of your portfolio. Consider diversifying to reduce concentration risk.</p>
+      <div class="dash-insights">
+        <div class="ai-insight amber">
+          <span class="ic">&#129302;</span>
+          <div><strong>AI Insight:</strong> MSFT represents 31% of your portfolio. Consider diversifying to reduce concentration risk.</div>
+        </div>
+        <div class="ai-insight green">
+          <span class="ic">&#129302;</span>
+          <div><strong>AI Insight:</strong> Your Redmond property yields 4.2% gross rental income — above the 3.8% US average for comparable suburbs.</div>
+        </div>
+        <div class="ai-insight purple">
+          <span class="ic">&#129302;</span>
+          <div><strong>AI Insight:</strong> VOO and CSPX have 0.03% and 0.07% expense ratios — well-optimized. Consider consolidating similar S&amp;P 500 exposure to reduce overlap.</div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ===== DATA PARTNERS ===== -->
-<section class="partners">
-  <div class="container partners-inner">
-    <span class="label">Powered by industry-leading data providers</span>
-    <div class="partners-row">
-      <span>Sophtron</span><span class="dot">·</span>
-      <span>CASParser</span><span class="dot">·</span>
-      <span>Twelve Data</span><span class="dot">·</span>
-      <span>Clerk</span><span class="dot">·</span>
-      <span>Anthropic</span>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">All-in-one</div><div class="stat-label">Every account, one view</div></div>
+    <div class="stat"><div class="stat-num">XIRR</div><div class="stat-label">True returns, not just NAV</div></div>
+    <div class="stat"><div class="stat-num">AI coach</div><div class="stat-label">Insights on every decision</div></div>
+    <div class="stat"><div class="stat-num">Rs. + $</div><div class="stat-label">India, US and global</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What Dhan-X does</div>
+    <div class="section-title">Everything in one place.<br><span class="accent">Finally.</span></div>
+    <div class="section-sub">Whether you have one account or ten, in India or across the world — Dhan-X gives you clarity, context, and a coach.</div>
+    <div class="grid-3">
+      <div class="card"><div class="card-icon">&#128200;</div><h3>Portfolio tracker</h3><p>India MFs, US stocks, real estate, gold, bonds — all in one dashboard with true XIRR returns.</p></div>
+      <div class="card"><div class="card-icon">&#129504;</div><h3>AI wealth coach</h3><p>Ask any financial question. Get personalised insights based on your actual numbers, not generic advice.</p></div>
+      <div class="card"><div class="card-icon">&#128269;</div><h3>Stock screener</h3><p>Search stocks in plain English. "Show me profitable Indian banks" — and get live prices, P/E, ROE instantly.</p></div>
+      <div class="card"><div class="card-icon">&#128203;</div><h3>Watchlist and alerts</h3><p>Track stocks you care about. Set price alerts and get notified the moment they hit your target.</p></div>
+      <div class="card"><div class="card-icon">&#129518;</div><h3>Financial calculators</h3><p>Rent vs buy, FI number, RE returns, budget planner — built for real decisions, not textbook examples.</p></div>
+      <div class="card"><div class="card-icon">&#128176;</div><h3>Budget planner</h3><p>Plan your monthly income and expenses. Know exactly what you can invest and where your money goes.</p></div>
     </div>
   </div>
-</section>
 
-<!-- ===== FEATURES ===== -->
-<section id="features">
-  <div class="container">
-    <div class="section-head">
-      <h2>One platform. Every asset.</h2>
-      <p>Built for NRI, HNI, and global investors managing wealth across borders.</p>
-    </div>
-    <div class="features-grid">
-      <article class="feature-card">
-        <div class="feature-icon emerald"><i class="ti ti-chart-pie"></i></div>
-        <h3>Consolidated view</h3>
-        <p>Schwab, Vanguard, India MFs, real estate — all in one clean dashboard.</p>
-      </article>
-      <article class="feature-card">
-        <div class="feature-icon purple"><i class="ti ti-brain"></i></div>
-        <h3>AI portfolio analysis</h3>
-        <p>Ask Claude about your portfolio in plain English. Get insights, not spreadsheets.</p>
-      </article>
-      <article class="feature-card">
-        <div class="feature-icon amber"><i class="ti ti-target"></i></div>
-        <h3>Buffett-Graham scoring</h3>
-        <p>Proprietary quality score on any stock. Six pillars, one clear verdict.</p>
-      </article>
+  <div class="section section-alt">
+    <div class="section-label">Real questions. Real answers.</div>
+    <div class="section-title">Your AI coach is ready<br>for any decision</div>
+    <div class="section-sub">From big life decisions to small portfolio tweaks — Dhan-X gives you the numbers and the context to decide with confidence.</div>
+    <div class="grid-3">
+      <div class="scenario-card"><div class="scenario-q">"Should I buy a house now or keep renting?"</div><div class="scenario-a">Dhan-X runs the full rent vs buy analysis with your actual rent, home price, and investment return — and tells you exactly when buying makes sense.</div></div>
+      <div class="scenario-card"><div class="scenario-q">"Am I paying too much in mutual fund fees?"</div><div class="scenario-a">Dhan-X shows your TER leakage — how much regular plans cost vs direct — and calculates exactly how much you'd save by switching.</div></div>
+      <div class="scenario-card"><div class="scenario-q">"What's my actual net worth across all accounts?"</div><div class="scenario-a">Connect your India MFs, US brokerage, and add real estate and gold. Dhan-X gives you one number — in rupees or dollars.</div></div>
+      <div class="scenario-card"><div class="scenario-q">"How much do I need to retire?"</div><div class="scenario-a">The FI calculator takes your monthly expenses, expected returns, and inflation — and tells you your number and how many years away you are.</div></div>
+      <div class="scenario-card"><div class="scenario-q">"Which stocks should I be watching?"</div><div class="scenario-a">Ask in plain English. The AI screener finds stocks matching your criteria — with live prices, fundamentals, and a 30-day chart.</div></div>
+      <div class="scenario-card"><div class="scenario-q">"Am I spending too much this month?"</div><div class="scenario-a">The budget planner tracks income vs expenses and shows your savings rate, guilt-free spending, and how much you can invest.</div></div>
     </div>
   </div>
-</section>
 
-<!-- ===== PRICING ===== -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-head">
-      <h2>Simple, honest pricing</h2>
-      <p>Start free. Upgrade when you're ready for the full picture.</p>
+  <div class="section">
+    <div class="section-label">Everything included</div>
+    <div class="section-title">12+ tools. One subscription.</div>
+    <div class="section-sub">Every feature is available on every plan — no add-ons, no upgrades needed.</div>
+    <div class="module-grid">
+      <div class="module-pill"><span>&#128200;</span><span>India portfolio</span></div>
+      <div class="module-pill"><span>&#127970;</span><span>US portfolio</span></div>
+      <div class="module-pill"><span>&#128185;</span><span>XIRR calculator</span></div>
+      <div class="module-pill"><span>&#128178;</span><span>TER analyser</span></div>
+      <div class="module-pill"><span>&#128269;</span><span>Stock screener</span></div>
+      <div class="module-pill"><span>&#128203;</span><span>Watchlist</span></div>
+      <div class="module-pill"><span>&#128276;</span><span>Price alerts</span></div>
+      <div class="module-pill"><span>&#127968;</span><span>Rent vs buy</span></div>
+      <div class="module-pill"><span>&#127963;</span><span>RE XIRR</span></div>
+      <div class="module-pill"><span>&#9728;</span><span>FI calculator</span></div>
+      <div class="module-pill"><span>&#128176;</span><span>Budget planner</span></div>
+      <div class="module-pill"><span>&#129504;</span><span>AI wealth coach</span></div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section section-alt" id="pricing">
+    <div class="pricing-head">
+      <div class="section-label">Pricing</div>
+      <div class="section-title">Simple, honest pricing</div>
+      <div class="section-sub">Start free. Upgrade when you're ready for the full picture.</div>
     </div>
 
-    <div class="pricing-grid">
+    <div class="tier-grid">
       <!-- Free -->
-      <div class="price-card">
-        <span class="label tier-label">Free</span>
-        <div class="price-amount">$0</div>
-        <p class="price-sub">Forever free</p>
-        <a href="https://app.dhan-x.com" class="btn btn-outline btn-block">Get started free</a>
-        <div class="price-cat">
-          <span class="label">Planning tools</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>FI calculator</span></li>
-            <li><i class="ti ti-check"></i><span>Real estate planner</span></li>
-            <li><i class="ti ti-check"></i><span>Budget planner</span></li>
+      <div class="tier">
+        <div class="tier-label">Free</div>
+        <div class="tier-price">$0</div>
+        <div class="tier-sub">Forever free</div>
+        <a class="tier-cta outline" href="https://app.dhan-x.com">Get started free</a>
+        <div class="tier-cat">
+          <div class="tier-cat-label">Planning tools</div>
+          <ul class="tier-list">
+            <li><span>FI calculator</span></li>
+            <li><span>Real estate planner</span></li>
+            <li><span>Budget planner</span></li>
           </ul>
         </div>
       </div>
 
-      <!-- Pro -->
-      <div class="price-card featured">
-        <span class="popular-badge">Most popular</span>
-        <span class="label tier-label">Dhan-X Pro</span>
-        <div class="price-amount"><span id="price-amount">$12.99</span><span class="per">/month</span></div>
-        <p class="price-sub" id="price-yearly-note">or $100/year — save 36%</p>
-        <a href="https://app.dhan-x.com" class="btn btn-primary btn-block">Upgrade to Pro</a>
+      <!-- Dhan-X Pro -->
+      <div class="tier featured">
+        <span class="tier-badge">Most popular</span>
+        <div class="tier-label">Dhan-X Pro</div>
+        <div class="tier-price"><span id="price-amount">$12.99</span><span class="per">/month</span></div>
+        <div class="tier-sub" id="price-yearly-note">or $100/year — save 36%</div>
+        <a class="tier-cta filled" href="https://app.dhan-x.com">Upgrade to Pro</a>
 
-        <p class="feature-heading">Everything in Free, plus:</p>
+        <div class="tier-plus">Everything in Free, plus:</div>
 
-        <div class="price-cat">
-          <span class="label">Portfolio aggregation</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>US brokerage sync</span></li>
-            <li><i class="ti ti-check"></i><span>India mutual funds via CAS</span></li>
-            <li><i class="ti ti-check"></i><span>Real estate &amp; offline assets</span></li>
-            <li><i class="ti ti-check"></i><span>Net worth in 6 currencies</span></li>
+        <div class="tier-cat">
+          <div class="tier-cat-label">Portfolio aggregation</div>
+          <ul class="tier-list">
+            <li><span>US brokerage sync</span></li>
+            <li><span>India mutual funds via CAS</span></li>
+            <li><span>Real estate &amp; offline assets</span></li>
+            <li><span>Net worth in 6 currencies</span></li>
           </ul>
         </div>
 
-        <div class="price-cat">
-          <span class="label">AI intelligence</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>AI portfolio analysis</span></li>
-            <li><i class="ti ti-check"></i><span>Natural-language stock screener</span></li>
-            <li><i class="ti ti-check"></i><span>Claude MCP integration</span></li>
+        <div class="tier-cat">
+          <div class="tier-cat-label">AI intelligence</div>
+          <ul class="tier-list">
+            <li><span>AI portfolio analysis</span></li>
+            <li><span>Natural-language stock screener</span></li>
+            <li><span>Claude MCP integration</span></li>
           </ul>
         </div>
 
-        <div class="price-cat">
-          <span class="label">Stock research</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>Buffett-Graham quality scores</span></li>
-            <li><i class="ti ti-check"></i><span>Watchlist with fundamentals</span></li>
-            <li><i class="ti ti-check"></i><span>Company deep-dive analysis</span></li>
-            <li><i class="ti ti-check"></i><span>ETF &amp; index fund coverage</span></li>
+        <div class="tier-cat">
+          <div class="tier-cat-label">Stock research</div>
+          <ul class="tier-list">
+            <li><span>Buffett-Graham quality scores</span></li>
+            <li><span>Watchlist with fundamentals</span></li>
+            <li><span>Company deep-dive analysis</span></li>
+            <li><span>ETF &amp; index fund coverage</span></li>
           </ul>
         </div>
 
-        <div class="price-cat">
-          <span class="label">Performance analytics</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>XIRR across all accounts</span></li>
-            <li><i class="ti ti-check"></i><span>TER analysis on India MFs</span></li>
-            <li><i class="ti ti-check"></i><span>Nifty benchmark comparison</span></li>
+        <div class="tier-cat">
+          <div class="tier-cat-label">Performance analytics</div>
+          <ul class="tier-list">
+            <li><span>XIRR across all accounts</span></li>
+            <li><span>TER analysis on India MFs</span></li>
+            <li><span>Nifty benchmark comparison</span></li>
           </ul>
         </div>
 
-        <div class="price-cat">
-          <span class="label">Priority support</span>
-          <ul class="plan-list">
-            <li><i class="ti ti-check"></i><span>Priority customer support</span></li>
+        <div class="tier-cat">
+          <div class="tier-cat-label">Priority support</div>
+          <ul class="tier-list">
+            <li><span>Priority customer support</span></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Geo + beta strips -->
     <div class="info-strips">
       <div class="info-strip geo">
-        <i class="ti ti-map-pin"></i>
-        <span>Pricing detected: <strong id="geo-country">United States</strong> — <span id="geo-alternate">Indian users see ₹499/mo</span>.</span>
+        <span class="ic">&#128205;</span>
+        <span>Pricing detected: <strong id="geo-country">United States</strong> — <span id="geo-alternate">Indian users see &#8377;499/mo</span>.</span>
       </div>
       <div class="info-strip beta">
-        <i class="ti ti-gift"></i>
+        <span class="ic">&#127873;</span>
         <span>Beta users: get 3 months of Pro free when paid tiers launch.</span>
       </div>
     </div>
   </div>
-</section>
 
+  <div class="cta-banner">
+    <h2>Start understanding your money better</h2>
+    <p>Join the private beta — 30 days free, no credit card required.</p>
+    <a class="btn-dark" href="https://app.dhan-x.com">Get Private Beta Access</a>
+  </div>
 </main>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer" id="security">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="/" class="brand">
-          <span class="brand-badge">X</span>
-          <span>Dhan-X</span>
-        </a>
-        <p class="footer-tag">Your wealth deserves the X factor.</p>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="#security">Security</a></li>
-          <li><a href="terms-of-service.html">Terms of service</a></li>
-          <li><a href="privacy-policy.html">Privacy policy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:support@dhan-x.com" class="footer-mail"><i class="ti ti-mail"></i> support@dhan-x.com</a></li>
-        </ul>
-      </div>
+<div class="disclaimer">Dhan-X is a financial planning and analysis tool for informational and educational purposes only. It does not constitute investment advice, tax advice, or a solicitation to buy or sell any security. Please consult a qualified financial adviser before making investment decisions.</div>
+
+<!-- SHARED FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/dhanx-logo.png" alt="Dhan-X" onerror="this.style.display='none'">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
     </div>
-    <div class="footer-bottom">© 2026 Dhan-X. All rights reserved.</div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="features.html">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://app.dhan-x.com">Private beta</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="#">Blog</a>
+      <a href="mailto:support@dhan-x.com" class="mail">support@dhan-x.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 <script>
-  // Mobile nav toggle
-  (function () {
-    var toggle = document.getElementById('navToggle');
-    var links = document.getElementById('navLinks');
-    if (toggle && links) {
-      toggle.addEventListener('click', function () { links.classList.toggle('open'); });
-      links.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') links.classList.remove('open');
-      });
-    }
-  })();
-
   // Geo-based pricing (Cloudflare Pages Function)
   fetch('/api/pricing')
     .then(function (r) { return r.json(); })
@@ -291,6 +305,5 @@
       // Fallback: static USD pricing already rendered in the markup.
     });
 </script>
-
 </body>
 </html>
