@@ -206,6 +206,61 @@
     </div>
   </div>
 
+  <!-- FEEDBACK -->
+  <section class="feedback-section" id="feedback">
+    <div class="section-header">
+      <h2>We'd love to hear from you</h2>
+      <p class="section-sub">Suggestions, feedback, or just a hello — send it our way. We read every message.</p>
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="feedback-form" id="feedbackForm">
+      <input type="hidden" name="access_key" value="768bf766-6b96-495f-87a9-a1b955450978">
+      <input type="hidden" name="subject" value="Dhan-X Feedback">
+      <input type="hidden" name="from_name" value="Dhan-X Website">
+
+      <div class="form-row">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="form-row">
+        <label for="feedback_type">Feedback type</label>
+        <select id="feedback_type" name="feedback_type" required>
+          <option value="">Select a type...</option>
+          <option value="Product feedback">Product feedback</option>
+          <option value="Feature request">Feature request</option>
+          <option value="Bug report">Bug report</option>
+          <option value="General inquiry">General inquiry</option>
+          <option value="Partnership / press">Partnership / press</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required rows="5" placeholder="Tell us what's on your mind..."></textarea>
+      </div>
+
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <button type="submit" class="btn-primary">Send feedback</button>
+
+      <p class="form-footnote">Your feedback goes directly to support@dhan-x.com</p>
+    </form>
+
+    <div id="successMessage" style="display:none;" class="success-message">
+      &#10003; Thanks! Your message has been sent. We'll get back to you soon.
+    </div>
+
+    <div id="errorMessage" style="display:none;" class="error-message">
+      Something went wrong. Please try again or email us directly at support@dhan-x.com
+    </div>
+  </section>
+
   <!-- PRICING -->
   <div class="section section-alt" id="pricing">
     <div class="pricing-head">
@@ -357,6 +412,40 @@
     })
     .catch(function () {
       // Fallback: static USD pricing already rendered in the markup.
+    });
+</script>
+<script>
+  // Feedback form → Web3Forms (delivers to support@dhan-x.com)
+  document.getElementById('feedbackForm')
+    .addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button');
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.style.display = 'none';
+          document.getElementById('successMessage').style.display = 'block';
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        document.getElementById('errorMessage').style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send feedback';
+      }
     });
 </script>
 </body>
