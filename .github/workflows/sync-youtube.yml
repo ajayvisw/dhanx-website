@@ -1,0 +1,42 @@
+name: Sync API TO ROI uploads
+
+on:
+  schedule:
+    # Daily at 07:15 UTC. GitHub may delay scheduled workflows during heavy load.
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-content-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Import new YouTube uploads
+        run: python3 scripts/sync-youtube.py
+      - name: Regenerate articles and sitemap
+        run: node scripts/generate-blog-articles.js
+      - name: Commit imported content
+        run: |
+          if git diff --quiet; then
+            echo "No site changes to publish."
+            exit 0
+          fi
+          git config user.name "dhanx-content-bot[bot]"
+          git config user.email "dhanx-content-bot[bot]@users.noreply.github.com"
+          git add js/blog.js blogs sitemap.xml
+          git commit -m "Sync latest API TO ROI upload"
+          git push origin HEAD:main
