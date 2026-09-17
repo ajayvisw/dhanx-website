@@ -131,6 +131,21 @@ function article(row) {
 }
 const out = path.join(root, 'blogs'); fs.mkdirSync(out, { recursive: true });
 rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(row)));
-const urls = ['https://www.dhan-x.com/', 'https://www.dhan-x.com/blog.html', ...rows.map(r => `https://www.dhan-x.com/blogs/${r[0]}.html`)];
-fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u => `<url><loc>${u}</loc></url>`).join('')}</urlset>`);
+// Index only public, canonical pages. Pricing and early-access are deliberately
+// noindex pages and should not be offered to search engines here.
+const urls = [
+  'https://www.dhan-x.com/',
+  'https://www.dhan-x.com/about.html',
+  'https://www.dhan-x.com/features.html',
+  'https://www.dhan-x.com/blog.html',
+  ...rows.map(r => `https://www.dhan-x.com/blogs/${r[0]}.html`)
+];
+const xml = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...urls.map(u => `  <url><loc>${u}</loc></url>`),
+  '</urlset>',
+  ''
+].join('\n');
+fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
 console.log(`Generated ${rows.length} static articles`);
