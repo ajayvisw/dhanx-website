@@ -171,16 +171,26 @@
       <p class="section-sub">Connect Dhan-X to a compatible AI client through the Model Context Protocol (MCP), then ask questions grounded in your own portfolio, research and planning data.</p>
     </div>
 
+    <p class="mcp-prerequisite"><strong>Before you begin:</strong> sign in to Dhan-X and make sure the accounts you want to discuss have been added. You will approve the AI connection separately.</p>
+
     <div class="mcp-client-grid">
       <article class="mcp-client-card">
-        <div class="mcp-client-top"><span class="mcp-client-mark chatgpt-mark">◎</span><span class="mcp-status">Compatible MCP client</span></div>
-        <h3>ChatGPT</h3>
-        <p>Add Dhan-X as a custom app connection, sign in to your Dhan-X account, and approve read-only access to your financial context.</p>
+        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark chatgpt-mark"><img src="images/openai-symbol.svg" alt="OpenAI"></span><span>ChatGPT</span></div><span class="mcp-status">MCP connection</span></div>
+        <h3>Connect Dhan-X in ChatGPT</h3>
+        <ol class="mcp-instructions">
+          <li><strong>Open Apps in ChatGPT settings.</strong> Choose the option to add a custom app or connector.</li>
+          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and choose Connect.</li>
+          <li><strong>Sign in and approve.</strong> Log in to Dhan-X and consent to the read-only access request.</li>
+        </ol>
       </article>
       <article class="mcp-client-card">
-        <div class="mcp-client-top"><span class="mcp-client-mark claude-mark">✦</span><span class="mcp-status">Compatible MCP client</span></div>
-        <h3>Claude</h3>
-        <p>Add Dhan-X as a connector, sign in once, and use Claude to explore portfolio questions with the context you choose to share.</p>
+        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark claude-mark"><img src="images/claude-symbol.svg" alt="Claude"></span><span>Claude <small>by Anthropic</small></span></div><span class="mcp-status">MCP connection</span></div>
+        <h3>Connect Dhan-X in Claude</h3>
+        <ol class="mcp-instructions">
+          <li><strong>Open Connectors in Claude settings.</strong> Choose to add a custom connector.</li>
+          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and continue to Dhan-X sign-in.</li>
+          <li><strong>Approve read-only access.</strong> Return to Claude and ask a portfolio, research or planning question.</li>
+        </ol>
       </article>
     </div>
 
