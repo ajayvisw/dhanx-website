@@ -237,8 +237,8 @@
 
   <div class="section">
     <div class="section-label">Everything included</div>
-    <div class="section-title">12+ tools. One subscription.</div>
-    <div class="section-sub">Every feature is available on every plan — no add-ons, no upgrades needed.</div>
+    <div class="section-title">12+ tools. One place.</div>
+    <div class="section-sub">Private beta members receive full Dhan-X access for their 90-day trial — no feature-by-feature add-ons.</div>
     <div class="module-grid">
       <div class="module-pill"><span>&#128200;</span><span>India portfolio</span></div>
       <div class="module-pill"><span>&#127970;</span><span>US portfolio</span></div>
@@ -313,40 +313,23 @@
   <!-- PRICING -->
   <div class="section section-alt" id="pricing">
     <div class="pricing-head">
-      <div class="section-label">Pricing</div>
-      <div class="section-title">Simple, honest pricing</div>
-      <div class="section-sub">Start free. Upgrade when you're ready for the full picture.</div>
+      <div class="section-label">Private beta</div>
+      <div class="section-title">Start with 90 days<br>of <span class="accent">full access.</span></div>
+      <div class="section-sub">Connect your accounts, use every Dhan-X tool, and decide whether it belongs in your financial life. No credit card required.</div>
     </div>
 
-    <div class="tier-grid">
-      <!-- Free -->
-      <div class="tier">
-        <div class="tier-label">Free</div>
-        <div class="tier-price">$0</div>
-        <div class="tier-sub">Forever free</div>
-        <a class="tier-cta outline" href="https://app.dhan-x.com">Get started free</a>
-        <div class="tier-cat">
-          <div class="tier-cat-label">Planning tools</div>
-          <ul class="tier-list">
-            <li><span>FI calculator</span></li>
-            <li><span>Real estate planner</span></li>
-            <li><span>Budget planner</span></li>
-          </ul>
-        </div>
-      </div>
+    <div class="tier-grid beta-tier-grid">
+      <div class="tier featured beta-tier">
+        <span class="tier-badge">Private beta</span>
+        <div class="tier-label">Dhan-X Pro trial</div>
+        <div class="tier-price">90 days<span class="per"> of full access</span></div>
+        <div class="tier-sub">No credit card required</div>
+        <a class="tier-cta filled" href="https://app.dhan-x.com">Get private beta access</a>
 
-      <!-- Dhan-X Pro -->
-      <div class="tier featured">
-        <span class="tier-badge">Most popular</span>
-        <div class="tier-label">Dhan-X Pro</div>
-        <div class="tier-price"><span id="price-amount">$12.99</span><span class="per">/month</span></div>
-        <div class="tier-sub" id="price-yearly-note">or $100/year — save 36%</div>
-        <a class="tier-cta filled" href="https://app.dhan-x.com">Upgrade to Pro</a>
-
-        <div class="tier-plus">Everything in Free, plus:</div>
+        <div class="tier-plus">Included throughout your trial:</div>
 
         <div class="tier-cat">
-          <div class="tier-cat-label">Portfolio aggregation</div>
+          <div class="tier-cat-label">Your complete financial picture</div>
           <ul class="tier-list">
             <li><span>US brokerage sync</span></li>
             <li><span>India mutual funds via CAS</span></li>
@@ -356,7 +339,7 @@
         </div>
 
         <div class="tier-cat">
-          <div class="tier-cat-label">AI intelligence</div>
+          <div class="tier-cat-label">Research and AI intelligence</div>
           <ul class="tier-list">
             <li><span>AI portfolio analysis</span></li>
             <li><span>Natural-language stock screener</span></li>
@@ -365,48 +348,23 @@
         </div>
 
         <div class="tier-cat">
-          <div class="tier-cat-label">Stock research</div>
-          <ul class="tier-list">
-            <li><span>Buffett-Graham quality scores</span></li>
-            <li><span>Watchlist with fundamentals</span></li>
-            <li><span>Company deep-dive analysis</span></li>
-            <li><span>ETF &amp; index fund coverage</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Performance analytics</div>
+          <div class="tier-cat-label">Planning and performance tools</div>
           <ul class="tier-list">
             <li><span>XIRR across all accounts</span></li>
             <li><span>TER analysis on India MFs</span></li>
-            <li><span>Nifty benchmark comparison</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Priority support</div>
-          <ul class="tier-list">
-            <li><span>Priority customer support</span></li>
+            <li><span>FI, real estate and budget planning</span></li>
+            <li><span>Watchlist, quality scores and research</span></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="info-strips">
-      <div class="info-strip geo">
-        <span class="ic">&#128205;</span>
-        <span>Pricing detected: <strong id="geo-country">United States</strong> — <span id="geo-alternate">Indian users see &#8377;499/mo</span>.</span>
-      </div>
-      <div class="info-strip beta">
-        <span class="ic">&#127873;</span>
-        <span>Beta users: get 3 months of Pro free when paid tiers launch.</span>
-      </div>
-    </div>
+    <p class="beta-plan-note">We are using the private beta to shape Dhan-X’s long-term offering. You will receive plan details before your 90-day trial ends.</p>
   </div>
 
   <div class="cta-banner">
     <h2>Start understanding your money better</h2>
-    <p>Join the private beta — 30 days free, no credit card required.</p>
+    <p>Join the private beta — 90 days of full access, no credit card required.</p>
     <a class="btn-dark" href="https://app.dhan-x.com">Get Private Beta Access</a>
   </div>
 </main>
@@ -447,22 +405,6 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  // Geo-based pricing (Cloudflare Pages Function)
-  fetch('/api/pricing')
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      document.getElementById('price-amount').textContent = data.symbol + data.monthly;
-      document.getElementById('price-yearly-note').textContent =
-        'or ' + data.symbol + data.yearly.toLocaleString() + '/year — save ' + data.yearlySavings + '%';
-      document.getElementById('geo-country').textContent = data.country;
-      document.getElementById('geo-alternate').textContent =
-        (data.isIndia ? 'International' : 'Indian') + ' users see ' + data.alternatePrice;
-    })
-    .catch(function () {
-      // Fallback: static USD pricing already rendered in the markup.
-    });
-</script>
 <script>
   // Feedback form → Web3Forms (delivers to support@dhan-x.com)
   document.getElementById('feedbackForm')

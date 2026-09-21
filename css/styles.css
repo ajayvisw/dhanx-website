@@ -331,7 +331,9 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
 .pricing-head .section-label { display: block; }
 .pricing-head .section-sub { margin-left: auto; margin-right: auto; }
 .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 920px; margin: 0 auto; align-items: start; }
+.beta-tier-grid { grid-template-columns: minmax(0, 700px); justify-content: center; }
 .tier { position: relative; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+.beta-tier { padding: 34px; }
 .tier.featured { border-color: var(--teal); }
 .tier-badge { position: absolute; top: -11px; left: 28px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0a0c0f; background: var(--teal); padding: 5px 11px; border-radius: 20px; }
 .tier-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
@@ -358,6 +360,7 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
 .info-strip .ic { flex-shrink: 0; font-size: 15px; }
 .info-strip.geo { background: var(--teal-dim); border: 1px solid var(--teal-border); }
 .info-strip.beta { background: var(--amber-dim); border: 1px solid rgba(250,199,117,0.20); }
+.beta-plan-note { max-width: 700px; margin: 20px auto 0; color: var(--text3); font-size: 12px; line-height: 1.6; text-align: center; }
 
 /* Footer support email */
 .footer-col a.mail { color: var(--teal); }
