@@ -2,7 +2,9 @@
 /* Generates static, crawlable article pages from the public API to ROI archive. */
 const fs = require('fs');
 const path = require('path');
-const root = path.resolve(__dirname, '..');
+// The site moved into public/ so that the repository's own files are not
+// served. Everything this script reads and writes is part of the site.
+const root = path.resolve(__dirname, '..', 'public');
 const raw = fs.readFileSync(path.join(root, 'js/blog.js'), 'utf8');
 const match = raw.match(/const P=(\[[\s\S]*?\])\.map/);
 if (!match) throw new Error('Could not read the blog catalogue');
@@ -130,7 +132,11 @@ function article(row) {
     ['About this episode', summary],
     ['What to consider', 'This video is part of the API TO ROI research archive. Watch the original analysis for the presenter’s full context, evidence and conclusions.']
   ];
-  const canonical = `https://www.dhan-x.com/blogs/${id}.html`;
+  // Apex host, no .html. Cloudflare serves /blogs/<id> and 307s the .html
+  // form, so a canonical ending in .html names a URL that is not the one
+  // served — and the www host is a second copy of the whole site competing
+  // with this one. Both were true of every article this generator wrote.
+  const canonical = `https://dhan-x.com/blogs/${id}`;
   const body = sections.map(([heading, text]) => `<h2>${esc(heading)}</h2><p>${esc(text)}</p>`).join('');
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(summary)}"><link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} | Dhan-X"><meta property="og:description" content="${esc(summary)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"${esc(title)}","description":"${esc(summary)}","datePublished":"${date}","dateModified":"${date}","author":{"@type":"Organization","name":"Dhan-X"},"publisher":{"@type":"Organization","name":"Dhan-X"},"mainEntityOfPage":"${canonical}","video":{"@type":"VideoObject","name":"${esc(title)}","contentUrl":"https://www.youtube.com/watch?v=${id}","uploadDate":"${date}"}}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time></p><h1>${esc(title)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt=""><article><p>${esc(summary)}</p>${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
 }
@@ -138,12 +144,13 @@ const out = path.join(root, 'blogs'); fs.mkdirSync(out, { recursive: true });
 rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(row)));
 // Index only public, canonical pages. Pricing and early-access are deliberately
 // noindex pages and should not be offered to search engines here.
+const SITE = 'https://dhan-x.com';
 const urls = [
-  'https://www.dhan-x.com/',
-  'https://www.dhan-x.com/about.html',
-  'https://www.dhan-x.com/features.html',
-  'https://www.dhan-x.com/blog.html',
-  ...rows.map(r => `https://www.dhan-x.com/blogs/${r[0]}.html`)
+  `${SITE}/`,
+  `${SITE}/about`,
+  `${SITE}/features`,
+  `${SITE}/blog`,
+  ...rows.map(r => `${SITE}/blogs/${r[0]}`)
 ];
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',

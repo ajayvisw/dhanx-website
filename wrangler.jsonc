@@ -23,8 +23,14 @@
   "observability": {
     "enabled": true
   },
+  // The site lives in public/, so .git, .github/, scripts/ and functions/
+  // are simply outside what gets uploaded. With the repo root as the assets
+  // directory they were all served: https://dhan-x.com/.git/config and
+  // /scripts/sync-youtube.py both answered 200. .assetsignore does not help
+  // — it is not honoured when the assets directory is the repo root, which
+  // was verified against wrangler 4.156.0 before taking this route.
   "assets": {
-    "directory": "."
+    "directory": "public"
   },
   "compatibility_flags": [
     "nodejs_compat"

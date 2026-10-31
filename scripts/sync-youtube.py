@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = ROOT / "js" / "blog.js"
+ARCHIVE = ROOT / "public" / "js" / "blog.js"
 CHANNEL_ID = "UCxCFLXnf5oFgqHw11vAwxww"
 FEED = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
 NS = {
