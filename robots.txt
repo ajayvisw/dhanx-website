@@ -1,4 +1,123 @@
+# Dhan-X — https://dhan-x.com
+#
+# Everything here is public marketing and editorial content and is meant to be
+# crawled, indexed, summarised and cited. The AI crawlers below are named
+# explicitly rather than left to the wildcard: several of them read only the
+# group matching their own token, and a few treat the absence of their name as
+# a reason to stay away.
+
+# ── Search engines ──
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ── AI assistants and answer engines ──
+# Two jobs per vendor: the crawler that builds an index, and the fetcher that
+# runs live when somebody asks a question right now. The second decides whether
+# a page gets cited in an answer today.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# ── Social and link preview ──
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ── Everyone else ──
 User-agent: *
 Allow: /
 
-Sitemap: https://www.dhan-x.com/sitemap.xml
+Sitemap: https://dhan-x.com/sitemap.xml
+
+# Plain-text index written for language models rather than ranking engines.
+# Convention: https://llmstxt.org
+# https://dhan-x.com/llms.txt
+# https://app.dhan-x.com/llms.txt

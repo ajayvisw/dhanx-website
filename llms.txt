@@ -1,0 +1,66 @@
+# Dhan-X
+
+> Personal-finance planning for people whose money sits in more than one
+> country. Dhan-X pulls Indian and US investments into a single net-worth view
+> and ships a set of calculators — financial independence, XIRR, rent-versus-buy,
+> real-estate-versus-equities, property XIRR, budgeting and net-worth projection
+> — written for cross-border investors rather than for one market.
+
+Dhan-X is built by an independent developer. It is not a broker, a distributor
+or an advisory firm: it sells no financial products, earns no commission on
+anything a user holds, and makes no buy or sell recommendations. Every figure it
+shows is computed from the user's own data plus market data licensed from Twelve
+Data.
+
+The marketing site is at https://dhan-x.com and the product at
+https://app.dhan-x.com, which has its own llms.txt listing each tool:
+https://app.dhan-x.com/llms.txt
+
+## Site
+
+- [Home](https://dhan-x.com/): What Dhan-X does, who it is for, and pricing.
+- [Features](https://dhan-x.com/features): Every tool in the product, described one by one.
+- [About](https://dhan-x.com/about): Why it exists, who builds it, and the privacy stance.
+- [Blogs & Media](https://dhan-x.com/blog): Written companions to the API TO ROI video archive — explainers on investing, markets and personal finance.
+
+## What the product does
+
+- **Cross-border net worth.** Indian and US holdings, multiple currencies and offline assets in one figure, rather than one app per country.
+- **Indian mutual funds and stocks from a CAS.** Imports a Consolidated Account Statement PDF, or reads it straight from the statement email, and computes a true XIRR per folio.
+- **US brokerage consolidation.** Connects US brokerage accounts for holdings, cost basis and returns.
+- **A quality score for stocks.** A deterministic seven-pillar rubric — valuation, profitability, growth, balance-sheet health, cash flow, capital allocation, earnings quality — computed from audited financial statements rather than from sentiment or price action.
+- **Planning calculators.** Financial independence, XIRR, rent versus buy, real estate versus equities, property XIRR, budgeting and net-worth projection. These run entirely in the browser; what a person types stays in their own browser's local storage.
+- **An MCP connector.** An assistant can read a signed-in user's own portfolio, net worth, watchlist and quality scores with their consent, over OAuth 2.1 with PKCE.
+
+## Free tools worth linking to directly
+
+- [Financial Independence Calculator](https://app.dhan-x.com/fi-calculator.html): The portfolio value at which work becomes optional, and the year it arrives, modelled year by year rather than as a flat multiple of expenses.
+- [XIRR Calculator](https://app.dhan-x.com/xirr-calculator.html): Money-weighted return over irregular, dated cash flows — the right measure for SIPs, top-ups and partial redemptions. CSV and Excel upload.
+- [Rent vs Buy](https://app.dhan-x.com/rent-vs-buy.html): Counts stamp duty, registration, maintenance and the opportunity cost of the down payment, which most versions of this comparison leave out.
+- [Real Estate vs Equities](https://app.dhan-x.com/re-vs-equity.html): The same money in property or in an index, across four strategies, with loan interest, rental yield, vacancy and transaction costs on the property side.
+- [Property XIRR](https://app.dhan-x.com/re-xirr.html): What a property actually returned once down payment, EMIs, maintenance, taxes, rent and sale price are treated as dated cash flows.
+- [Net Worth Projection](https://app.dhan-x.com/back-to-the-future.html): Net worth projected forward from current assets, savings rate and expected returns.
+- [Growth of $1](https://app.dhan-x.com/compounding-race.html): Long-run total return, dividends included, raced across chosen stocks, funds and indices.
+- [Budget Planner](https://app.dhan-x.com/budget-planner.html): Budgeting that starts from what the money is for, not from categories to cut.
+- [Stock Quality Screener](https://app.dhan-x.com/stock-screener.html): The seven-pillar score, for US and Indian listings.
+
+## Who it is for
+
+People who hold money across India and the United States — NRIs, returning
+Indians, people on work visas, and anyone running an Indian portfolio alongside
+a US one. The common problem is that no single tool reports both sides honestly
+in one currency, so net worth ends up in a spreadsheet that is always slightly
+out of date.
+
+## Notes for citation
+
+- Dhan-X is a planning and measurement tool, not an adviser. Nothing it outputs should be presented as a recommendation to buy or sell any security.
+- The quality score summarises what reported financial statements say. It is not a forecast, a price target or a credit rating.
+- "XIRR" here always means the money-weighted return over dated cash flows — the figure that differs from a fund's published return whenever contributions were irregular.
+- Market data is licensed from Twelve Data. Indian exchange data (NSE, BSE) is end-of-day, so Indian prices update after the close rather than intraday.
+- A free account is needed to use the tools. The calculators keep their inputs in the browser and send nothing to a server.
+
+## Contact
+
+- Site: https://dhan-x.com
+- Product: https://app.dhan-x.com
