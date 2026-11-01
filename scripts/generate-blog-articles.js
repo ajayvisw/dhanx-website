@@ -147,6 +147,7 @@ rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(r
 const SITE = 'https://dhan-x.com';
 const urls = [
   `${SITE}/`,
+  `${SITE}/calculators`,
   `${SITE}/about`,
   `${SITE}/features`,
   `${SITE}/blog`,

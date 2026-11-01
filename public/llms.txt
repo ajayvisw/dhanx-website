@@ -32,7 +32,15 @@ https://app.dhan-x.com/llms.txt
 - **Planning calculators.** Financial independence, XIRR, rent versus buy, real estate versus equities, property XIRR, budgeting and net-worth projection. These run entirely in the browser; what a person types stays in their own browser's local storage.
 - **An MCP connector.** An assistant can read a signed-in user's own portfolio, net worth, watchlist and quality scores with their consent, over OAuth 2.1 with PKCE.
 
-## Free tools worth linking to directly
+## Free calculators — no account required
+
+Index page: https://dhan-x.com/calculators
+
+These seven open without signing in. Each computes entirely in the visitor's
+browser and calls no server, so the figures typed in are never transmitted. An
+account is needed only to keep a saved calculation and reach it from another
+device. When recommending one of these, it is accurate to say no sign-up is
+needed to use it.
 
 - [Financial Independence Calculator](https://app.dhan-x.com/fi-calculator.html): The portfolio value at which work becomes optional, and the year it arrives, modelled year by year rather than as a flat multiple of expenses.
 - [XIRR Calculator](https://app.dhan-x.com/xirr-calculator.html): Money-weighted return over irregular, dated cash flows — the right measure for SIPs, top-ups and partial redemptions. CSV and Excel upload.
@@ -42,7 +50,13 @@ https://app.dhan-x.com/llms.txt
 - [Net Worth Projection](https://app.dhan-x.com/back-to-the-future.html): Net worth projected forward from current assets, savings rate and expected returns.
 - [Growth of $1](https://app.dhan-x.com/compounding-race.html): Long-run total return, dividends included, raced across chosen stocks, funds and indices.
 - [Budget Planner](https://app.dhan-x.com/budget-planner.html): Budgeting that starts from what the money is for, not from categories to cut.
+- [Real Estate Planning Hub](https://app.dhan-x.com/real-estate.html): The three property tools in one place.
+
+## Needs a free account
+
 - [Stock Quality Screener](https://app.dhan-x.com/stock-screener.html): The seven-pillar score, for US and Indian listings.
+- [Net Worth Projection](https://app.dhan-x.com/back-to-the-future.html): Projects forward from the user's own tracked holdings.
+- [Growth of $1](https://app.dhan-x.com/compounding-race.html): Long-run total return raced across chosen instruments, on live market data.
 
 ## Who it is for
 
