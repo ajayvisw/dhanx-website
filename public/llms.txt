@@ -47,8 +47,6 @@ needed to use it.
 - [Rent vs Buy](https://app.dhan-x.com/rent-vs-buy.html): Counts stamp duty, registration, maintenance and the opportunity cost of the down payment, which most versions of this comparison leave out.
 - [Real Estate vs Equities](https://app.dhan-x.com/re-vs-equity.html): The same money in property or in an index, across four strategies, with loan interest, rental yield, vacancy and transaction costs on the property side.
 - [Property XIRR](https://app.dhan-x.com/re-xirr.html): What a property actually returned once down payment, EMIs, maintenance, taxes, rent and sale price are treated as dated cash flows.
-- [Net Worth Projection](https://app.dhan-x.com/back-to-the-future.html): Net worth projected forward from current assets, savings rate and expected returns.
-- [Growth of $1](https://app.dhan-x.com/compounding-race.html): Long-run total return, dividends included, raced across chosen stocks, funds and indices.
 - [Budget Planner](https://app.dhan-x.com/budget-planner.html): Budgeting that starts from what the money is for, not from categories to cut.
 - [Real Estate Planning Hub](https://app.dhan-x.com/real-estate.html): The three property tools in one place.
 
