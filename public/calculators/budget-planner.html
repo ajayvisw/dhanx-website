@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Planner — Conscious Spending Plan Calculator, Free</title>
+<link rel="canonical" href="https://dhan-x.com/calculators/budget-planner"/>
+<meta name="description" content="Free budget planner built on the conscious spending framework: fixed costs, investments, savings and guilt-free spending, with a health score against real thresholds.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhan-X">
+<meta property="og:url" content="https://dhan-x.com/calculators/budget-planner">
+<meta property="og:title" content="Budget Planner — Conscious Spending Plan Calculator, Free">
+<meta property="og:description" content="Free budget planner built on the conscious spending framework: fixed costs, investments, savings and guilt-free spending, with a health score against real thresholds.">
+<meta property="og:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Budget Planner — Conscious Spending Plan Calculator, Free">
+<meta name="twitter:description" content="Free budget planner built on the conscious spending framework: fixed costs, investments, savings and guilt-free spending, with a health score against real thresholds.">
+<meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/guide.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dhan-x.com/calculators/budget-planner#article",
+      "headline": "Budget Planner",
+      "description": "Free budget planner built on the conscious spending framework: fixed costs, investments, savings and guilt-free spending, with a health score against real thresholds.",
+      "url": "https://dhan-x.com/calculators/budget-planner",
+      "author": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "mainEntityOfPage": "https://dhan-x.com/calculators/budget-planner"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Budget Planner",
+      "url": "https://app.dhan-x.com/budget-planner.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the 50/30/20 rule, and is this the same thing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "50/30/20 splits income into needs, wants and savings. This is close but separates investing from saving, because they behave differently: an emergency fund needs to be boring and reachable, while retirement money needs to compound and should not be touched. The targets here are roughly 50–60% fixed, 10% investing, 5–10% saving and 20–35% guilt-free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use gross or net income?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter gross, pre-tax, across every source. The planner handles the waterfall from there. Using take-home instead will make your percentages look better than they are and will not match the thresholds the score uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My fixed costs are above 60%. What do I actually do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only two things move a fixed cost: renegotiate it or replace it. Rent and EMI are usually the whole problem — trimming subscriptions rarely shifts the percentage by more than a point. Before cutting, check whether the number is temporary: a loan ending in eighteen months is a different situation from a rent you just signed for three years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much emergency fund do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three to six months of fixed costs — not of income, and not of total spending. If your job is secure and dual-income, three is defensible. Single income, variable pay or a specialised role, aim for six or more. The planner scores you against your own fixed costs rather than a flat figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 20–35% on guilt-free spending really allowed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is the point of the framework. If your fixed costs are in range and you are investing properly, the rest is yours with no tracking required. A plan you can live with for ten years beats an austere one you abandon in March."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work with an irregular income?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a conservative monthly average — ideally your worst three months of last year rather than the mean. Variable income makes the emergency fund more important, not less, so push toward six months of fixed costs before raising your guilt-free number."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free calculators",
+          "item": "https://dhan-x.com/calculators"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Budget Planner",
+          "item": "https://dhan-x.com/calculators/budget-planner"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/calculators">Free calculators</a>
+    <a class="nav-link" href="/features">Features</a>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="/early-access">Get early access</a>
+  </div>
+</nav>
+<main>
+<article class="guide">
+  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; Budget Planner</p>
+  <header class="guide-hero">
+    <p class="guide-eyebrow">Budgeting</p>
+    <h1>Budget Planner</h1>
+    <p class="guide-lede">A budget that starts from what you want your money to buy, rather than from a list of categories to cut. Four buckets instead of forty, with guilt-free spending as a target to hit rather than a leak to plug.</p>
+  </header>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/budget-planner.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+  <div class="guide-body">
+<h2>A budget that starts from what you want, not what to cut</h2>
+  <p>Most budgeting fails for the same reason most diets fail: it is organised around
+  denial. You list forty categories, discover you spend too much on coffee, feel bad,
+  and stop opening the spreadsheet by March. Nothing about that process tells you
+  whether you can afford the thing you actually want.</p>
+  <p>This planner uses the conscious-spending approach popularised by Ramit Sethi. It
+  asks four questions instead of forty, and the last one is the point: what is left for
+  the life you actually want to live?</p>
+
+  <h2>The four buckets</h2>
+  <ul class="calc-takeaway">
+    <li><strong>Fixed costs — 50 to 60%.</strong> Rent or EMI, utilities, insurance,
+    groceries, transport, school fees. Everything that arrives whether you think about
+    it or not.</li>
+    <li><strong>Investments — 10% or more.</strong> SIPs, retirement contributions,
+    anything bought to be held. This is the bucket that compounds.</li>
+    <li><strong>Savings — 5 to 10%.</strong> Emergency fund, a holiday, a down payment.
+    Money with a job and a date.</li>
+    <li><strong>Guilt-free spending — 20 to 35%.</strong> Whatever you like, with no
+    tracking and no apology. This is a target to hit, not a leak to plug.</li>
+  </ul>
+  <p>The order matters. Investments and savings come out before the guilt-free number,
+  not after — so the amount left to enjoy is genuinely yours to spend, because
+  everything that needed protecting has already been protected.</p>
+
+  <h2>What the health score is actually measuring</h2>
+  <p>It starts at 100 and takes away for the things that reliably break a plan. These
+  are the real thresholds, not a vague sentiment:</p>
+  <ul class="calc-takeaway">
+    <li><strong>Fixed costs above 60% of income: −25.</strong> The single most common
+    cause of a stuck financial life. Above 60% there is nothing left to redirect when
+    something goes wrong, and almost every fixed cost takes months to unwind.</li>
+    <li><strong>Investing under 10%: −25.</strong> Weighted as heavily as the first,
+    because the two together determine whether your money ever starts working.</li>
+    <li><strong>Spending more than you earn: −20.</strong></li>
+    <li><strong>An emergency fund under half of target: −10.</strong></li>
+    <li><strong>Investing 25% or more: +5</strong>, and a fully funded emergency fund
+    adds another <strong>+5</strong>.</li>
+  </ul>
+  <p>Below 30 the planner calls it Critical; 75 and above is Excellent. The score is a
+  summary of those rules, nothing more — it is not a credit rating and nobody but you
+  ever sees it.</p>
+
+  <h2>The fixed-cost trap</h2>
+  <p>Fixed costs are weighted hardest for a reason that has nothing to do with
+  arithmetic. A big discretionary month is over when the month is over. A larger flat,
+  a longer car loan or a more expensive school commits you for years, and each one
+  quietly lowers the ceiling on every future decision — including the ability to take a
+  pay cut for a better job, or to stop working at all.</p>
+  <p>This is why the planner lets you test a change before you make it: a new school,
+  a car, a home, a bigger SIP, a different holiday budget. Watch what each does to the
+  guilt-free number and to the score before you sign anything.</p>
+
+  <h2>Common questions</h2>
+  <div class="calc-faq">
+    <details>
+      <summary>What is the 50/30/20 rule, and is this the same thing?</summary>
+      <div><p>50/30/20 splits income into needs, wants and savings. This is close but
+      separates investing from saving, because they behave differently: an emergency
+      fund needs to be boring and reachable, while retirement money needs to compound
+      and should not be touched. The targets here are roughly 50–60% fixed, 10%
+      investing, 5–10% saving and 20–35% guilt-free.</p></div>
+    </details>
+    <details>
+      <summary>Should I use gross or net income?</summary>
+      <div><p>Enter gross, pre-tax, across every source. The planner handles the
+      waterfall from there. Using take-home instead will make your percentages look
+      better than they are and will not match the thresholds the score uses.</p></div>
+    </details>
+    <details>
+      <summary>My fixed costs are above 60%. What do I actually do?</summary>
+      <div><p>Only two things move a fixed cost: renegotiate it or replace it. Rent and
+      EMI are usually the whole problem — trimming subscriptions rarely shifts the
+      percentage by more than a point. Before cutting, check whether the number is
+      temporary: a loan ending in eighteen months is a different situation from a rent
+      you just signed for three years.</p></div>
+    </details>
+    <details>
+      <summary>How much emergency fund do I need?</summary>
+      <div><p>Three to six months of fixed costs — not of income, and not of total
+      spending. If your job is secure and dual-income, three is defensible. Single
+      income, variable pay or a specialised role, aim for six or more. The planner
+      scores you against your own fixed costs rather than a flat figure.</p></div>
+    </details>
+    <details>
+      <summary>Is 20–35% on guilt-free spending really allowed?</summary>
+      <div><p>That is the point of the framework. If your fixed costs are in range and
+      you are investing properly, the rest is yours with no tracking required. A plan
+      you can live with for ten years beats an austere one you abandon in March.</p></div>
+    </details>
+    <details>
+      <summary>Does this work with an irregular income?</summary>
+      <div><p>Use a conservative monthly average — ideally your worst three months of
+      last year rather than the mean. Variable income makes the emergency fund more
+      important, not less, so push toward six months of fixed costs before raising your
+      guilt-free number.</p></div>
+    </details>
+  </div>
+  </div>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/budget-planner.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+<section class="guide-related">
+  <h2>Other free calculators</h2>
+  <div class="guide-related-grid">
+    <a class="guide-related-card" href="/calculators/rent-vs-buy"><strong>Rent vs Buy Calculator</strong><span>Counts stamp duty, maintenance and the opportunity cost of your down payment.</span></a>
+    <a class="guide-related-card" href="/calculators/financial-independence"><strong>FIRE &amp; Financial Independence Calculator</strong><span>The portfolio value at which work becomes optional, and the year you get there.</span></a>
+    <a class="guide-related-card" href="/calculators/property-xirr"><strong>Property XIRR Calculator</strong><span>The real return on a property you already own — not the headline price move.</span></a>
+  </div>
+</section>
+</article>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators">Free calculators</a>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/early-access">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="/calculators/rent-vs-buy">Rent vs Buy Calculator</a>
+      <a href="/calculators/financial-independence">FIRE &amp; Financial Independence Calculator</a>
+      <a href="/calculators/property-xirr">Property XIRR Calculator</a>
+      <a href="/calculators/real-estate-vs-equities">Real Estate vs Equities Calculator</a>
+      <a href="/calculators/budget-planner">Budget Planner</a>
+      <a href="/calculators/real-estate">Free Real Estate Calculators</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/blog">Blogs &amp; Media</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

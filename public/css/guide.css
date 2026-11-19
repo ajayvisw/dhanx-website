@@ -1,0 +1,210 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   guide.css — the long-form calculator guides at /calculators/<tool>.
+
+   WHY THESE PAGES EXIST ON THIS DOMAIN
+
+   The calculators themselves live on app.dhan-x.com. The written guides live
+   here, on the marketing site, and that split is deliberate.
+
+   Google ranks a page, not a site. dhan-x.com/calculators was a 305-word menu
+   — seven topics, 25 words each — so it was not "about" anything and could not
+   win a search. Meanwhile the app pages carried the explanations, which meant
+   the domain people were meant to land on was the one with nothing to rank.
+
+   The content therefore MOVED here rather than being copied. Two pages
+   carrying the same thousand words compete with each other, Google picks one
+   and often suppresses the other, and it could easily have picked the app —
+   the opposite of the intent. So: the guide is here and ranks, the tool is
+   there and works, and each links to the other.
+
+   Nothing here is shared with the app's calc-content.css. That file styles the
+   explainer inside the app shell (fixed sidebar, dark-only tokens); this one
+   styles an ordinary article on the marketing site, which has its own
+   typography and its own palette in styles.css. Keeping them separate is what
+   lets the marketing site restyle without touching the app.
+   ────────────────────────────────────────────────────────────────────────── */
+
+.guide {
+  max-width: 760px;              /* a measure that stays readable on a wide screen */
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+/* ── Lede, above the fold ─────────────────────────────────────────────────
+   The first thing a visitor from a search result sees. It has one job: say
+   what the page answers, before anything asks them to click. */
+.guide-hero { padding: 64px 0 8px; }
+
+.guide-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #00b894);
+  margin-bottom: 14px;
+}
+
+.guide h1 {
+  font-size: clamp(30px, 4.4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.guide-lede {
+  font-size: 19px;
+  line-height: 1.6;
+  opacity: 0.86;
+  margin: 0 0 30px;
+}
+
+/* ── The call to action into the app ─────────────────────────────────────
+   Appears twice: once under the lede for someone who already knows what they
+   want, once at the end for someone who read first. Both go to the tool. */
+.guide-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  padding: 20px 22px;
+  margin: 0 0 42px;
+  border: 1px solid rgba(127, 127, 127, 0.22);
+  border-radius: 12px;
+  background: rgba(127, 127, 127, 0.05);
+}
+.guide-cta-text { flex: 1 1 240px; font-size: 15px; opacity: 0.84; margin: 0; }
+.guide-cta-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 9px;
+  font-weight: 650;
+  font-size: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--accent, #00b894);
+  color: #04120e;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.guide-cta-btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.guide-cta-note { flex-basis: 100%; font-size: 13px; opacity: 0.6; margin: 0; }
+
+/* ── Body copy ───────────────────────────────────────────────────────────── */
+.guide-body { font-size: 17px; line-height: 1.74; }
+.guide-body h2 {
+  font-size: 26px;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  margin: 46px 0 14px;
+}
+.guide-body h3 { font-size: 18px; margin: 30px 0 8px; }
+.guide-body p { margin: 0 0 18px; }
+.guide-body ul, .guide-body ol { margin: 0 0 20px; padding-left: 22px; }
+.guide-body li { margin-bottom: 9px; }
+.guide-body a { color: var(--accent, #00b894); }
+
+/* ── Worked example ──────────────────────────────────────────────────────
+   Tinted and ruled so a reader scanning for "what does this look like with
+   real numbers" finds it without reading the prose around it. */
+.calc-eg {
+  background: rgba(0, 184, 148, 0.06);
+  border-left: 3px solid var(--accent, #00b894);
+  border-radius: 0 10px 10px 0;
+  padding: 22px 24px 8px;
+  margin: 0 0 28px;
+}
+.calc-eg-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #00b894);
+  margin-bottom: 14px;
+}
+.calc-eg dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 20px;
+  margin: 0 0 18px;
+  font-size: 15.5px;
+}
+.calc-eg dt { opacity: 0.74; }
+.calc-eg dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.calc-eg-verdict {
+  border-top: 1px solid rgba(0, 184, 148, 0.25);
+  padding-top: 15px;
+  margin: 0 0 16px;
+}
+
+/* ── "So what" bullets ───────────────────────────────────────────────────── */
+.calc-takeaway { list-style: none; padding-left: 0; margin: 0 0 24px; }
+.calc-takeaway li { position: relative; padding-left: 27px; margin-bottom: 12px; }
+.calc-takeaway li::before {
+  content: "\2192";
+  position: absolute; left: 0; top: 0;
+  color: var(--accent, #00b894);
+  font-weight: 700;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────
+   Real <details>: no script, keyboard-operable for free, and a crawler reads
+   the answer whether or not it is open. Mirrored in FAQPage JSON-LD. */
+.calc-faq { margin: 10px 0 0; }
+.calc-faq details { border-bottom: 1px solid rgba(127, 127, 127, 0.22); }
+.calc-faq details:first-of-type { border-top: 1px solid rgba(127, 127, 127, 0.22); }
+.calc-faq summary {
+  cursor: pointer;
+  padding: 17px 32px 17px 0;
+  font-weight: 600;
+  position: relative;
+  list-style: none;
+}
+.calc-faq summary::-webkit-details-marker { display: none; }
+.calc-faq summary::after {
+  content: "+";
+  position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; font-weight: 400; line-height: 1; opacity: 0.5;
+}
+.calc-faq details[open] summary::after { content: "\2013"; }
+.calc-faq summary:hover { color: var(--accent, #00b894); }
+.calc-faq details > div { padding: 0 0 18px; }
+.calc-faq details > div p:last-child { margin-bottom: 0; }
+
+/* ── Cross-links between guides ──────────────────────────────────────────── */
+.guide-related { margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(127,127,127,0.22); }
+.guide-related h2 { font-size: 20px; margin: 0 0 16px; }
+.guide-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.guide-related-card {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid rgba(127, 127, 127, 0.22);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.14s ease, transform 0.14s ease;
+}
+.guide-related-card:hover { border-color: var(--accent, #00b894); transform: translateY(-2px); }
+.guide-related-card strong { display: block; margin-bottom: 5px; font-size: 15.5px; }
+.guide-related-card span { font-size: 13.5px; opacity: 0.68; line-height: 1.5; }
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+.guide-crumb { font-size: 13.5px; opacity: 0.62; padding: 22px 0 0; }
+.guide-crumb a { color: inherit; text-decoration: none; }
+.guide-crumb a:hover { text-decoration: underline; }
+
+/* ── Phone: 16px gutter, no horizontal scroll, example grid collapses ────── */
+@media (max-width: 640px) {
+  .guide { padding: 0 16px 72px; }
+  .guide-hero { padding: 40px 0 6px; }
+  .guide-body { font-size: 16.5px; }
+  .guide-body h2 { font-size: 22px; margin-top: 38px; }
+  .guide-cta { padding: 17px 16px; }
+  .guide-cta-btn { width: 100%; text-align: center; }
+  .calc-eg { padding: 18px 16px 6px; }
+  .calc-eg dl { grid-template-columns: 1fr; gap: 3px 0; }
+  .calc-eg dd { text-align: left; margin-bottom: 10px; }
+}

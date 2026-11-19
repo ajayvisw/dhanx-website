@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Real Estate Calculators — Rent vs Buy, Property XIRR, vs Equities</title>
+<link rel="canonical" href="https://dhan-x.com/calculators/real-estate"/>
+<meta name="description" content="Three free property calculators — rent vs buy, real estate versus equities, and property XIRR — and a guide to which question each one answers.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhan-X">
+<meta property="og:url" content="https://dhan-x.com/calculators/real-estate">
+<meta property="og:title" content="Free Real Estate Calculators — Rent vs Buy, Property XIRR, vs Equities">
+<meta property="og:description" content="Three free property calculators — rent vs buy, real estate versus equities, and property XIRR — and a guide to which question each one answers.">
+<meta property="og:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Real Estate Calculators — Rent vs Buy, Property XIRR, vs Equities">
+<meta name="twitter:description" content="Three free property calculators — rent vs buy, real estate versus equities, and property XIRR — and a guide to which question each one answers.">
+<meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/guide.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dhan-x.com/calculators/real-estate#article",
+      "headline": "Free Real Estate Calculators",
+      "description": "Three free property calculators — rent vs buy, real estate versus equities, and property XIRR — and a guide to which question each one answers.",
+      "url": "https://dhan-x.com/calculators/real-estate",
+      "author": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "mainEntityOfPage": "https://dhan-x.com/calculators/real-estate"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Free Real Estate Calculators",
+      "url": "https://app.dhan-x.com/real-estate.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which calculator should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you need somewhere to live, rent vs buy. If you have somewhere to live and are choosing an asset, real estate vs equities. If you already own the property and want to know how it has done, property XIRR. They answer different questions and will give different thresholds, which is correct rather than contradictory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do rent-vs-buy and real-estate-vs-equities disagree?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because in one you live in the home and pay rent to nobody, and in the other you let it out and collect rent from a tenant. Rental income materially helps the property side, which is why the appreciation needed to justify buying drops from about 9.2% to about 7.5%. Owning and letting is a better deal than owning and living — on the numbers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do these work for property outside India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Switch the country and the defaults change — mortgage rates near 7%, transfer and title costs under 1% rather than 5–8% stamp duty, property tax as a meaningful annual percentage, and 9–11% for broad US equities. The structure of each comparison is identical; only the inputs move."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do they account for tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rent vs buy includes the home-loan interest deduction if you claim one. Capital gains and rental-income tax are not modelled anywhere, so treat every output as pre-tax. Depending on your bracket this can move results by a percentage point or two."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All three run entirely in your browser and nothing you type is sent to a server. A free account only adds the ability to save a scenario and open it on another device."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free calculators",
+          "item": "https://dhan-x.com/calculators"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free Real Estate Calculators",
+          "item": "https://dhan-x.com/calculators/real-estate"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/calculators">Free calculators</a>
+    <a class="nav-link" href="/features">Features</a>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="/early-access">Get early access</a>
+  </div>
+</nav>
+<main>
+<article class="guide">
+  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; Free Real Estate Calculators</p>
+  <header class="guide-hero">
+    <p class="guide-eyebrow">Property</p>
+    <h1>Free Real Estate Calculators</h1>
+    <p class="guide-lede">“Is property a good investment” is really three separate questions, and they have different answers. Here is which calculator answers which, and why their thresholds differ.</p>
+  </header>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/real-estate.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+  <div class="guide-body">
+<h2>Three property questions, three different calculators</h2>
+  <p>"Is property a good investment" is really three separate questions, and they have
+  different answers. Picking the wrong tool is how people end up with a confident number
+  that does not address their situation.</p>
+
+  <h3>I am deciding where to live</h3>
+  <p><a href="/calculators/rent-vs-buy"><strong>Rent vs Buy</strong></a> — you need somewhere to
+  live and you are choosing between paying a landlord and paying a bank. It counts what
+  the usual argument leaves out: stamp duty, registration, maintenance, and what your
+  down payment would have earned had it stayed invested. On the default assumptions,
+  buying needs about <strong>9.2% annual appreciation</strong> to beat renting and
+  investing the difference.</p>
+
+  <h3>I am deciding where to invest</h3>
+  <p><a href="/calculators/real-estate-vs-equities"><strong>Real Estate vs Equities</strong></a> — you
+  already have somewhere to live and this is about where the money goes. It matches the
+  cash flows rupee for rupee: the equity path gets the same down payment and the same
+  monthly outgo as a SIP. Because the property collects rent here, the bar is lower —
+  about <strong>7.5% appreciation</strong>.</p>
+
+  <h3>I already own it and want the truth</h3>
+  <p><a href="/calculators/property-xirr"><strong>Property XIRR</strong></a> — what has it actually
+  returned, counting the down payment, every EMI, maintenance, taxes, rent received and
+  today's value as dated cash flows. Usually well below the headline price move, and it
+  reports both the unlevered return (the asset) and the levered one (your money), which
+  can be lower when your loan rate exceeds the appreciation rate.</p>
+
+  <h2>The three mistakes these tools exist to prevent</h2>
+  <ul class="calc-takeaway">
+    <li><strong>Comparing EMI against rent.</strong> It leaves out the largest item on
+    the buying side, which is the return your down payment and stamp duty would have
+    earned elsewhere.</li>
+    <li><strong>Quoting the price move as the return.</strong> It ignores six to eight
+    percent of acquisition cost, a decade of interest, maintenance and vacancy.</li>
+    <li><strong>Assuming leverage always helps.</strong> It multiplies the gap between
+    your asset's growth and your borrowing cost — and when the loan is dearer than the
+    appreciation, that gap is negative.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <div class="calc-faq">
+    <details>
+      <summary>Which calculator should I use?</summary>
+      <div><p>If you need somewhere to live, rent vs buy. If you have somewhere to live
+      and are choosing an asset, real estate vs equities. If you already own the
+      property and want to know how it has done, property XIRR. They answer different
+      questions and will give different thresholds, which is correct rather than
+      contradictory.</p></div>
+    </details>
+    <details>
+      <summary>Why do rent-vs-buy and real-estate-vs-equities disagree?</summary>
+      <div><p>Because in one you live in the home and pay rent to nobody, and in the
+      other you let it out and collect rent from a tenant. Rental income materially
+      helps the property side, which is why the appreciation needed to justify buying
+      drops from about 9.2% to about 7.5%. Owning and letting is a better deal than
+      owning and living — on the numbers.</p></div>
+    </details>
+    <details>
+      <summary>Do these work for property outside India?</summary>
+      <div><p>Yes. Switch the country and the defaults change — mortgage rates near 7%,
+      transfer and title costs under 1% rather than 5–8% stamp duty, property tax as a
+      meaningful annual percentage, and 9–11% for broad US equities. The structure of
+      each comparison is identical; only the inputs move.</p></div>
+    </details>
+    <details>
+      <summary>Do they account for tax?</summary>
+      <div><p>Rent vs buy includes the home-loan interest deduction if you claim one.
+      Capital gains and rental-income tax are not modelled anywhere, so treat every
+      output as pre-tax. Depending on your bracket this can move results by a
+      percentage point or two.</p></div>
+    </details>
+    <details>
+      <summary>Do I need an account?</summary>
+      <div><p>No. All three run entirely in your browser and nothing you type is sent to
+      a server. A free account only adds the ability to save a scenario and open it on
+      another device.</p></div>
+    </details>
+  </div>
+  </div>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/real-estate.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+<section class="guide-related">
+  <h2>Other free calculators</h2>
+  <div class="guide-related-grid">
+    <a class="guide-related-card" href="/calculators/rent-vs-buy"><strong>Rent vs Buy Calculator</strong><span>Counts stamp duty, maintenance and the opportunity cost of your down payment.</span></a>
+    <a class="guide-related-card" href="/calculators/financial-independence"><strong>FIRE &amp; Financial Independence Calculator</strong><span>The portfolio value at which work becomes optional, and the year you get there.</span></a>
+    <a class="guide-related-card" href="/calculators/property-xirr"><strong>Property XIRR Calculator</strong><span>The real return on a property you already own — not the headline price move.</span></a>
+  </div>
+</section>
+</article>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators">Free calculators</a>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/early-access">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="/calculators/rent-vs-buy">Rent vs Buy Calculator</a>
+      <a href="/calculators/financial-independence">FIRE &amp; Financial Independence Calculator</a>
+      <a href="/calculators/property-xirr">Property XIRR Calculator</a>
+      <a href="/calculators/real-estate-vs-equities">Real Estate vs Equities Calculator</a>
+      <a href="/calculators/budget-planner">Budget Planner</a>
+      <a href="/calculators/real-estate">Free Real Estate Calculators</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/blog">Blogs &amp; Media</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

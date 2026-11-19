@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate vs Equities Calculator — The Same Money, Compared</title>
+<link rel="canonical" href="https://dhan-x.com/calculators/real-estate-vs-equities"/>
+<meta name="description" content="Free calculator comparing real estate against equities with matched cash flows — same down payment, same monthly outgo, loan interest and rental income all counted.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhan-X">
+<meta property="og:url" content="https://dhan-x.com/calculators/real-estate-vs-equities">
+<meta property="og:title" content="Real Estate vs Equities Calculator — The Same Money, Compared">
+<meta property="og:description" content="Free calculator comparing real estate against equities with matched cash flows — same down payment, same monthly outgo, loan interest and rental income all counted.">
+<meta property="og:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Real Estate vs Equities Calculator — The Same Money, Compared">
+<meta name="twitter:description" content="Free calculator comparing real estate against equities with matched cash flows — same down payment, same monthly outgo, loan interest and rental income all counted.">
+<meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/guide.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dhan-x.com/calculators/real-estate-vs-equities#article",
+      "headline": "Real Estate vs Equities Calculator",
+      "description": "Free calculator comparing real estate against equities with matched cash flows — same down payment, same monthly outgo, loan interest and rental income all counted.",
+      "url": "https://dhan-x.com/calculators/real-estate-vs-equities",
+      "author": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "mainEntityOfPage": "https://dhan-x.com/calculators/real-estate-vs-equities"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Real Estate vs Equities Calculator",
+      "url": "https://app.dhan-x.com/re-vs-equity.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is real estate or the stock market a better investment in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On these assumptions — 6% appreciation, 11% equity returns, an 8.5% home loan — equities finish ahead by a wide margin, and property needs about 7.5% annual appreciation to draw level. But both inputs are forecasts, and the answer is genuinely sensitive to them. The useful output is not the verdict; it is the appreciation rate at which the verdict flips, because that is something you can check against your own market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Isn't this unfair because property is leveraged and equity isn't?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The leverage is fully counted. The property side gets the full asset for a 20% down payment and the equity side never borrows — that advantage is real and it is in the numbers. What makes it fair is that the equity side also receives every EMI rupee as a monthly investment, so both paths see the same money leaving your pocket on the same dates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it include rental income?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with a growth rate you set — 6% a year by default, roughly Indian metro rent inflation. Rental income is a large part of why property is competitive at all in this comparison; without it the gap widens considerably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not modelled, in either direction. Rental income is taxable at your slab, capital gains rules differ between the two assets, and home-loan interest may be deductible. Depending on your bracket these can move the result by a point or two each way, so treat the output as pre-tax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What appreciation rate should I assume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use your own market, not a national figure. Check what comparable flats in the same building or street actually transacted at five and ten years ago — not asking prices, which are systematically optimistic. If you cannot find real transaction data, that difficulty is itself informative about the asset."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Everything is computed in your browser and nothing is sent to a server. A free account lets you save a scenario and reopen it elsewhere, but the calculator works without one."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free calculators",
+          "item": "https://dhan-x.com/calculators"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Real Estate vs Equities Calculator",
+          "item": "https://dhan-x.com/calculators/real-estate-vs-equities"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/calculators">Free calculators</a>
+    <a class="nav-link" href="/features">Features</a>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="/early-access">Get early access</a>
+  </div>
+</nav>
+<main>
+<article class="guide">
+  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; Real Estate vs Equities Calculator</p>
+  <header class="guide-hero">
+    <p class="guide-eyebrow">Property</p>
+    <h1>Real Estate vs Equities Calculator</h1>
+    <p class="guide-lede">The same money put into property or into an index, matched rupee for rupee: the equity path gets the same down payment and the same monthly outgo as a SIP, so both sides see identical cash leaving your pocket.</p>
+  </header>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/re-vs-equity.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+  <div class="guide-body">
+<h2>Real estate or equities — the same money, compared properly</h2>
+  <p>Most versions of this argument are rigged by accident. They compare the full value
+  of a leveraged property against a lump sum invested in an index, which is not the same
+  money at all: the property buyer put down 20% and borrowed the rest, then fed it an
+  EMI every month for twenty years. A fair comparison has to match those flows rupee for
+  rupee.</p>
+  <p>That is what this does. The equity path starts with the same down payment and then
+  receives the same monthly outgo as a SIP, so both sides see identical cash leaving your
+  pocket on identical dates. Only the destination differs.</p>
+
+  <div class="calc-eg">
+    <div class="calc-eg-title">Worked example — ₹2 Cr property, 20 years</div>
+    <dl>
+      <dt>Down payment (20%)</dt><dd>₹40 L</dd>
+      <dt>Loan — 8.5%, 20 years</dt><dd>₹1,38,852/mo</dd>
+      <dt>Rent received, growing 6%/yr</dt><dd>₹55,000/mo</dd>
+      <dt>Appreciation assumed</dt><dd>6% a year</dd>
+      <dt>Equity return assumed</dt><dd>11% a year</dd>
+      <dt>Total EMI paid</dt><dd>₹3.33 Cr</dd>
+      <dt>Of which interest</dt><dd>₹1.73 Cr</dd>
+      <dt>Property position at 20 years</dt><dd>₹6.56 Cr</dd>
+      <dt>Equity path at 20 years</dt><dd>₹8.61 Cr</dd>
+    </dl>
+    <p class="calc-eg-verdict">Equities finish <strong>₹2.05 crore ahead</strong>, even
+    with the property collecting rent that grows at 6% a year throughout. The property
+    has to appreciate at <strong>7.5% a year</strong> before it catches up.</p>
+  </div>
+
+  <h2>7.5% is the number to argue about</h2>
+  <p>Everything else is detail. If you believe your market will compound above 7.5% a
+  year for two decades, property wins on these assumptions. If you do not, it does not.
+  Indian metro residential has broadly not managed that since the 2013 peak, but a
+  specific micro-market with a new metro line or a tech corridor might, and you may know
+  something about yours that a national average does not.</p>
+  <p>The threshold moves with your equity assumption, not just the property one. Expect
+  9% from equities rather than 11% and the bar drops sharply. Both numbers are yours to
+  set, and you should set them honestly rather than to win the argument.</p>
+
+  <h2>Why this threshold differs from the rent-vs-buy one</h2>
+  <p>Our <a href="/calculators/rent-vs-buy">rent vs buy</a> calculator puts the crossover nearer
+  <strong>9.2%</strong>. That is not a contradiction — the two tools answer different
+  questions. There, you live in the home and pay no rent to anyone; the renter's
+  advantage is the rent they do not pay plus the down payment they keep invested. Here,
+  you own it and collect rent from a tenant, which materially helps the property side.
+  Owning and letting is a better deal than owning and living, on the numbers. Whether it
+  is a better life is not a question a calculator can take on.</p>
+
+  <h2>What the comparison does and does not include</h2>
+  <ul class="calc-takeaway">
+    <li><strong>Counted:</strong> down payment, EMI, loan interest, maintenance as a
+    percentage of value, property tax, rent and its growth, appreciation, and the equity
+    path's matched contributions.</li>
+    <li><strong>Not counted:</strong> tax. Rental income is taxable, long-term capital
+    gains differ between property and equities, and home-loan interest may be
+    deductible. These can shift the answer by a percentage point or two in either
+    direction depending on your bracket and jurisdiction.</li>
+    <li><strong>Not counted:</strong> the things that are not money. A tenant who stops
+    paying, a builder who does not deliver, a society dispute, or the simple fact that
+    you cannot sell one bedroom when you need ₹10 lakh. Equities have their own version
+    — a 40% drawdown you have to sit through without selling.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <div class="calc-faq">
+    <details>
+      <summary>Is real estate or the stock market a better investment in India?</summary>
+      <div><p>On these assumptions — 6% appreciation, 11% equity returns, an 8.5% home
+      loan — equities finish ahead by a wide margin, and property needs about 7.5%
+      annual appreciation to draw level. But both inputs are forecasts, and the answer
+      is genuinely sensitive to them. The useful output is not the verdict; it is the
+      appreciation rate at which the verdict flips, because that is something you can
+      check against your own market.</p></div>
+    </details>
+    <details>
+      <summary>Isn't this unfair because property is leveraged and equity isn't?</summary>
+      <div><p>The leverage is fully counted. The property side gets the full asset for a
+      20% down payment and the equity side never borrows — that advantage is real and
+      it is in the numbers. What makes it fair is that the equity side also receives
+      every EMI rupee as a monthly investment, so both paths see the same money
+      leaving your pocket on the same dates.</p></div>
+    </details>
+    <details>
+      <summary>Does it include rental income?</summary>
+      <div><p>Yes, with a growth rate you set — 6% a year by default, roughly Indian
+      metro rent inflation. Rental income is a large part of why property is competitive
+      at all in this comparison; without it the gap widens considerably.</p></div>
+    </details>
+    <details>
+      <summary>What about tax?</summary>
+      <div><p>Not modelled, in either direction. Rental income is taxable at your slab,
+      capital gains rules differ between the two assets, and home-loan interest may be
+      deductible. Depending on your bracket these can move the result by a point or two
+      each way, so treat the output as pre-tax.</p></div>
+    </details>
+    <details>
+      <summary>What appreciation rate should I assume?</summary>
+      <div><p>Use your own market, not a national figure. Check what comparable flats in
+      the same building or street actually transacted at five and ten years ago — not
+      asking prices, which are systematically optimistic. If you cannot find real
+      transaction data, that difficulty is itself informative about the asset.</p></div>
+    </details>
+    <details>
+      <summary>Is my data saved?</summary>
+      <div><p>No. Everything is computed in your browser and nothing is sent to a
+      server. A free account lets you save a scenario and reopen it elsewhere, but the
+      calculator works without one.</p></div>
+    </details>
+  </div>
+  </div>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/re-vs-equity.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+<section class="guide-related">
+  <h2>Other free calculators</h2>
+  <div class="guide-related-grid">
+    <a class="guide-related-card" href="/calculators/rent-vs-buy"><strong>Rent vs Buy Calculator</strong><span>Counts stamp duty, maintenance and the opportunity cost of your down payment.</span></a>
+    <a class="guide-related-card" href="/calculators/financial-independence"><strong>FIRE &amp; Financial Independence Calculator</strong><span>The portfolio value at which work becomes optional, and the year you get there.</span></a>
+    <a class="guide-related-card" href="/calculators/property-xirr"><strong>Property XIRR Calculator</strong><span>The real return on a property you already own — not the headline price move.</span></a>
+  </div>
+</section>
+</article>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators">Free calculators</a>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/early-access">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="/calculators/rent-vs-buy">Rent vs Buy Calculator</a>
+      <a href="/calculators/financial-independence">FIRE &amp; Financial Independence Calculator</a>
+      <a href="/calculators/property-xirr">Property XIRR Calculator</a>
+      <a href="/calculators/real-estate-vs-equities">Real Estate vs Equities Calculator</a>
+      <a href="/calculators/budget-planner">Budget Planner</a>
+      <a href="/calculators/real-estate">Free Real Estate Calculators</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/blog">Blogs &amp; Media</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

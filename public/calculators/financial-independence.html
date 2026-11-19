@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIRE Calculator for India &amp; US — Free Financial Independence Calculator</title>
+<link rel="canonical" href="https://dhan-x.com/calculators/financial-independence"/>
+<meta name="description" content="Free FIRE calculator for Indian and US investors. Projects your financial independence number year by year with inflation, life events and your own withdrawal rate.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhan-X">
+<meta property="og:url" content="https://dhan-x.com/calculators/financial-independence">
+<meta property="og:title" content="FIRE Calculator for India &amp; US — Free Financial Independence Calculator">
+<meta property="og:description" content="Free FIRE calculator for Indian and US investors. Projects your financial independence number year by year with inflation, life events and your own withdrawal rate.">
+<meta property="og:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FIRE Calculator for India &amp; US — Free Financial Independence Calculator">
+<meta name="twitter:description" content="Free FIRE calculator for Indian and US investors. Projects your financial independence number year by year with inflation, life events and your own withdrawal rate.">
+<meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/guide.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dhan-x.com/calculators/financial-independence#article",
+      "headline": "FIRE & Financial Independence Calculator",
+      "description": "Free FIRE calculator for Indian and US investors. Projects your financial independence number year by year with inflation, life events and your own withdrawal rate.",
+      "url": "https://dhan-x.com/calculators/financial-independence",
+      "author": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "mainEntityOfPage": "https://dhan-x.com/calculators/financial-independence"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "FIRE & Financial Independence Calculator",
+      "url": "https://app.dhan-x.com/fi-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the 4% rule still safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It was derived from US market history over a 30-year retirement, and it held up well across that period. Two things strain it: a retirement longer than 30 years, and starting valuations higher than the historical average. Many researchers now suggest 3–3.5% for an early retirement. The calculator lets you set it because the honest answer is that it depends on how long you need the money to last."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use nominal or real returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter both separately — your expected nominal return and your expected inflation — and the model derives the real return itself. At 11% and 6% that is 4.72%, not 5%, because inflation compounds against a growing balance rather than subtracting from it. Everything is then shown in today's money so the figures stay intelligible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I account for a child's education or a wedding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add it as a life event with its cost in today's money and how many years away it is. It is discounted at your portfolio return rather than added at face value, because money earmarked for it keeps compounding until the bill lands. A ₹50 lakh cost ten years out adds roughly ₹32 lakh to your target."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it assume my spending stays flat in retirement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Costs inflate each year, and from age 70 they step down to 70% of the inflation-adjusted figure. That matches what spending data shows: discretionary outlay fades well before healthcare costs rise. If you expect a different shape, adjust your monthly figure to the average you actually expect."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I plan to keep earning part-time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Model it as a later retirement year, or as a smaller monthly spend that your portfolio has to cover. A few years of part-time income early in retirement is one of the most powerful levers available — it removes exactly the withdrawals that would otherwise come out of a falling market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data saved anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The calculation runs entirely in your browser and nothing is sent to a server. A free account lets you save a scenario and open it on another device, but you do not need one to use the tool."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free calculators",
+          "item": "https://dhan-x.com/calculators"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FIRE & Financial Independence Calculator",
+          "item": "https://dhan-x.com/calculators/financial-independence"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/calculators">Free calculators</a>
+    <a class="nav-link" href="/features">Features</a>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="/early-access">Get early access</a>
+  </div>
+</nav>
+<main>
+<article class="guide">
+  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; FIRE &amp; Financial Independence Calculator</p>
+  <header class="guide-hero">
+    <p class="guide-eyebrow">Retirement</p>
+    <h1>FIRE &amp; Financial Independence Calculator</h1>
+    <p class="guide-lede">Work out the portfolio value at which work becomes optional, and the year you get there — modelled year by year with inflation, life events and a withdrawal rate you choose, rather than a flat 25× multiple.</p>
+  </header>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/fi-calculator.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+  <div class="guide-body">
+<h2>How much do you actually need to retire?</h2>
+  <p>The usual answer is 25 times your annual spending — the 4% rule. It is a good
+  starting point and a poor finishing one, because it assumes your costs are flat, your
+  retirement has no lumps in it, and inflation politely waits outside. This calculator
+  starts from the 25× figure and then projects it forward year by year, so you can see
+  the balance rise, peak and draw down rather than comparing your portfolio to a single
+  number.</p>
+
+  <h2>Why your number is bigger than 25× — and sometimes smaller</h2>
+  <p>Three things move it, and they do not all push the same way.</p>
+  <ul class="calc-takeaway">
+    <li><strong>Inflation compounds against you for decades.</strong> At 6%, the
+    ₹1.2 lakh a month you spend today is ₹3.85 lakh a month in twenty years. The target
+    is set in today's money; the projection inflates it.</li>
+    <li><strong>Life has lumps.</strong> A wedding, a child's education, a healthcare
+    reserve. These are not monthly expenses and treating them as such is how plans go
+    wrong. Each is discounted properly: a ₹50 lakh education bill ten years out adds
+    about <strong>₹32 lakh</strong> to your number, not ₹50 lakh, because the money set
+    aside for it keeps earning until the bill arrives.</li>
+    <li><strong>Spending falls later.</strong> After 70 the model drops living costs to
+    70% of the inflation-adjusted figure, which is what spending data actually shows —
+    travel and discretionary outlay fade well before healthcare rises.</li>
+  </ul>
+
+  <h2>The withdrawal rate is the biggest lever you control</h2>
+  <p>It is also the one people pick carelessly. On ₹1.2 lakh a month of spending, a 4%
+  withdrawal rate gives a target of <strong>₹3.6 crore</strong>. Move to 3% — the rate
+  many researchers now prefer for a long retirement, or for a market priced as richly
+  as this one — and the same lifestyle needs <strong>₹4.8 crore</strong>. That single
+  percentage point is ₹1.2 crore and, for most people, several extra working years.</p>
+  <p>Lower is safer. 4% came from US data over a 30-year retirement; retire at 45 and
+  you are planning for fifty years, not thirty.</p>
+
+  <h2>Real returns, not nominal ones</h2>
+  <p>An 11% portfolio against 6% inflation is not a 5% real return. It is
+  <strong>4.72%</strong> — you divide rather than subtract, because inflation compounds
+  against a growing balance. Over twenty years that apparently pedantic difference is
+  worth a great deal, and it is the single most common error in retirement arithmetic
+  done on the back of an envelope.</p>
+
+  <h2>What "FI" means here</h2>
+  <p>The year your portfolio first covers your inflation-adjusted spending at your
+  chosen withdrawal rate, with every planned lump already funded. It is not the year you
+  must stop working. It is the year work becomes optional, which is a different and
+  better thing to know.</p>
+  <p>Until that year, your expenses come out of your salary, not your portfolio — your
+  contributions are already what is left after you have lived. After it, the portfolio
+  takes over.</p>
+
+  <h2>Common questions</h2>
+  <div class="calc-faq">
+    <details>
+      <summary>Is the 4% rule still safe?</summary>
+      <div><p>It was derived from US market history over a 30-year retirement, and it
+      held up well across that period. Two things strain it: a retirement longer than
+      30 years, and starting valuations higher than the historical average. Many
+      researchers now suggest 3–3.5% for an early retirement. The calculator lets you
+      set it because the honest answer is that it depends on how long you need the money
+      to last.</p></div>
+    </details>
+    <details>
+      <summary>Should I use nominal or real returns?</summary>
+      <div><p>Enter both separately — your expected nominal return and your expected
+      inflation — and the model derives the real return itself. At 11% and 6% that is
+      4.72%, not 5%, because inflation compounds against a growing balance rather than
+      subtracting from it. Everything is then shown in today's money so the figures stay
+      intelligible.</p></div>
+    </details>
+    <details>
+      <summary>How do I account for a child's education or a wedding?</summary>
+      <div><p>Add it as a life event with its cost in today's money and how many years
+      away it is. It is discounted at your portfolio return rather than added at face
+      value, because money earmarked for it keeps compounding until the bill lands. A
+      ₹50 lakh cost ten years out adds roughly ₹32 lakh to your target.</p></div>
+    </details>
+    <details>
+      <summary>Does it assume my spending stays flat in retirement?</summary>
+      <div><p>No. Costs inflate each year, and from age 70 they step down to 70% of the
+      inflation-adjusted figure. That matches what spending data shows: discretionary
+      outlay fades well before healthcare costs rise. If you expect a different shape,
+      adjust your monthly figure to the average you actually expect.</p></div>
+    </details>
+    <details>
+      <summary>What if I plan to keep earning part-time?</summary>
+      <div><p>Model it as a later retirement year, or as a smaller monthly spend that
+      your portfolio has to cover. A few years of part-time income early in retirement
+      is one of the most powerful levers available — it removes exactly the withdrawals
+      that would otherwise come out of a falling market.</p></div>
+    </details>
+    <details>
+      <summary>Is my data saved anywhere?</summary>
+      <div><p>No. The calculation runs entirely in your browser and nothing is sent to a
+      server. A free account lets you save a scenario and open it on another device, but
+      you do not need one to use the tool.</p></div>
+    </details>
+  </div>
+  </div>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/fi-calculator.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+<section class="guide-related">
+  <h2>Other free calculators</h2>
+  <div class="guide-related-grid">
+    <a class="guide-related-card" href="/calculators/rent-vs-buy"><strong>Rent vs Buy Calculator</strong><span>Counts stamp duty, maintenance and the opportunity cost of your down payment.</span></a>
+    <a class="guide-related-card" href="/calculators/property-xirr"><strong>Property XIRR Calculator</strong><span>The real return on a property you already own — not the headline price move.</span></a>
+    <a class="guide-related-card" href="/calculators/real-estate-vs-equities"><strong>Real Estate vs Equities Calculator</strong><span>Property or an index, with the cash flows matched rupee for rupee.</span></a>
+  </div>
+</section>
+</article>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators">Free calculators</a>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/early-access">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="/calculators/rent-vs-buy">Rent vs Buy Calculator</a>
+      <a href="/calculators/financial-independence">FIRE &amp; Financial Independence Calculator</a>
+      <a href="/calculators/property-xirr">Property XIRR Calculator</a>
+      <a href="/calculators/real-estate-vs-equities">Real Estate vs Equities Calculator</a>
+      <a href="/calculators/budget-planner">Budget Planner</a>
+      <a href="/calculators/real-estate">Free Real Estate Calculators</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/blog">Blogs &amp; Media</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property XIRR Calculator — What Your Real Estate Actually Returned</title>
+<link rel="canonical" href="https://dhan-x.com/calculators/property-xirr"/>
+<meta name="description" content="Free property XIRR calculator. Computes the real return on real estate from the down payment, EMIs, maintenance, taxes and rent — both unlevered and on your own equity.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhan-X">
+<meta property="og:url" content="https://dhan-x.com/calculators/property-xirr">
+<meta property="og:title" content="Property XIRR Calculator — What Your Real Estate Actually Returned">
+<meta property="og:description" content="Free property XIRR calculator. Computes the real return on real estate from the down payment, EMIs, maintenance, taxes and rent — both unlevered and on your own equity.">
+<meta property="og:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Property XIRR Calculator — What Your Real Estate Actually Returned">
+<meta name="twitter:description" content="Free property XIRR calculator. Computes the real return on real estate from the down payment, EMIs, maintenance, taxes and rent — both unlevered and on your own equity.">
+<meta name="twitter:image" content="https://app.dhan-x.com/assets/og-image.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/guide.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dhan-x.com/calculators/property-xirr#article",
+      "headline": "Property XIRR Calculator",
+      "description": "Free property XIRR calculator. Computes the real return on real estate from the down payment, EMIs, maintenance, taxes and rent — both unlevered and on your own equity.",
+      "url": "https://dhan-x.com/calculators/property-xirr",
+      "author": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dhan-X",
+        "url": "https://dhan-x.com"
+      },
+      "mainEntityOfPage": "https://dhan-x.com/calculators/property-xirr"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Property XIRR Calculator",
+      "url": "https://app.dhan-x.com/re-xirr.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my property's XIRR so much lower than the price increase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the price increase ignores everything else. Stamp duty and registration are 6–8% gone on day one. Interest front-loads: on a 20-year loan at 9%, most of the first decade's EMIs are interest, not principal. Maintenance and property tax run every year. And the rent, if any, usually falls well short of the EMI. The headline number is the one input that looks best in isolation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between levered and unlevered XIRR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlevered treats the whole purchase price as your outflow and measures what the asset earned. Levered counts only the cash you actually put in — the down payment and acquisition costs — and then every EMI as it was paid, measuring what your own money earned. When your loan rate is above the appreciation rate, the levered figure is the lower of the two."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I include the rent I saved by living in it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you live in the property you receive no rent, so leave it unrented — the return will look worse, and it should, because you consumed the asset rather than renting it out. The rent you avoided paying is a real benefit, but it belongs in a rent-versus-buy comparison, not in the property's own return."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it handle a refinance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Give the month you refinanced and the new rate, and the outstanding balance at that point is re-amortised on the new terms, with the EMI changing from that month onward. The cash flows before and after are both counted at their own dates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as a good XIRR on property?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare it to what the same money would have done elsewhere, not to an absolute. Indian equity indices have compounded in the low teens over long periods; a fixed deposit pays 6–7% with no maintenance, no vacancy and no stamp duty. A levered property XIRR below your loan rate means the leverage worked against you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many years do I need for the number to be meaningful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least twelve months, which the tool enforces. But property transaction costs are so heavily front-loaded that anything under about five years is dominated by them, and the XIRR will look dreadful almost regardless of what happened to the price."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free calculators",
+          "item": "https://dhan-x.com/calculators"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property XIRR Calculator",
+          "item": "https://dhan-x.com/calculators/property-xirr"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/calculators">Free calculators</a>
+    <a class="nav-link" href="/features">Features</a>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="/early-access">Get early access</a>
+  </div>
+</nav>
+<main>
+<article class="guide">
+  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; Property XIRR Calculator</p>
+  <header class="guide-hero">
+    <p class="guide-eyebrow">Property</p>
+    <h1>Property XIRR Calculator</h1>
+    <p class="guide-lede">What a property has actually earned, once the down payment, every EMI, maintenance, taxes, rent received and today’s value are treated as dated cash flows. Usually a very different number from the price move.</p>
+  </header>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/re-xirr.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+  <div class="guide-body">
+<h2>What has your property actually returned?</h2>
+  <p>Almost nobody knows. The number people quote is the price move — "I bought at
+  ₹80 lakh and it's worth ₹1.5 crore now" — which ignores the stamp duty, the ten years
+  of EMIs, the maintenance, the property tax, the rent that did or did not come in, and
+  the fact that the money arrived and left on dozens of different dates. Once you count
+  all of it, the answer is usually a good deal smaller, and occasionally it is a
+  shock.</p>
+
+  <h2>A real example, and why it stings</h2>
+  <div class="calc-eg">
+    <div class="calc-eg-title">Worked example — Bangalore flat, 2015 to 2025</div>
+    <dl>
+      <dt>Purchase price (2015)</dt><dd>₹80 L</dd>
+      <dt>Value today (2025)</dt><dd>₹1.50 Cr</dd>
+      <dt>Loan</dt><dd>₹64 L at 9%, 20 yr</dd>
+      <dt>Cash actually put in</dt><dd>₹26.6 L</dd>
+      <dt>EMIs paid over 10 years</dt><dd>₹69.1 L</dd>
+      <dt>Net rent received</dt><dd>₹27.6 L</dd>
+      <dt>Headline price move</dt><dd>6.5% a year</dd>
+      <dt>Unlevered XIRR (the property)</dt><dd>7.1%</dd>
+      <dt>Levered XIRR (your equity)</dt><dd>4.9%</dd>
+    </dl>
+    <p class="calc-eg-verdict">The flat nearly doubled, and the return on the money you
+    put in was <strong>4.9% a year</strong> — below a fixed deposit. Meanwhile the
+    property ate <strong>₹40,316 a month</strong> in net cash: rent of ₹23,000 against
+    an EMI of ₹57,600 and ₹5,733 of upkeep. For ten years.</p>
+  </div>
+
+  <h2>The part that surprises people: leverage can cut your return</h2>
+  <p>Everyone knows a loan amplifies gains. Fewer people notice it works in reverse. In
+  the example above the unlevered return — what the property itself earned — was
+  <strong>7.1%</strong>. The levered return, on your own equity, was
+  <strong>4.9%</strong>. Lower, not higher.</p>
+  <p>The reason is simple once stated: <strong>the loan cost 9% and the asset grew at
+  6.5%</strong>. You borrowed at a rate above what the thing you bought was earning, so
+  every rupee of debt dragged the result down. Leverage multiplies the gap between your
+  asset's return and your borrowing cost, and that gap can be negative.</p>
+  <p>This is why "property always wins because of leverage" is only true when
+  appreciation comfortably exceeds your mortgage rate. In most Indian metros over the
+  last decade it has not.</p>
+
+  <h2>Two numbers, and which one you want</h2>
+  <ul class="calc-takeaway">
+    <li><strong>Unlevered XIRR</strong> — what the asset earned, ignoring how you paid
+    for it. Use this to judge the property as an investment, or to compare one
+    property against another.</li>
+    <li><strong>Levered XIRR</strong> — what <em>your money</em> earned, after the loan.
+    Use this to compare against your equity portfolio, your FD, or anything else you
+    could have done with the down payment.</li>
+  </ul>
+  <p>If you only ever look at one, look at the levered number. It is the one that
+  answers "was this a good use of my capital".</p>
+
+  <h2>What gets counted</h2>
+  <p>The down payment, stamp duty, registration, brokerage and interiors as the opening
+  outflow; every EMI; maintenance and property tax monthly; rent net of vacancy, from
+  whichever year it started; and the current value less any outstanding loan at exit.
+  Each is dated, which is the whole point — ten years of monthly flows cannot be
+  collapsed into a single percentage without losing the answer.</p>
+
+  <h2>Common questions</h2>
+  <div class="calc-faq">
+    <details>
+      <summary>Why is my property's XIRR so much lower than the price increase?</summary>
+      <div><p>Because the price increase ignores everything else. Stamp duty and
+      registration are 6–8% gone on day one. Interest front-loads: on a 20-year loan at
+      9%, most of the first decade's EMIs are interest, not principal. Maintenance and
+      property tax run every year. And the rent, if any, usually falls well short of the
+      EMI. The headline number is the one input that looks best in isolation.</p></div>
+    </details>
+    <details>
+      <summary>What is the difference between levered and unlevered XIRR?</summary>
+      <div><p>Unlevered treats the whole purchase price as your outflow and measures
+      what the asset earned. Levered counts only the cash you actually put in — the down
+      payment and acquisition costs — and then every EMI as it was paid, measuring what
+      your own money earned. When your loan rate is above the appreciation rate, the
+      levered figure is the lower of the two.</p></div>
+    </details>
+    <details>
+      <summary>Should I include the rent I saved by living in it?</summary>
+      <div><p>If you live in the property you receive no rent, so leave it unrented —
+      the return will look worse, and it should, because you consumed the asset rather
+      than renting it out. The rent you avoided paying is a real benefit, but it belongs
+      in a rent-versus-buy comparison, not in the property's own return.</p></div>
+    </details>
+    <details>
+      <summary>Does it handle a refinance?</summary>
+      <div><p>Yes. Give the month you refinanced and the new rate, and the outstanding
+      balance at that point is re-amortised on the new terms, with the EMI changing from
+      that month onward. The cash flows before and after are both counted at their own
+      dates.</p></div>
+    </details>
+    <details>
+      <summary>What counts as a good XIRR on property?</summary>
+      <div><p>Compare it to what the same money would have done elsewhere, not to an
+      absolute. Indian equity indices have compounded in the low teens over long
+      periods; a fixed deposit pays 6–7% with no maintenance, no vacancy and no stamp
+      duty. A levered property XIRR below your loan rate means the leverage worked
+      against you.</p></div>
+    </details>
+    <details>
+      <summary>How many years do I need for the number to be meaningful?</summary>
+      <div><p>At least twelve months, which the tool enforces. But property transaction
+      costs are so heavily front-loaded that anything under about five years is
+      dominated by them, and the XIRR will look dreadful almost regardless of what
+      happened to the price.</p></div>
+    </details>
+  </div>
+  </div>
+  <div class="guide-cta">
+  <p class="guide-cta-text">The calculator itself runs in your browser — nothing you enter is sent to a server.</p>
+  <a class="guide-cta-btn" href="https://app.dhan-x.com/re-xirr.html">Open the calculator &rarr;</a>
+  <p class="guide-cta-note">Free, no account needed. An account only adds saving a scenario and opening it on another device.</p>
+</div>
+<section class="guide-related">
+  <h2>Other free calculators</h2>
+  <div class="guide-related-grid">
+    <a class="guide-related-card" href="/calculators/rent-vs-buy"><strong>Rent vs Buy Calculator</strong><span>Counts stamp duty, maintenance and the opportunity cost of your down payment.</span></a>
+    <a class="guide-related-card" href="/calculators/financial-independence"><strong>FIRE &amp; Financial Independence Calculator</strong><span>The portfolio value at which work becomes optional, and the year you get there.</span></a>
+    <a class="guide-related-card" href="/calculators/real-estate-vs-equities"><strong>Real Estate vs Equities Calculator</strong><span>Property or an index, with the cash flows matched rupee for rupee.</span></a>
+  </div>
+</section>
+</article>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators">Free calculators</a>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/early-access">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="/calculators/rent-vs-buy">Rent vs Buy Calculator</a>
+      <a href="/calculators/financial-independence">FIRE &amp; Financial Independence Calculator</a>
+      <a href="/calculators/property-xirr">Property XIRR Calculator</a>
+      <a href="/calculators/real-estate-vs-equities">Real Estate vs Equities Calculator</a>
+      <a href="/calculators/budget-planner">Budget Planner</a>
+      <a href="/calculators/real-estate">Free Real Estate Calculators</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/blog">Blogs &amp; Media</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>
