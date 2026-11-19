@@ -174,7 +174,7 @@ const NAV = (active) => `<nav>
   </button>
   <div class="nav-links" id="nav-links">
     <a class="nav-link" href="/">Home</a>
-    <a class="nav-link${active === 'calculators' ? ' active' : ''}" href="/calculators">Free calculators</a>
+    <a class="nav-link${active === 'calculators' ? ' active' : ''}" href="/calculators/">Free calculators</a>
     <a class="nav-link" href="/features">Features</a>
     <a class="nav-link" href="/pricing">Pricing</a>
     <a class="nav-link" href="/about">About</a>
@@ -191,7 +191,7 @@ const FOOTER = `<footer>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
-      <a href="/calculators">Free calculators</a>
+      <a href="/calculators/">Free calculators</a>
       <a href="/features">Features</a>
       <a href="/pricing">Pricing</a>
       <a href="/early-access">Early access</a>
@@ -285,7 +285,7 @@ function buildGuide(g) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Free calculators', item: SITE + '/calculators' },
+          { '@type': 'ListItem', position: 1, name: 'Free calculators', item: SITE + '/calculators/' },
           { '@type': 'ListItem', position: 2, name: g.h1, item: canonical },
         ],
       },
@@ -301,7 +301,7 @@ function buildGuide(g) {
   return `${head(g.title, g.desc, canonical, jsonld)}
 <main>
 <article class="guide">
-  <p class="guide-crumb"><a href="/calculators">Free calculators</a> &rsaquo; ${esc(g.h1)}</p>
+  <p class="guide-crumb"><a href="/calculators/">Free calculators</a> &rsaquo; ${esc(g.h1)}</p>
   <header class="guide-hero">
     <p class="guide-eyebrow">${esc(g.eyebrow)}</p>
     <h1>${esc(g.h1)}</h1>
@@ -324,7 +324,10 @@ ${FOOTER}
 
 // ── The hub ────────────────────────────────────────────────────────────────
 function buildHub() {
-  const canonical = SITE + '/calculators';
+  // Trailing slash: Cloudflare serves the directory index at /calculators/
+  // and 307s the bare form to it. The canonical must name the URL actually
+  // served, not one that redirects.
+  const canonical = SITE + '/calculators/';
   const title = 'Free Financial Calculators for Indian & US Investors — Dhan-X';
   const desc = 'Six free financial calculators, no sign-up: FIRE, rent vs buy, property XIRR, real estate vs equities and budgeting. Built for people holding money in both India and the US.';
   const faq = [
