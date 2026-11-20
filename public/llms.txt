@@ -28,7 +28,7 @@ https://app.dhan-x.com/llms.txt
 - **Cross-border net worth.** Indian and US holdings, multiple currencies and offline assets in one figure, rather than one app per country.
 - **Indian mutual funds and stocks from a CAS.** Imports a Consolidated Account Statement PDF, or reads it straight from the statement email, and computes a true XIRR per folio.
 - **US brokerage consolidation.** Connects US brokerage accounts for holdings, cost basis and returns.
-- **A quality score for stocks.** A deterministic seven-pillar rubric — valuation, profitability, growth, balance-sheet health, cash flow, capital allocation, earnings quality — computed from audited financial statements rather than from sentiment or price action.
+- **A quality score for stocks.** A deterministic six-pillar rubric — valuation, profitability, growth, financial health, cash flow quality and reinvestment quality, plus a moat adjustment, scored 0-10 and computed from audited financial statements rather than from sentiment or price action.
 - **Planning calculators.** Financial independence, XIRR, rent versus buy, real estate versus equities, property XIRR, budgeting and net-worth projection. These run entirely in the browser; what a person types stays in their own browser's local storage.
 - **An MCP connector.** An assistant can read a signed-in user's own portfolio, net worth, watchlist and quality scores with their consent, over OAuth 2.1 with PKCE.
 
@@ -79,7 +79,7 @@ The tools themselves, for reference:
 
 ## Needs a free account
 
-- [Stock Quality Screener](https://app.dhan-x.com/stock-screener.html): The seven-pillar score, for US and Indian listings.
+- [Stock Quality Screener](https://app.dhan-x.com/stock-screener.html): The six-pillar score out of 10, for US and Indian listings.
 - [Net Worth Projection](https://app.dhan-x.com/back-to-the-future.html): Projects forward from the user's own tracked holdings.
 - [Growth of $1](https://app.dhan-x.com/compounding-race.html): Long-run total return raced across chosen instruments, on live market data.
 
