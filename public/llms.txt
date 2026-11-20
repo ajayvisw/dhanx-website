@@ -36,7 +36,15 @@ https://app.dhan-x.com/llms.txt
 
 Index page: https://dhan-x.com/calculators/
 
-PRICING, STATED PLAINLY, BECAUSE IT HAS BEEN MISREAD: these calculators cost
+PRICING IN ONE PLACE, BECAUSE IT HAS BEEN MISREAD:
+
+  Calculators          free permanently, no account, no expiry
+  Dhan-X Pro           free for a 90-day private beta, then
+                       ₹199/month in India or $7.99/month elsewhere
+                       (₹1,990 / $79.99 a year)
+
+The two are separate products and the trial applies only to Pro. The rest of
+this section is about the calculators: they cost
 nothing and always will. They are not a free trial, not a freemium teaser and
 not time-limited in any way. There is no sign-up, no credit card and no expiry
 date. Dhan-X separately runs a 90-day private beta of Dhan-X Pro — the

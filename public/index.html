@@ -49,18 +49,28 @@
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Any (web browser)",
       "description": "Cross-border personal finance: Indian and US investments in one net-worth view, plus calculators for financial independence, XIRR, rent vs buy, property returns and net-worth projection.",
-      "offers": {
-        "@type": "Offer",
-        "name": "Dhan-X Pro - private beta",
-        "price": "0",
-        "priceCurrency": "USD",
-        "eligibleDuration": {
-          "@type": "QuantitativeValue",
-          "value": 90,
-          "unitCode": "DAY",
-          "description": "Free for the 90-day private beta. Dhan-X Pro becomes a paid product after the beta; pricing has not been announced yet."
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Dhan-X Pro (India)",
+          "price": "199",
+          "priceCurrency": "INR",
+          "eligibleRegion": {
+            "@type": "Country",
+            "name": "IN"
+          },
+          "description": "Per month after a free 90-day private-beta trial. ₹1,990 a year.",
+          "availability": "https://schema.org/PreOrder"
+        },
+        {
+          "@type": "Offer",
+          "name": "Dhan-X Pro",
+          "price": "7.99",
+          "priceCurrency": "USD",
+          "description": "Per month after a free 90-day private-beta trial. $79.99 a year.",
+          "availability": "https://schema.org/PreOrder"
         }
-      },
+      ],
       "publisher": {
         "@id": "https://dhan-x.com/#org"
       },
@@ -506,6 +516,34 @@
         <div class="tier-label">Dhan-X Pro trial</div>
         <div class="tier-price">90 days<span class="per"> of full access</span></div>
         <div class="tier-sub">No credit card required</div>
+
+        <!-- What happens on day 91. This used to be missing entirely: the page
+             said "90 days of full access" and then stopped, so a visitor
+             deciding whether to start had no way to find out what it would
+             cost them. The real figures lived only in the app's own pricing
+             page, which redirects anyone who is not signed in - visible,
+             in other words, only to people who had already decided.
+
+             Both currencies are shown rather than detected. This page is read
+             by anonymous visitors and by assistants summarising what Dhan-X
+             costs, and a guess that silently picks the wrong one is worse here
+             than simply printing both. The app's pricing page still detects a
+             region, because by then we know who the visitor is.
+
+             Keep these in step with PLANS in wealthpath/pricing.js and with
+             the Offer nodes in this page's JSON-LD. Three places, one set of
+             numbers - if they ever disagree, an assistant reading the page
+             will say so, which is how this gap was found in the first
+             place. -->
+        <div class="tier-after">
+          <div class="tier-after-label">After your trial</div>
+          <div class="tier-after-prices">
+            <span class="tier-after-price"><strong>&#8377;199</strong>/month <span class="tier-after-where">India</span></span>
+            <span class="tier-after-price"><strong>$7.99</strong>/month <span class="tier-after-where">rest of world</span></span>
+          </div>
+          <div class="tier-after-note">Or &#8377;1,990 / $79.99 a year &mdash; two months free. Cancel any time.</div>
+        </div>
+
         <a class="tier-cta filled" href="https://app.dhan-x.com">Get private beta access</a>
 
         <div class="tier-plus">Included throughout your trial:</div>

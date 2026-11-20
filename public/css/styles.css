@@ -550,3 +550,45 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   .free-band-inner { padding: 20px 18px; gap: 14px; }
   .free-band-cta { width: 100%; text-align: center; }
 }
+
+/* ── Post-trial price, inside the Pro tier ───────────────────────────────
+   Set apart from the trial headline above it so the eye does not read
+   "90 days ... ₹199" as one price. Muted panel rather than another accent
+   block: the free tier already owns the teal on this page, and a second
+   bright element here would compete with it. */
+.tier-after {
+  margin: 16px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border2, rgba(255,255,255,0.12));
+  border-radius: var(--radius, 10px);
+  background: rgba(255,255,255,0.03);
+}
+.tier-after-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3, #6b7a8d);
+  margin-bottom: 9px;
+}
+.tier-after-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin-bottom: 8px;
+}
+.tier-after-price { font-size: 15px; color: var(--text2, #a0aec0); white-space: nowrap; }
+/* The numbers themselves at full brightness — they are the thing the
+   visitor came to this panel to find. */
+.tier-after-price strong {
+  font-family: var(--font-head, inherit);
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--text, #f0f0f0);
+}
+.tier-after-where { color: var(--text3, #6b7a8d); font-size: 13px; }
+.tier-after-note { font-size: 13px; line-height: 1.5; color: var(--text3, #6b7a8d); }
+
+@media (max-width: 520px) {
+  .tier-after-prices { flex-direction: column; gap: 4px; }
+}
