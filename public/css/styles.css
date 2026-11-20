@@ -484,73 +484,6 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   .calc-card { padding: 16px; }
 }
 
-/* ── Free-calculators band (homepage, directly under the hero) ───────────
-   Deliberately loud. Its job is to be the first pricing statement on the
-   page for a reader who is skimming and for an assistant that is
-   summarising, both of which previously met the 90-day trial first and
-   concluded the whole product was time-limited. Teal border and tint tie it
-   to the brand accent without competing with the hero's own type scale. */
-.free-band {
-  max-width: 1120px;
-  margin: 8px auto 0;
-  padding: 0 24px;
-}
-.free-band-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 18px 28px;
-  padding: 26px 30px;
-  border: 1px solid var(--teal-border);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(0,212,170,0.09), rgba(0,212,170,0.03));
-}
-.free-band-main { flex: 1 1 420px; }
-.free-band-eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 9px;
-}
-.free-band-title {
-  font-family: var(--font-head);
-  font-size: clamp(21px, 2.6vw, 27px);
-  line-height: 1.22;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-.free-band-copy {
-  font-size: 15.5px;
-  line-height: 1.62;
-  color: var(--text2);
-  max-width: 68ch;
-}
-/* Brighter than the body text: these are the three words the whole band
-   exists to land, so they must not read as incidental. */
-.free-band-copy strong { color: var(--text); font-weight: 600; }
-.free-band-cta {
-  flex: 0 0 auto;
-  display: inline-block;
-  padding: 13px 24px;
-  border-radius: var(--radius);
-  background: var(--teal);
-  color: #04120e;
-  font-weight: 650;
-  font-size: 15px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.12s ease, filter 0.12s ease;
-}
-.free-band-cta:hover { filter: brightness(1.07); transform: translateY(-1px); }
-
-@media (max-width: 720px) {
-  .free-band { padding: 0 16px; }
-  .free-band-inner { padding: 20px 18px; gap: 14px; }
-  .free-band-cta { width: 100%; text-align: center; }
-}
-
 /* ── Post-trial price, inside the Pro tier ───────────────────────────────
    Set apart from the trial headline above it so the eye does not read
    "90 days ... ₹199" as one price. Muted panel rather than another accent
@@ -611,10 +544,11 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
 .tier-after-per { font-size: 15px; color: var(--text2, #a0aec0); }
 
 /* ── Dhan-X Pro intro, directly under the dashboard preview ──────────────
-   Counterpart to .free-band above. Deliberately NOT teal: the free band
-   owns the accent on this page, and two competing bright blocks would make
-   the reader work out which offer is which. This one is a quiet panel that
-   lets the feature columns carry the weight. */
+   The detail behind the Pro card in .tiers above, placed after the
+   dashboard so the order reads: choose a tier, see what Pro looks like,
+   then see what it does. Deliberately unaccented - the two tier cards
+   carry the teal and the orange, and a third coloured block here would
+   turn a clear choice back into a wall. */
 .pro-intro { padding-top: 8px; }
 .pro-grid {
   display: grid;
@@ -702,3 +636,133 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   .pro-cta { padding: 18px 16px; }
   .pro-cta-btn { width: 100%; text-align: center; }
 }
+
+/* ── The two tiers, directly under the hero ──────────────────────────────
+   One pair, one glance. The page has to establish that Dhan-X is two
+   products before it shows anything else, or "90 days" gets read as the
+   price of the whole thing.
+
+   Equal columns and identical internal structure on purpose: the moment one
+   card is taller or louder it stops being a choice and becomes a headline
+   with a footnote. Only the accent differs. */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 20px;
+  max-width: 1060px;
+  margin: 10px auto 0;
+  padding: 0 24px;
+  align-items: stretch;
+  text-align: left;
+}
+.tier-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 26px;
+  border: 1px solid var(--border2, rgba(255,255,255,0.12));
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg2, #0e1115);
+}
+.tier-card-free {
+  border-color: var(--teal-border, rgba(0,212,170,0.25));
+  background: linear-gradient(135deg, rgba(0,212,170,0.09), rgba(0,212,170,0.03));
+}
+.tier-card-pro {
+  border-color: rgba(255,106,61,0.28);
+  background: linear-gradient(135deg, rgba(255,106,61,0.09), rgba(255,106,61,0.03));
+}
+.tier-card-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tier-card-free .tier-card-eyebrow { color: var(--teal, #00d4aa); }
+.tier-card-pro  .tier-card-eyebrow { color: var(--orange, #ff6a3d); }
+.tier-card-title {
+  font-family: var(--font-head, inherit);
+  font-size: clamp(20px, 2.3vw, 25px);
+  line-height: 1.2;
+  color: var(--text, #f0f0f0);
+  margin-bottom: 11px;
+}
+.tier-card-copy {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text2, #a0aec0);
+  margin-bottom: 18px;
+}
+.tier-card-list { list-style: none; padding: 0; margin: 0 0 20px; }
+.tier-card-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 9px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text2, #a0aec0);
+}
+.tier-card-list li::before {
+  content: "\2713";
+  position: absolute; left: 0; top: 0;
+  font-weight: 700;
+}
+.tier-card-free .tier-card-list li::before { color: var(--teal, #00d4aa); }
+.tier-card-pro  .tier-card-list li::before { color: var(--orange, #ff6a3d); }
+
+/* margin-top:auto pins the price and button to the bottom, so the two cards
+   line up however much copy sits above them. */
+.tier-card-price {
+  margin-top: auto;
+  padding-top: 6px;
+  font-family: var(--font-head, inherit);
+  font-size: 24px;
+  font-weight: 650;
+  color: var(--text, #f0f0f0);
+  margin-bottom: 16px;
+}
+.tier-card-price span {
+  font-family: var(--font-body, inherit);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text3, #6b7a8d);
+}
+/* Exactly one Pro price shows; both stay in the HTML for crawlers. */
+.tier-card-pro .tier-card-price[data-for] { display: none; }
+[data-region="global"] .tier-card-pro .tier-card-price[data-for="global"],
+[data-region="in"]     .tier-card-pro .tier-card-price[data-for="in"] { display: block; }
+
+.tier-card-btn {
+  display: block;
+  padding: 13px 20px;
+  border-radius: var(--radius, 10px);
+  font-weight: 650;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #04120e;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.tier-card-free .tier-card-btn { background: var(--teal, #00d4aa); }
+.tier-card-pro  .tier-card-btn { background: var(--orange, #ff6a3d); color: #1a0a04; }
+.tier-card-btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+
+@media (max-width: 720px) {
+  .tiers { padding: 0 16px; gap: 14px; }
+  .tier-card { padding: 22px 20px; }
+}
+
+/* Labels the dashboard mock so a large sample net-worth figure cannot be
+   mistaken for a claim, or for the page's own headline. */
+.dashboard-caption {
+  max-width: 1060px;
+  margin: 46px auto 12px;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3, #6b7a8d);
+  text-align: center;
+}
+@media (max-width: 720px) { .dashboard-caption { padding: 0 16px; margin-top: 34px; } }

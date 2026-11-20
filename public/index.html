@@ -223,7 +223,7 @@
     <div class="hero-btns single">
       <a class="btn-primary" href="https://app.dhan-x.com">Get Private Beta Access &rarr;</a>
     </div>
-    <p class="hero-cta-note">Private beta is for <strong>Dhan-X Pro</strong>. The seven calculators below are free and need no account.</p>
+    <p class="hero-cta-note">Two products below: calculators that are <strong>free forever</strong>, and <strong>Dhan-X Pro</strong> in private beta.</p>
     <div class="hero-trust">
       <span class="trust-item"><span class="ic">&#128274;</span> AES-256 encrypted</span>
       <span class="trust-item"><span class="ic">&#128737;&#65039;</span> SOC 2 certified partners</span>
@@ -231,35 +231,61 @@
     </div>
   </div>
 
-  <!-- FREE CALCULATORS BAND
-       Sits above every mention of the private beta on purpose.
+  <!-- THE TWO TIERS, SIDE BY SIDE
+       Dhan-X is two products and the page has to say so before it says
+       anything else. The calculators are free permanently and need no
+       account; Dhan-X Pro is the paid product, currently a free 90-day beta.
+       Showing them as one pair, in one glance, is what stops "90 days" being
+       read as the price of everything - which is exactly the mistake an
+       assistant made when asked to compare Dhan-X with other tools, and the
+       reason it declined to say anything here was free.
 
-       Dhan-X is two things: calculators that are free forever and need no
-       account, and a Pro product that is currently a 90-day beta. The page
-       used to describe only the second, so a reader arriving at the top -
-       human or machine - met "90 days of full access" and "plan details
-       before your trial ends" with nothing to indicate that anything was
-       permanently free. ChatGPT, asked to compare Dhan-X with other tools,
-       said in as many words that it could not confirm free access because
-       the pricing it found was inconsistent, and declined to recommend us
-       on that basis.
+       The free card keeps the teal. Pro takes the orange so the two read as
+       a choice between two things rather than a headline and a footnote;
+       neither outranks the other visually.
 
-       The JSON-LD below has always declared price 0. An assistant reading
-       the page trusts the prose over the markup, so the prose has to say it
-       too, before the trial is mentioned and in words that cannot be read
-       as time-limited. -->
-  <div class="free-band">
-    <div class="free-band-inner">
-      <div class="free-band-main">
-        <div class="free-band-eyebrow">Free forever &middot; not a trial</div>
-        <h2 class="free-band-title">Seven financial calculators, free for everyone</h2>
-        <p class="free-band-copy">Rent vs buy, FIRE, property XIRR, real estate vs equities, budgeting and more &mdash; built for Indian and US investors. <strong>No sign-up, no credit card, no time limit.</strong> They are free today and they stay free; an account only lets you save a scenario and reopen it on another device.</p>
-      </div>
-      <a class="free-band-cta" href="/calculators/">Open the free calculators &rarr;</a>
+       Each card carries its own complete price sentence. The two Pro price
+       lines are whole sentences rather than swapped fragments, so anything
+       reading this HTML without applying the CSS gets two readable
+       statements instead of "Rs 199 a month$7.99 a month". -->
+  <div class="tiers">
+    <div class="tier-card tier-card-free">
+      <div class="tier-card-eyebrow">Free forever &middot; not a trial</div>
+      <h2 class="tier-card-title">Seven financial calculators</h2>
+      <p class="tier-card-copy">Rent vs buy, FIRE, property XIRR, real estate vs equities and budgeting &mdash; built for Indian and US investors.</p>
+      <ul class="tier-card-list">
+        <li>No sign-up to get a result</li>
+        <li>No credit card, ever</li>
+        <li>No time limit &mdash; free today, free later</li>
+      </ul>
+      <div class="tier-card-price">&#8377;0 / $0 <span>forever</span></div>
+      <a class="tier-card-btn" href="/calculators/">Open the free calculators &rarr;</a>
+    </div>
+
+    <div class="tier-card tier-card-pro">
+      <div class="tier-card-eyebrow">Dhan-X Pro &middot; private beta</div>
+      <h2 class="tier-card-title">Your real accounts, not assumptions</h2>
+      <p class="tier-card-copy">A calculator works on numbers you type in. Pro works on the money you actually hold, across India and the US, and keeps answering as it moves.</p>
+      <ul class="tier-card-list">
+        <li>US brokerages and India funds in one net worth</li>
+        <li>AI portfolio analysis and stock quality scores</li>
+        <li>XIRR, TER and saved planning scenarios</li>
+      </ul>
+      <div class="tier-card-price" data-for="in">&#8377;199 <span>/month after a free 90-day beta</span></div>
+      <div class="tier-card-price" data-for="global">$7.99 <span>/month after a free 90-day beta</span></div>
+      <a class="tier-card-btn" href="https://app.dhan-x.com">Get private beta access &rarr;</a>
     </div>
   </div>
 
-  <!-- DASHBOARD PREVIEW -->
+  <!-- DASHBOARD PREVIEW
+       Now below the two tiers rather than above them. It is a picture of
+       Pro, so it was previously doing the job of a headline - a large net
+       worth figure, with no label, before the reader had been told what
+       product it belonged to or that anything here was free.
+
+       The caption is what stops it reading as a claim about the visitor's
+       own money, which a bare "$1,364,289" at the top of a page invites. -->
+  <p class="dashboard-caption">A look at Dhan-X Pro &mdash; sample data</p>
   <div class="dashboard">
     <div class="dash-card">
       <div class="dash-top">
