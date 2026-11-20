@@ -766,3 +766,159 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   text-align: center;
 }
 @media (max-width: 720px) { .dashboard-caption { padding: 0 16px; margin-top: 34px; } }
+
+/* ── Region-swapped figures ──────────────────────────────────────────────
+   Every currency on this page shows in the visitor's own, never both. A
+   rupee price beside a dollar price asks the reader to work out which half
+   applies to them, and "Rs 0 / $0" made the free tier look like it had two
+   prices rather than none.
+
+   Both values stay in the HTML so a crawler still sees that Dhan-X is
+   priced in each market; CSS shows one. The sample dashboard is swapped the
+   same way - a net worth quoted in dollars reads as a US product, which is
+   the opposite of the cross-border pitch. */
+.tier-card-price[data-for],
+.tier-price[data-for],
+.dash-value[data-for],
+.dash-cell .v[data-for],
+.ai-insight [data-for] { display: none; }
+
+[data-region="in"] .tier-card-price[data-for="in"],
+[data-region="global"] .tier-card-price[data-for="global"],
+[data-region="in"] .tier-price[data-for="in"],
+[data-region="global"] .tier-price[data-for="global"],
+[data-region="in"] .dash-value[data-for="in"],
+[data-region="global"] .dash-value[data-for="global"],
+[data-region="in"] .dash-cell .v[data-for="in"],
+[data-region="global"] .dash-cell .v[data-for="global"],
+[data-region="in"] .ai-insight [data-for="in"],
+[data-region="global"] .ai-insight [data-for="global"] { display: block; }
+
+/* ── Sample product views ────────────────────────────────────────────────
+   Three faked app panels. Hand-built rather than screenshotted: real markup
+   stays sharp at any density, survives a UI change, and leaves text a
+   crawler can read instead of pixels it cannot. */
+.showcase { padding-top: 10px; }
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 36px auto 0;
+  text-align: left;
+}
+.shot {
+  margin: 0;
+  border: 1px solid var(--border2, rgba(255,255,255,0.12));
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg2, #0e1115);
+  overflow: hidden;
+}
+/* A title bar is the cheapest possible signal that this is an app view and
+   not a marketing table the copywriter invented. */
+.shot-chrome {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border, rgba(255,255,255,0.07));
+  background: rgba(255,255,255,0.025);
+}
+.shot-chrome span {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+}
+.shot-chrome em {
+  margin-left: 8px;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text3, #6b7a8d);
+}
+.shot-body { padding: 16px 16px 18px; }
+
+/* The question, styled as something typed rather than something printed. */
+.shot-prompt {
+  display: flex;
+  gap: 9px;
+  padding: 11px 13px;
+  margin-bottom: 14px;
+  border: 1px solid var(--teal-border, rgba(0,212,170,0.25));
+  border-radius: 9px;
+  background: rgba(0,212,170,0.06);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text, #f0f0f0);
+}
+.shot-prompt-ic { flex: 0 0 auto; }
+
+.shot-rows { display: flex; flex-direction: column; gap: 2px; }
+.shot-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.7fr 0.7fr 0.7fr;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 4px;
+  font-size: 13.5px;
+  color: var(--text2, #a0aec0);
+  border-bottom: 1px solid var(--border, rgba(255,255,255,0.05));
+}
+.shot-row.wl { grid-template-columns: 1.3fr 0.7fr 0.8fr 1fr 0.8fr; }
+.shot-row span:first-child { color: var(--text, #f0f0f0); font-weight: 600; }
+.shot-row-head {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3, #6b7a8d);
+  border-bottom-color: var(--border2, rgba(255,255,255,0.12));
+}
+.shot-row-head span:first-child { color: var(--text3, #6b7a8d); font-weight: 700; }
+.shot-row span { font-variant-numeric: tabular-nums; }
+
+.pill {
+  justify-self: start;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pill.good { background: rgba(0,212,170,0.16); color: var(--teal, #00d4aa); }
+.pill.ok   { background: rgba(255,106,61,0.16); color: var(--orange, #ff6a3d); }
+
+/* Bars rather than a line chart: the comparison is between five totals,
+   not a shape over time, and bars need no script or SVG to read correctly. */
+.shot-bars { display: flex; flex-direction: column; gap: 11px; }
+.bar-row { display: grid; grid-template-columns: 78px 1fr 44px; gap: 10px; align-items: center; }
+.bar-name { font-size: 12.5px; color: var(--text2, #a0aec0); }
+.bar-track { height: 9px; border-radius: 5px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 5px; background: var(--teal, #00d4aa); }
+.bar-fill.muted { background: rgba(255,255,255,0.18); }
+.bar-val {
+  font-size: 13px; font-weight: 650; text-align: right;
+  color: var(--text, #f0f0f0); font-variant-numeric: tabular-nums;
+}
+
+.shot figcaption {
+  padding: 0 16px 16px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text3, #6b7a8d);
+}
+.shots-note {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  font-size: 12.5px;
+  color: var(--text3, #6b7a8d);
+  text-align: center;
+}
+
+/* Currency inside the mocks follows the same region rule as everything else. */
+.shot [data-for] { display: none; }
+[data-region="in"] .shot [data-for="in"],
+[data-region="global"] .shot [data-for="global"] { display: inline; }
+
+@media (max-width: 720px) {
+  .shots { gap: 14px; }
+  .shot-row { font-size: 12.5px; }
+}
