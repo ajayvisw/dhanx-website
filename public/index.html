@@ -1,6 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-region="global">
 <head>
+<script>
+/* Region for the Pro price, decided before the first paint.
+ *
+ * Inline and synchronous on purpose: in an external file, or deferred, the
+ * page would paint one price and then swap it, and a visitor in India would
+ * watch $7.99 become Rs 199. That flicker reads as a site that cannot make
+ * its mind up about what it charges.
+ *
+ * Both prices stay in the HTML and both Offer nodes stay in the JSON-LD -
+ * this only chooses which one is VISIBLE. That matters: the two prices are
+ * equally real, so a crawler or an assistant should still be able to see
+ * both and describe them per region. Hiding one from the markup would mean
+ * lying to whichever audience the server guessed wrong about.
+ *
+ * Same signals as the app's detectRegion(), deliberately, so the marketing
+ * site and the product never disagree in front of the same person.
+ *
+ * This is presentation only. It decides nothing about what anyone is
+ * charged - see the note above detectRegion() in wealthpath/pricing.js. */
+(function () {
+  try {
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+    if (tz.indexOf('kolkata') >= 0 || tz.indexOf('calcutta') >= 0) {
+      document.documentElement.setAttribute('data-region', 'in'); return;
+    }
+  } catch (e) {}
+  try {
+    var l = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    if (/-in\b|_in\b/.test(l)) document.documentElement.setAttribute('data-region', 'in');
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhan-X — Your Personal Finance Coach</title>
@@ -538,10 +570,11 @@
         <div class="tier-after">
           <div class="tier-after-label">After your trial</div>
           <div class="tier-after-prices">
-            <span class="tier-after-price"><strong>&#8377;199</strong>/month <span class="tier-after-where">India</span></span>
-            <span class="tier-after-price"><strong>$7.99</strong>/month <span class="tier-after-where">rest of world</span></span>
+            <span class="tier-after-price" data-for="in"><strong>&#8377;199</strong><span class="tier-after-per">/month</span></span>
+            <span class="tier-after-price" data-for="global"><strong>$7.99</strong><span class="tier-after-per">/month</span></span>
           </div>
-          <div class="tier-after-note">Or &#8377;1,990 / $79.99 a year &mdash; two months free. Cancel any time.</div>
+          <div class="tier-after-note" data-for="in">Or &#8377;1,990 a year &mdash; two months free. Cancel any time.</div>
+          <div class="tier-after-note" data-for="global">Or $79.99 a year &mdash; two months free. Cancel any time.</div>
         </div>
 
         <a class="tier-cta filled" href="https://app.dhan-x.com">Get private beta access</a>

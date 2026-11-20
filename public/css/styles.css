@@ -592,3 +592,20 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
 @media (max-width: 520px) {
   .tier-after-prices { flex-direction: column; gap: 4px; }
 }
+
+/* ── One price per visitor ───────────────────────────────────────────────
+   Both prices are in the HTML; exactly one is shown. The region comes from
+   the inline script in <head>, which runs before first paint, so nothing
+   flickers between currencies.
+
+   <html> ships with data-region="global", so the attribute is always set:
+   with JavaScript off, or if the script throws, the USD price shows rather
+   than nothing. That figure is still true for most of the world, and a
+   visitor in India sees a real price rather than a blank panel. */
+.tier-after [data-for] { display: none; }
+[data-region="global"] .tier-after-price[data-for="global"],
+[data-region="in"]     .tier-after-price[data-for="in"]     { display: inline-block; }
+[data-region="global"] .tier-after-note[data-for="global"],
+[data-region="in"]     .tier-after-note[data-for="in"]      { display: block; }
+
+.tier-after-per { font-size: 15px; color: var(--text2, #a0aec0); }
