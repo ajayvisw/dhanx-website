@@ -2,6 +2,7 @@
 /* Generates static, crawlable article pages from the public API to ROI archive. */
 const fs = require('fs');
 const path = require('path');
+const { render } = require('./render-markdown');
 // The site moved into public/ so that the repository's own files are not
 // served. Everything this script reads and writes is part of the site.
 const root = path.resolve(__dirname, '..', 'public');
@@ -123,22 +124,70 @@ const rewrites = {
 };
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function prettyDate(value) { return new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(value + 'T12:00:00')); }
+/**
+ * Full articles live as Markdown in content/blog/<videoId>.md.
+ *
+ * They used to be inline in this file as [heading, paragraph] pairs, which was
+ * fine for eight and unmanageable for fifty. More importantly, the fallback
+ * below produced pages averaging 123 words whose only unique text was a
+ * truncated YouTube description repeated three times — the exact shape Google
+ * names as scaled content abuse, across 51 URLs that were 91% of everything
+ * crawlable on this domain.
+ */
+function readArticle(id) {
+  const f = path.join(__dirname, '..', 'content', 'blog', id + '.md');
+  if (!fs.existsSync(f)) return null;
+  const md = fs.readFileSync(f, 'utf8').trim();
+  if (!md) return null;
+  return render(md);
+}
+
 function article(row) {
   const [id, date, topic, format, title, summary] = row;
-  // Newly imported videos publish immediately. Their article begins with the
-  // creator-supplied YouTube description; a fuller editorial rewrite can be
-  // added to `rewrites` later without changing the URL or sitemap entry.
-  const sections = rewrites[id] || [
+  const full = readArticle(id);
+  // Videos without a written article yet keep the old two-section shell so the
+  // page still builds. They are noindex'd below rather than offered to a
+  // search engine as if they were finished.
+  const sections = full ? null : (rewrites[id] || [
     ['About this episode', summary],
     ['What to consider', 'This video is part of the API TO ROI research archive. Watch the original analysis for the presenter’s full context, evidence and conclusions.']
-  ];
+  ]);
   // Apex host, no .html. Cloudflare serves /blogs/<id> and 307s the .html
   // form, so a canonical ending in .html names a URL that is not the one
   // served — and the www host is a second copy of the whole site competing
   // with this one. Both were true of every article this generator wrote.
   const canonical = `https://dhan-x.com/blogs/${id}`;
-  const body = sections.map(([heading, text]) => `<h2>${esc(heading)}</h2><p>${esc(text)}</p>`).join('');
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(summary)}"><link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} | Dhan-X"><meta property="og:description" content="${esc(summary)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"${esc(title)}","description":"${esc(summary)}","datePublished":"${date}","dateModified":"${date}","author":{"@type":"Organization","name":"Dhan-X"},"publisher":{"@type":"Organization","name":"Dhan-X"},"mainEntityOfPage":"${canonical}","video":{"@type":"VideoObject","name":"${esc(title)}","contentUrl":"https://www.youtube.com/watch?v=${id}","uploadDate":"${date}"}}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time></p><h1>${esc(title)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt=""><article><p>${esc(summary)}</p>${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
+
+  // Body, contents list and the figures the structured data needs.
+  const body = full
+    ? full.html
+    : sections.map(([heading, text]) => `<h2>${esc(heading)}</h2><p>${esc(text)}</p>`).join('');
+  const plain = full ? full.text : sections.map((x) => x[1]).join(' ');
+  const words = plain.split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 220));   // ~220 wpm reading
+
+  // A meta description written from the article's own opening rather than the
+  // YouTube blurb. 28 of the old pages carried a description truncated
+  // mid-sentence ("six indices side by side (large, mid…"), which is what a
+  // search result showed.
+  const metaDesc = full
+    ? (plain.length > 155 ? plain.slice(0, 152).replace(/\s+\S*$/, '') + '…' : plain)
+    : summary;
+
+  // On-page contents. Useful to a reader on a 1,000-word piece, and it gives
+  // Google anchored jump links for the section headings.
+  const toc = (full && full.headings.length >= 3)
+    ? `<nav class="article-toc" aria-label="On this page"><p class="article-toc-title">On this page</p><ol>${
+        full.headings.map((h) => `<li><a href="#${h.id}">${esc(h.text)}</a></li>`).join('')
+      }</ol></nav>`
+    : '';
+
+  // Pages with no written article yet are kept out of the index rather than
+  // offered up as finished. Remove the article's stub and this flips itself.
+  const robots = full
+    ? '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'
+    : '<meta name="robots" content="noindex,follow">';
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(metaDesc)}">${robots}<link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} | Dhan-X"><meta property="og:description" content="${esc(metaDesc)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"${canonical}#article","headline":"${esc(title)}","description":"${esc(metaDesc)}","datePublished":"${date}","dateModified":"${date}","wordCount":${words},"timeRequired":"PT${minutes}M","inLanguage":"en","author":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"publisher":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"mainEntityOfPage":"${canonical}","image":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","articleSection":"${esc(topic)}"},{"@type":"VideoObject","name":"${esc(title)}","description":"${esc(metaDesc)}","thumbnailUrl":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=${id}","embedUrl":"https://www.youtube.com/embed/${id}","uploadDate":"${date}"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs & Media","item":"https://dhan-x.com/blog"},{"@type":"ListItem","position":2,"name":"${esc(title)}","item":"${canonical}"}]}]}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time>${full ? ` · ${minutes} min read` : ''}</p><h1>${esc(title)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="${esc(title)}" loading="lazy">${toc}<article>${full ? '' : `<p>${esc(summary)}</p>`}${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
 }
 const out = path.join(root, 'blogs'); fs.mkdirSync(out, { recursive: true });
 rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(row)));
