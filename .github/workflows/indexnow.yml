@@ -1,0 +1,41 @@
+# Tell IndexNow when pages change.
+#
+# Publishing notifies nobody on its own. A sitemap is a hint a crawler may read
+# whenever it next visits; Google retired its sitemap ping in 2023 and Bing
+# retired its own in favour of this protocol. IndexNow needs no account — the
+# key file at the site root proves domain control.
+#
+# Bing matters more than its search share suggests: ChatGPT's search is
+# Bing-backed, so this is the path by which an assistant finds the site.
+# Google does not participate; Search Console is still the only route there.
+#
+# Runs after a push to main that touched published pages. The Cloudflare build
+# has to finish first, hence the wait — submitting a URL before it is live
+# gets it fetched, 404'd and ignored.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/**/*.html'
+      - 'public/sitemap.xml'
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Wait for the Cloudflare build to publish
+        run: sleep 120
+      - name: Confirm the key file is reachable
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://dhan-x.com/a560929104b8604140615a5a704bf8d2.txt)
+          echo "key file: HTTP $code"
+          test "$code" = "200"
+      - name: Submit changed URLs
+        run: node scripts/indexnow-submit.js
