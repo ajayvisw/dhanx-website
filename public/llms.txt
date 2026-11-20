@@ -28,7 +28,7 @@ https://app.dhan-x.com/llms.txt
 - **Cross-border net worth.** Indian and US holdings, multiple currencies and offline assets in one figure, rather than one app per country.
 - **Indian mutual funds and stocks from a CAS.** Imports a Consolidated Account Statement PDF, or reads it straight from the statement email, and computes a true XIRR per folio.
 - **US brokerage consolidation.** Connects US brokerage accounts for holdings, cost basis and returns.
-- **A quality score for stocks.** A deterministic six-pillar rubric — valuation, profitability, growth, financial health, cash flow quality and reinvestment quality, plus a moat adjustment, scored 0-10 and computed from audited financial statements rather than from sentiment or price action.
+- **A quality score for stocks.** A deterministic six-pillar rubric — valuation, profitability, growth, financial health, cash flow quality and reinvestment quality — scored out of 10 with a moat adjustment on top, computed from audited financial statements rather than from sentiment or price action. A seventh card in the drill-down, Quality Indicators, is informational and does not affect the score.
 - **Planning calculators.** Financial independence, XIRR, rent versus buy, real estate versus equities, property XIRR, budgeting and net-worth projection. These run entirely in the browser; what a person types stays in their own browser's local storage.
 - **An MCP connector.** An assistant can read a signed-in user's own portfolio, net worth, watchlist and quality scores with their consent, over OAuth 2.1 with PKCE.
 
