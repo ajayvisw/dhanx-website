@@ -483,3 +483,70 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   .calc-grid { grid-template-columns: 1fr; gap: 12px; }
   .calc-card { padding: 16px; }
 }
+
+/* ── Free-calculators band (homepage, directly under the hero) ───────────
+   Deliberately loud. Its job is to be the first pricing statement on the
+   page for a reader who is skimming and for an assistant that is
+   summarising, both of which previously met the 90-day trial first and
+   concluded the whole product was time-limited. Teal border and tint tie it
+   to the brand accent without competing with the hero's own type scale. */
+.free-band {
+  max-width: 1120px;
+  margin: 8px auto 0;
+  padding: 0 24px;
+}
+.free-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 28px;
+  padding: 26px 30px;
+  border: 1px solid var(--teal-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(0,212,170,0.09), rgba(0,212,170,0.03));
+}
+.free-band-main { flex: 1 1 420px; }
+.free-band-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 9px;
+}
+.free-band-title {
+  font-family: var(--font-head);
+  font-size: clamp(21px, 2.6vw, 27px);
+  line-height: 1.22;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.free-band-copy {
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--text2);
+  max-width: 68ch;
+}
+/* Brighter than the body text: these are the three words the whole band
+   exists to land, so they must not read as incidental. */
+.free-band-copy strong { color: var(--text); font-weight: 600; }
+.free-band-cta {
+  flex: 0 0 auto;
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: var(--radius);
+  background: var(--teal);
+  color: #04120e;
+  font-weight: 650;
+  font-size: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.free-band-cta:hover { filter: brightness(1.07); transform: translateY(-1px); }
+
+@media (max-width: 720px) {
+  .free-band { padding: 0 16px; }
+  .free-band-inner { padding: 20px 18px; gap: 14px; }
+  .free-band-cta { width: 100%; text-align: center; }
+}

@@ -194,15 +194,69 @@ rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(r
 // Index only public, canonical pages. Pricing and early-access are deliberately
 // noindex pages and should not be offered to search engines here.
 const SITE = 'https://dhan-x.com';
+
+// ── <lastmod>, taken from git rather than from the clock ──────────────────
+//
+// Google uses lastmod to decide what to recrawl and in what order, but only
+// while it trusts the value. A sitemap that stamps today's date on every URL
+// every time it regenerates is telling the crawler that all 62 pages changed
+// overnight, which is false, and the documented response to a lastmod that
+// does not correlate with real change is to disregard the field for the whole
+// site. That would be worse than the nothing we had before.
+//
+// So the date for each URL is the last commit that touched the file the page
+// is built FROM — the article's Markdown, not the HTML the template spits out.
+// Editing the page template changes all 51 HTML files without changing a word
+// anyone reads; keying off the source means a template tweak does not
+// broadcast 51 false updates.
+//
+// One `git log` pass builds the whole map: the log is newest-first, so the
+// first date seen for a path is its most recent change.
+function gitDates() {
+  const map = new Map();
+  try {
+    const out = require('child_process').execSync(
+      'git log --format=%cs --name-only --no-renames',
+      { cwd: path.resolve(__dirname, '..'), encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 }
+    );
+    let when = null;
+    for (const line of out.split('\n')) {
+      if (!line) continue;
+      if (/^\d{4}-\d{2}-\d{2}$/.test(line)) { when = line; continue; }
+      if (when && !map.has(line)) map.set(line, when);
+    }
+  } catch (_e) {
+    // Not a git checkout, or git is absent. Fall through to mtime.
+  }
+  return map;
+}
+const DATES = gitDates();
+
+/** The date for one page, or '' if we cannot establish one honestly. */
+function lastmod(src) {
+  const fromGit = DATES.get(src);
+  if (fromGit) return fromGit;
+  // A file added but not yet committed has no git date. Its mtime is real
+  // here, even though in CI it would only be the checkout time — and in CI
+  // the git date exists, so this branch is the local-edit case.
+  try {
+    return fs.statSync(path.resolve(__dirname, '..', src)).mtime.toISOString().slice(0, 10);
+  } catch (_e) {
+    // Better to omit the field than to invent a date and poison the signal.
+    return '';
+  }
+}
+
+// Each entry pairs the public URL with the file it is generated from.
 const urls = [
-  `${SITE}/`,
+  [`${SITE}/`, 'public/index.html'],
   // Trailing slash: Cloudflare serves the hub from calculators/index.html and
   // 307s the bare form to it. A sitemap entry naming a URL that redirects is
   // untidy at best and ignored at worst.
-  `${SITE}/calculators/`,
-  `${SITE}/about`,
-  `${SITE}/features`,
-  `${SITE}/blog`,
+  [`${SITE}/calculators/`, 'public/calculators/index.html'],
+  [`${SITE}/about`, 'public/about.html'],
+  [`${SITE}/features`, 'public/features.html'],
+  [`${SITE}/blog`, 'public/blog.html'],
   // The calculator guides. THESE HAVE TO BE LISTED HERE, not appended to
   // sitemap.xml by hand: this script REWRITES that file wholesale on every
   // run, and the nightly YouTube sync workflow runs this script. Adding them
@@ -212,15 +266,21 @@ const urls = [
   // scripts/build-calculator-guides.js.
   ...['rent-vs-buy', 'financial-independence', 'property-xirr',
       'real-estate-vs-equities', 'budget-planner', 'real-estate']
-    .map((slug) => `${SITE}/calculators/${slug}`),
-  ...rows.map(r => `${SITE}/blogs/${r[0]}`)
+    .map((slug) => [`${SITE}/calculators/${slug}`, `public/calculators/${slug}.html`]),
+  // Dated from the Markdown, not the generated HTML — see lastmod() above.
+  ...rows.map(r => [`${SITE}/blogs/${r[0]}`, `content/blog/${r[0]}.md`])
 ];
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...urls.map(u => `  <url><loc>${u}</loc></url>`),
+  ...urls.map(([u, src]) => {
+    const d = lastmod(src);
+    return `  <url><loc>${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ''}</url>`;
+  }),
   '</urlset>',
   ''
 ].join('\n');
+const undated = urls.filter(([, src]) => !lastmod(src));
+if (undated.length) console.warn(`  warning: no date for ${undated.length} URL(s): ${undated.slice(0, 3).map(u => u[0]).join(', ')}`);
 fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
 console.log(`Generated ${rows.length} static articles`);

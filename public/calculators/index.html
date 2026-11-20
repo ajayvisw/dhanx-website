@@ -130,6 +130,47 @@
   ]
 }
 </script>
+<!-- A node of its own for the calculator suite.
+     The SoftwareApplication above describes Dhan-X as a whole. This one
+     describes only the part that is free permanently, which is the claim
+     an assistant could not verify: eligibleDuration says in machine-readable
+     terms that the price of zero has no end date, which "price": "0" alone
+     does not - a 90-day free trial would carry exactly the same markup. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://dhan-x.com/calculators/#free-suite",
+  "name": "Dhan-X Free Financial Calculators",
+  "url": "https://dhan-x.com/calculators/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Seven free financial calculators for Indian and US investors - rent vs buy, FIRE and financial independence, property XIRR, real estate vs equities, budget planning and more. No account, no credit card and no time limit.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "eligibleDuration": {
+      "@type": "QuantitativeValue",
+      "description": "Unlimited - these calculators are free permanently and are not a trial"
+    }
+  },
+  "featureList": [
+    "Rent vs Buy calculator for India and the US",
+    "FIRE and financial independence calculator",
+    "Property XIRR calculator",
+    "Real estate vs equities comparison",
+    "Budget planner and conscious spending plan"
+  ],
+  "publisher": {
+    "@id": "https://dhan-x.com/#org"
+  }
+}
+</script>
+
 </head>
 <body>
 <nav>

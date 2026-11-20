@@ -44,17 +44,23 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "Dhan-X",
+      "name": "Dhan-X Pro",
       "url": "https://app.dhan-x.com/",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Any (web browser)",
       "description": "Cross-border personal finance: Indian and US investments in one net-worth view, plus calculators for financial independence, XIRR, rent vs buy, property returns and net-worth projection.",
       "offers": {
         "@type": "Offer",
+        "name": "Dhan-X Pro - private beta",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 90,
+          "unitCode": "DAY",
+          "description": "Free for the 90-day private beta. Dhan-X Pro becomes a paid product after the beta; pricing has not been announced yet."
+        }
       },
-      "isAccessibleForFree": true,
       "publisher": {
         "@id": "https://dhan-x.com/#org"
       },
@@ -63,18 +69,53 @@
         "Indian mutual fund and stock import from a CAS statement",
         "US brokerage consolidation",
         "Seven-pillar stock quality score from audited financials",
-        "Financial independence calculator",
-        "XIRR calculator for irregular cash flows",
-        "Rent vs buy and real estate vs equities comparisons",
-        "Property XIRR",
-        "Net worth projection",
-        "Budget planner",
         "MCP connector for AI assistants"
       ]
     }
   ]
 }
 </script>
+<!-- A node of its own for the calculator suite.
+     The SoftwareApplication above describes Dhan-X as a whole. This one
+     describes only the part that is free permanently, which is the claim
+     an assistant could not verify: eligibleDuration says in machine-readable
+     terms that the price of zero has no end date, which "price": "0" alone
+     does not - a 90-day free trial would carry exactly the same markup. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://dhan-x.com/calculators/#free-suite",
+  "name": "Dhan-X Free Financial Calculators",
+  "url": "https://dhan-x.com/calculators/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Seven free financial calculators for Indian and US investors - rent vs buy, FIRE and financial independence, property XIRR, real estate vs equities, budget planning and more. No account, no credit card and no time limit.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "eligibleDuration": {
+      "@type": "QuantitativeValue",
+      "description": "Unlimited - these calculators are free permanently and are not a trial"
+    }
+  },
+  "featureList": [
+    "Rent vs Buy calculator for India and the US",
+    "FIRE and financial independence calculator",
+    "Property XIRR calculator",
+    "Real estate vs equities comparison",
+    "Budget planner and conscious spending plan"
+  ],
+  "publisher": {
+    "@id": "https://dhan-x.com/#org"
+  }
+}
+</script>
+
 
 <meta name="description" content="Your personal finance coach for every account, every market, every decision. Track your India and US investments, calculate XIRR, screen stocks, and get AI-powered insights.">
 <meta property="og:title" content="Dhan-X — Your Personal Finance Coach">
@@ -144,6 +185,34 @@
       <span class="trust-item"><span class="ic">&#128274;</span> AES-256 encrypted</span>
       <span class="trust-item"><span class="ic">&#128737;&#65039;</span> SOC 2 certified partners</span>
       <span class="trust-item"><span class="ic">&#128273;</span> Zero credential storage</span>
+    </div>
+  </div>
+
+  <!-- FREE CALCULATORS BAND
+       Sits above every mention of the private beta on purpose.
+
+       Dhan-X is two things: calculators that are free forever and need no
+       account, and a Pro product that is currently a 90-day beta. The page
+       used to describe only the second, so a reader arriving at the top -
+       human or machine - met "90 days of full access" and "plan details
+       before your trial ends" with nothing to indicate that anything was
+       permanently free. ChatGPT, asked to compare Dhan-X with other tools,
+       said in as many words that it could not confirm free access because
+       the pricing it found was inconsistent, and declined to recommend us
+       on that basis.
+
+       The JSON-LD below has always declared price 0. An assistant reading
+       the page trusts the prose over the markup, so the prose has to say it
+       too, before the trial is mentioned and in words that cannot be read
+       as time-limited. -->
+  <div class="free-band">
+    <div class="free-band-inner">
+      <div class="free-band-main">
+        <div class="free-band-eyebrow">Free forever &middot; not a trial</div>
+        <h2 class="free-band-title">Seven financial calculators, free for everyone</h2>
+        <p class="free-band-copy">Rent vs buy, FIRE, property XIRR, real estate vs equities, budgeting and more &mdash; built for Indian and US investors. <strong>No sign-up, no credit card, no time limit.</strong> They are free today and they stay free; an account only lets you save a scenario and reopen it on another device.</p>
+      </div>
+      <a class="free-band-cta" href="/calculators/">Open the free calculators &rarr;</a>
     </div>
   </div>
 
@@ -399,6 +468,39 @@
     </div>
 
     <div class="tier-grid beta-tier-grid">
+      <!-- The free tier is listed FIRST so that the pricing section does not
+           open with a countdown. A crawler or an assistant summarising
+           "what does Dhan-X cost" reads this before it reads "90 days". -->
+      <div class="tier beta-tier">
+        <span class="tier-badge">Always free</span>
+        <div class="tier-label">Calculators</div>
+        <div class="tier-price">&#8377;0 / $0<span class="per"> forever</span></div>
+        <div class="tier-sub">No account, no credit card, no expiry</div>
+        <a class="tier-cta" href="/calculators/">Open the calculators</a>
+
+        <div class="tier-plus">Free for everyone, permanently:</div>
+
+        <div class="tier-cat">
+          <div class="tier-cat-label">Planning calculators</div>
+          <ul class="tier-list">
+            <li><span>Rent vs Buy (India &amp; US)</span></li>
+            <li><span>FIRE &amp; financial independence</span></li>
+            <li><span>Property XIRR</span></li>
+            <li><span>Real estate vs equities</span></li>
+            <li><span>Budget planner</span></li>
+          </ul>
+        </div>
+
+        <div class="tier-cat">
+          <div class="tier-cat-label">What you do not need</div>
+          <ul class="tier-list">
+            <li><span>No sign-up to get a result</span></li>
+            <li><span>No credit card, ever</span></li>
+            <li><span>No trial clock on these tools</span></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="tier featured beta-tier">
         <span class="tier-badge">Private beta</span>
         <div class="tier-label">Dhan-X Pro trial</div>
@@ -439,7 +541,7 @@
       </div>
     </div>
 
-    <p class="beta-plan-note">We are using the private beta to shape Dhan-X’s long-term offering. You will receive plan details before your 90-day trial ends.</p>
+    <p class="beta-plan-note"><strong>The 90-day trial applies to Dhan-X Pro only.</strong> The calculators above are free permanently and are not part of it. We are using the private beta to shape Dhan-X’s long-term Pro offering, and you will receive plan details before your 90-day Pro trial ends.</p>
   </div>
 
   <div class="cta-banner">
