@@ -71,18 +71,15 @@ function post(body) {
   let urls = process.argv.slice(2);
   if (!urls.length) {
     urls = urlsFromSitemap(path.join(__dirname, '..', 'public', 'sitemap.xml'));
-    // The 51 video posts under /blogs/ average 123-161 words of body text and
-    // 27 of them share identical boilerplate. Submitting them would actively
-    // push the weakest pages on the domain at an index we are trying to earn
-    // standing in. They stay in the sitemap so a crawler that wants them can
-    // find them; they are simply not advertised. Drop this filter once they
-    // carry real articles. INCLUDE_BLOGS=1 overrides.
-    if (!process.env.INCLUDE_BLOGS) {
-      const before = urls.length;
-      urls = urls.filter((u) => !/\/blogs\//.test(u));
-      const skipped = before - urls.length;
-      if (skipped) console.log(`(skipping ${skipped} thin /blogs/ pages — set INCLUDE_BLOGS=1 to send them)`);
-    }
+    // There used to be a filter here that withheld everything under /blogs/.
+    // It was right at the time: those 51 pages were 123-161 words of
+    // auto-generated summary, 27 of them word-for-word identical, and pushing
+    // them at an index we were trying to earn standing in would have cost us
+    // more than the pages could return.
+    //
+    // They now carry hand-written articles — 27,268 words, median 477 a page,
+    // each one built from its own video transcript, with no shared
+    // boilerplate. The reason for holding them back is gone, so they go.
   }
   // IndexNow rejects the whole batch if any URL is on another host.
   urls = [...new Set(urls)].filter((u) => {

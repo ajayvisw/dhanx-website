@@ -196,10 +196,23 @@ rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(r
 const SITE = 'https://dhan-x.com';
 const urls = [
   `${SITE}/`,
-  `${SITE}/calculators`,
+  // Trailing slash: Cloudflare serves the hub from calculators/index.html and
+  // 307s the bare form to it. A sitemap entry naming a URL that redirects is
+  // untidy at best and ignored at worst.
+  `${SITE}/calculators/`,
   `${SITE}/about`,
   `${SITE}/features`,
   `${SITE}/blog`,
+  // The calculator guides. THESE HAVE TO BE LISTED HERE, not appended to
+  // sitemap.xml by hand: this script REWRITES that file wholesale on every
+  // run, and the nightly YouTube sync workflow runs this script. Adding them
+  // to the file instead of to this list means the next bot commit silently
+  // deletes six of the most important pages on the domain from the sitemap,
+  // with nothing failing and nobody noticing. Keep this in step with
+  // scripts/build-calculator-guides.js.
+  ...['rent-vs-buy', 'financial-independence', 'property-xirr',
+      'real-estate-vs-equities', 'budget-planner', 'real-estate']
+    .map((slug) => `${SITE}/calculators/${slug}`),
   ...rows.map(r => `${SITE}/blogs/${r[0]}`)
 ];
 const xml = [
