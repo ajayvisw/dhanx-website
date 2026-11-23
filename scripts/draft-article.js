@@ -100,6 +100,11 @@ function transcript(id) {
     execFileSync('yt-dlp', [
       '--skip-download', '--write-auto-subs', '--write-subs',
       '--sub-langs', 'en.*,en', '--sub-format', 'json3',
+      // YouTube gates its caption endpoint behind a JavaScript challenge, and
+      // yt-dlp enables only deno by default. A GitHub runner has Node and not
+      // deno, so without this it fails with "No supported JavaScript runtime
+      // could be found" and the video silently keeps its empty shell.
+      '--js-runtimes', 'node',
       '-o', path.join(dir, '%(id)s.%(ext)s'),
       `https://www.youtube.com/watch?v=${id}`,
     ], { stdio: 'pipe', timeout: 120000 });
