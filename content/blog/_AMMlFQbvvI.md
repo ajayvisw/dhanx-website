@@ -1,0 +1,53 @@
+# One Rubric for Every Stock, in Every Market
+
+## The investor this is built for
+
+There is a wide gap between running a hedge fund and guessing. Most people sit in it: they want to understand what a business actually earns, how much debt it carries and what they are paying for the growth, without a Bloomberg terminal or a week of spreadsheet work per name.
+
+That is the gap this is aimed at. Not professional coverage, and not a tip sheet either — a legible read of the fundamentals, presented the same way for every company, so that a judgement is possible at all.
+
+Underneath the scoring sits an unglamorous idea: a stock is worth the present value of the cash the business will produce. Everything the rubric measures is an attempt to get at that question from a different angle.
+
+## Why the same metrics, applied to everything
+
+The quiet failure in most stock research is that the case is built after the conclusion. A company with thin profits gets praised for revenue growth. A company with flat revenue gets praised for margins. Each argument is reasonable alone, and together they mean nothing, because the yardstick moved.
+
+Applying one set of metrics to every company removes that freedom. A business cannot be excused on the measure it happens to fail. Where a metric genuinely does not fit — a bank's debt ratio means something different from a software company's — the caveat is stated rather than quietly dropped.
+
+The point is not that the rubric is right. It is that it is the same rubric, so two companies can be put side by side and the comparison means something.
+
+## What an 8.5 is actually made of
+
+ASML, the Dutch semiconductor-equipment company, scores 8.5 out of 10. The number on its own is not the useful part; what it is built from is.
+
+Revenue compounding at 15.6% a year over three years, with a 34.5% net margin, says the growth is not being bought with discounts. A debt-to-equity ratio of roughly 0.1 says almost none of it is borrowed. A 4.6% free cash flow yield says the profits are real enough to leave the business as cash. The three-year return of 126% is the market having already noticed.
+
+The one metric that does not flatter it is price. A trailing P/E above the low-twenties is more than you would ideally pay — though a business growing at this rate rarely trades cheaply, and the forward P/E of 22.6 is the market pricing that growth in rather than ignoring it.
+
+That tension is the whole value of seeing the metrics together. An expensive excellent business and a cheap mediocre one can arrive at similar scores by opposite routes, and only the breakdown tells you which you are holding.
+
+## When the business and the share price disagree
+
+Netflix makes the opposite case. The stock fell roughly 47% over a year, much of it after the Warner acquisition went sideways, and the three-year return is a modest 42% as a result.
+
+The operations tell a different story. A 31% operating margin is not the profile of a company in trouble. The price moved; the business largely did not.
+
+Scoring from audited fundamentals rather than from price action is what lets those two facts sit in the same view without one drowning out the other. Whether a crowded exit is an opportunity or a warning is not a question a rubric can answer. It can at least stop the share price from being mistaken for the evidence.
+
+## Disagreeing with the score is the point
+
+Amazon scores 4.7 — low enough that anyone who considers it fairly valued will immediately object.
+
+Good. The score is a filter, not a verdict. It exists to produce exactly that reaction: a specific disagreement, on a named measure, with the data already in front of you. Each of the six vectors can be opened and argued with. Decide the valuation pillar deserves full marks and you have made a real judgement, which is more than a number ever does on its own.
+
+Mercado Libre at 5.4 invites the same argument from the other direction — the largest retail and fintech business in Latin America, compounding at 35 to 40% a year for some thirty quarters, on a score that sounds unremarkable.
+
+A rubric that only ever confirmed what you already believed would be worth nothing. Its job is to tell you which of your holdings you have never really examined.
+
+## One watchlist, wherever the stock is listed
+
+Holdings, former holdings and companies merely being watched can sit in one list regardless of where they trade — the US, India, Europe, Canada — grouped by region, with index funds and ETFs alongside individual names.
+
+That matters more than it sounds for anyone whose money is genuinely split across countries. The alternative is two or three separate brokerage views that cannot be compared, which is how an allocation drifts without anyone noticing.
+
+Price alerts close the loop. Costco, trading near 1,093 on a P/E around 53, is the kind of position where the useful alerts sit in both directions: one far below, in case the market offers a price worth acting on, and one above, where a valuation already stretched becomes a question worth revisiting.

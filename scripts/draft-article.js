@@ -99,7 +99,10 @@ function transcript(id) {
   try {
     execFileSync('yt-dlp', [
       '--skip-download', '--write-auto-subs', '--write-subs',
-      '--sub-langs', 'en.*,en', '--sub-format', 'json3',
+      // en-orig first. The plain "en" track is the one everything else hits,
+      // so it is the one that returns 429 under load; en-orig is the same
+      // captions on a less contended path and succeeded here when en did not.
+      '--sub-langs', 'en-orig,en.*,en', '--sub-format', 'json3',
       // YouTube gates its caption endpoint behind a JavaScript challenge, and
       // yt-dlp enables only deno by default. A GitHub runner has Node and not
       // deno, so without this it fails with "No supported JavaScript runtime
