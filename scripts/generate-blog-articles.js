@@ -163,6 +163,21 @@ function readArticle(id) {
 function article(row) {
   const [id, date, topic, format, title, summary] = row;
   const full = readArticle(id);
+  // Two different titles, and the page needs both.
+  //
+  // row[4] is the title on YouTube, written to earn a click in a feed: shouty,
+  // first-person, often naming Dhan-X before the reader knows what that is
+  // ("CAPITAL GAINS TAX - DON'T SCRAP IT."). The article's own H1 is written
+  // for the search result ("Why India should not scrap long-term capital gains
+  // tax"). <title> is the strongest on-page ranking signal there is, so it
+  // gets the second one; the H1 agrees with it, because a headline that
+  // contradicts the tab title reads as a different page.
+  //
+  // The VideoObject keeps the YouTube title, and so does the thumbnail's alt
+  // text: those describe the video, which really is called that. Renaming it
+  // in structured data would be a false statement about a real object.
+  const videoTitle = title;
+  const headline = (full && full.title) || title;
   // Videos without a written article yet keep the old two-section shell so the
   // page still builds. They are noindex'd below rather than offered to a
   // search engine as if they were finished.
@@ -205,7 +220,7 @@ function article(row) {
   const robots = (full && !full.draft)
     ? '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'
     : '<meta name="robots" content="noindex,follow">';
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(metaDesc)}">${robots}<link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} | Dhan-X"><meta property="og:description" content="${esc(metaDesc)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"${canonical}#article","headline":"${esc(title)}","description":"${esc(metaDesc)}","datePublished":"${date}","dateModified":"${date}","wordCount":${words},"timeRequired":"PT${minutes}M","inLanguage":"en","author":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"publisher":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"mainEntityOfPage":"${canonical}","image":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","articleSection":"${esc(topic)}"},{"@type":"VideoObject","name":"${esc(title)}","description":"${esc(metaDesc)}","thumbnailUrl":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=${id}","embedUrl":"https://www.youtube.com/embed/${id}","uploadDate":"${date}"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs & Media","item":"https://dhan-x.com/blog"},{"@type":"ListItem","position":2,"name":"${esc(title)}","item":"${canonical}"}]}]}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time>${full ? ` · ${minutes} min read` : ''}</p><h1>${esc(title)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="${esc(title)}" loading="lazy">${toc}<article>${full ? '' : `<p>${esc(summary)}</p>`}${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(headline)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(metaDesc)}">${robots}<link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(headline)} | Dhan-X"><meta property="og:description" content="${esc(metaDesc)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"${canonical}#article","headline":"${esc(headline)}","description":"${esc(metaDesc)}","datePublished":"${date}","dateModified":"${date}","wordCount":${words},"timeRequired":"PT${minutes}M","inLanguage":"en","author":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"publisher":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"mainEntityOfPage":"${canonical}","image":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","articleSection":"${esc(topic)}"},{"@type":"VideoObject","name":"${esc(videoTitle)}","description":"${esc(metaDesc)}","thumbnailUrl":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=${id}","embedUrl":"https://www.youtube.com/embed/${id}","uploadDate":"${date}"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs & Media","item":"https://dhan-x.com/blog"},{"@type":"ListItem","position":2,"name":"${esc(headline)}","item":"${canonical}"}]}]}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time>${full ? ` · ${minutes} min read` : ''}</p><h1>${esc(headline)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="${esc(videoTitle)}" loading="lazy">${toc}<article>${full ? '' : `<p>${esc(summary)}</p>`}${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
 }
 const out = path.join(root, 'blogs'); fs.mkdirSync(out, { recursive: true });
 rows.forEach(row => fs.writeFileSync(path.join(out, `${row[0]}.html`), article(row)));
@@ -309,4 +324,24 @@ const xml = [
 const undated = urls.filter(([, src]) => !lastmod(src));
 if (undated.length) console.warn(`  warning: no date for ${undated.length} URL(s): ${undated.slice(0, 3).map(u => u[0]).join(', ')}`);
 fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
+
+// Article headlines, for the blog index.
+//
+// The cards in public/js/blog.js carry the YouTube title, because
+// sync-youtube.py builds those rows from the feed and rewrites them nightly -
+// anything edited in place there is lost on the next run. So the headlines
+// are published beside it instead, keyed by video id, and blog-links.js
+// swaps them in. A reader then sees the same headline on the card that they
+// see on the page they land on.
+//
+// Only videos that have an article appear here; a video still waiting for
+// one keeps its YouTube title on the card, which is the honest thing to show
+// for a page that is only a shell.
+const titles = {};
+rows.forEach((r) => { const a = readArticle(r[0]); if (a && a.title) titles[r[0]] = a.title; });
+fs.writeFileSync(
+  path.join(root, 'js', 'article-titles.js'),
+  '/* GENERATED by scripts/generate-blog-articles.js - do not edit. */\n' +
+  'window.DHANX_TITLES=' + JSON.stringify(titles) + ';\n'
+);
 console.log(`Generated ${rows.length} static articles`);
