@@ -172,10 +172,24 @@ async function write(client, row, text) {
     (!only || id === only) && !fs.existsSync(path.join(CONTENT, `${id}.md`)));
 
   if (!pending.length) { console.log('Every video already has an article.'); return; }
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('ANTHROPIC_API_KEY is not set — cannot write articles.');
+  // Two ways to be authenticated, and this guard has to know both. An API
+  // key is the obvious one. In CI there is no key at all: GitHub mints an
+  // identity token, the SDK exchanges it, and the credential never exists as
+  // a stored secret. Checking only for the key made the workflow report
+  // "ANTHROPIC_API_KEY is not set" while sitting on a perfectly good
+  // federated credential.
+  const hasKey = !!process.env.ANTHROPIC_API_KEY;
+  const hasFederation = !!(process.env.ANTHROPIC_FEDERATION_RULE_ID &&
+    process.env.ANTHROPIC_ORGANIZATION_ID &&
+    (process.env.ANTHROPIC_IDENTITY_TOKEN || process.env.ANTHROPIC_IDENTITY_TOKEN_FILE));
+  if (!hasKey && !hasFederation) {
+    console.error('No Anthropic credential: set ANTHROPIC_API_KEY, or the ' +
+      'federation variables (ANTHROPIC_FEDERATION_RULE_ID, ' +
+      'ANTHROPIC_ORGANIZATION_ID and ANTHROPIC_IDENTITY_TOKEN).');
     process.exitCode = 1; return;
   }
+  console.log(hasKey ? 'Authenticating with an API key.'
+                     : 'Authenticating by workload identity federation.');
 
   const Anthropic = require('@anthropic-ai/sdk');
   const client = new Anthropic();
