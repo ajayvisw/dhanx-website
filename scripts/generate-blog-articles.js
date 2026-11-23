@@ -134,12 +134,30 @@ function prettyDate(value) { return new Intl.DateTimeFormat('en', { day: 'numeri
  * names as scaled content abuse, across 51 URLs that were 91% of everything
  * crawlable on this domain.
  */
+/**
+ * The article for one video, or null if it has none.
+ *
+ * Optional YAML-ish front matter is stripped before rendering - without this
+ * the "---" and "status: draft" lines come out as body paragraphs. Only
+ * `status` is read. A draft renders in full but is not offered to search:
+ * scripts/draft-article.js writes drafts when DRAFT=1, for articles a person
+ * has not read yet. Promote one by changing status to published, or by
+ * deleting the front matter block.
+ */
 function readArticle(id) {
   const f = path.join(__dirname, '..', 'content', 'blog', id + '.md');
   if (!fs.existsSync(f)) return null;
-  const md = fs.readFileSync(f, 'utf8').trim();
+  let md = fs.readFileSync(f, 'utf8').trim();
   if (!md) return null;
-  return render(md);
+
+  let draft = false;
+  const fm = md.match(/^---\n([\s\S]*?)\n---\s*/);
+  if (fm) {
+    draft = /^status:\s*draft\s*$/m.test(fm[1]);
+    md = md.slice(fm[0].length).trim();
+    if (!md) return null;
+  }
+  return Object.assign(render(md), { draft });
 }
 
 function article(row) {
@@ -184,7 +202,7 @@ function article(row) {
 
   // Pages with no written article yet are kept out of the index rather than
   // offered up as finished. Remove the article's stub and this flips itself.
-  const robots = full
+  const robots = (full && !full.draft)
     ? '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'
     : '<meta name="robots" content="noindex,follow">';
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Blogs & Media | Dhan-X</title><meta name="description" content="${esc(metaDesc)}">${robots}<link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} | Dhan-X"><meta property="og:description" content="${esc(metaDesc)}"><meta property="og:url" content="${canonical}"><meta property="article:published_time" content="${date}T12:00:00Z"><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/article.css"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"${canonical}#article","headline":"${esc(title)}","description":"${esc(metaDesc)}","datePublished":"${date}","dateModified":"${date}","wordCount":${words},"timeRequired":"PT${minutes}M","inLanguage":"en","author":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"publisher":{"@type":"Organization","name":"Dhan-X","url":"https://dhan-x.com/"},"mainEntityOfPage":"${canonical}","image":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","articleSection":"${esc(topic)}"},{"@type":"VideoObject","name":"${esc(title)}","description":"${esc(metaDesc)}","thumbnailUrl":"https://i.ytimg.com/vi/${id}/maxresdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=${id}","embedUrl":"https://www.youtube.com/embed/${id}","uploadDate":"${date}"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs & Media","item":"https://dhan-x.com/blog"},{"@type":"ListItem","position":2,"name":"${esc(title)}","item":"${canonical}"}]}]}</script></head><body><nav><a href="../index.html" class="nav-logo"><img src="../images/dhanx-logo-transparent.png" alt="Dhan-X"></a><div class="nav-links"><a class="nav-link" href="../index.html">Home</a><a class="nav-link active" href="../blog.html">Blogs &amp; Media</a><a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a></div></nav><main class="article"><a class="article-back" href="../blog.html">← All Blogs &amp; Media</a><p class="article-meta">${esc(topic)} · ${esc(format)} · <time datetime="${date}">${prettyDate(date)}</time>${full ? ` · ${minutes} min read` : ''}</p><h1>${esc(title)}</h1><p class="article-lede">${esc(summary)}</p><img class="article-image" src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="${esc(title)}" loading="lazy">${toc}<article>${full ? '' : `<p>${esc(summary)}</p>`}${body}<h2>Watch the original analysis</h2><p><a class="btn-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Watch on YouTube →</a></p></article><p class="article-disclaimer">For educational purposes only. This is not investment, tax or legal advice.</p></main><script src="../js/main.js"></script></body></html>`;
@@ -268,7 +286,15 @@ const urls = [
       'real-estate-vs-equities', 'budget-planner', 'real-estate']
     .map((slug) => [`${SITE}/calculators/${slug}`, `public/calculators/${slug}.html`]),
   // Dated from the Markdown, not the generated HTML — see lastmod() above.
-  ...rows.map(r => [`${SITE}/blogs/${r[0]}`, `content/blog/${r[0]}.md`])
+  //
+  // Only videos that HAVE an article. A video with no content/blog/<id>.md
+  // still gets a page built, but that page is a short shell carrying
+  // noindex. Listing it here would ask Google to index a URL whose own markup
+  // tells it not to — contradictory instructions that cost a little trust in
+  // everything else the sitemap says. It joins the sitemap on the run after
+  // its Markdown lands.
+  ...rows.filter(r => { const a = readArticle(r[0]); return a && !a.draft; })
+         .map(r => [`${SITE}/blogs/${r[0]}`, `content/blog/${r[0]}.md`])
 ];
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
