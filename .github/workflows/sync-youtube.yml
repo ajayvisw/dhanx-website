@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  # contents: to push the imported video and the article it writes.
+  # id-token: to ask GitHub for a signed token proving this job really is
+  #   running in this repo, on main. Anthropic trusts that token instead of a
+  #   stored API key, so there is no long-lived secret in this repository.
   contents: write
+  id-token: write
 
 concurrency:
   group: youtube-content-sync
@@ -36,18 +41,47 @@ jobs:
           python3 -m pip install --quiet --upgrade yt-dlp
           npm install --no-save --silent @anthropic-ai/sdk
 
+      # Workload Identity Federation, not a stored API key. GitHub signs a
+      # short-lived token asserting which repo and branch this job is running
+      # in; Anthropic's federation rule checks that against the owner's
+      # numeric ID, and issues a credential good only for this run. Nothing
+      # secret is kept in this repository, which matters more than usual here
+      # because it is public.
+      #
+      # The audience must be https://api.anthropic.com - the token is minted
+      # FOR Anthropic and is rejected if it was minted for anyone else.
+      # setSecret masks it so it cannot surface in a log.
+      - name: Fetch GitHub OIDC token
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const token = await core.getIDToken('https://api.anthropic.com');
+            core.setSecret(token);
+            core.exportVariable('ANTHROPIC_IDENTITY_TOKEN', token);
+
       # Writes content/blog/<id>.md for any video that has no article. Without
       # it a new upload gets a forty-word noindex shell that can never rank.
       #
+      # The SDK performs the token exchange itself when these variables are
+      # present - draft-article.js constructs Anthropic() with no arguments
+      # and the credential is resolved from the environment. These four IDs
+      # are identifiers rather than secrets; the console generates them into
+      # a file meant to be committed.
+      #
       # continue-on-error because the rest of this job is still worth running
-      # without it: a missing API key, a video with captions disabled, or a
+      # without it: a federation failure, a video with captions disabled, or a
       # model refusal should leave the import and the rebuild intact rather
       # than failing the whole sync. Articles that fail are simply not
       # written, and the video keeps its noindex shell until the next run.
+      # Check this step's log if articles stop appearing - by design it is
+      # quiet, so nothing else will tell you.
       - name: Write articles for new videos
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_FEDERATION_RULE_ID: fdrl_014kynq5TfjRks9v7ZiveDmw
+          ANTHROPIC_ORGANIZATION_ID: b58e3062-bee9-437b-8a7f-3f0103b8b9f3
+          ANTHROPIC_SERVICE_ACCOUNT_ID: svac_017apH6mVHtaebWMvdpvXhHS
+          ANTHROPIC_WORKSPACE_ID: wrkspc_01UjHAfNp2WUuMMWNHtaAXNq
         run: node scripts/draft-article.js
 
       - name: Regenerate articles and sitemap
