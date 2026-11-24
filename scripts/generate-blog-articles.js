@@ -290,6 +290,9 @@ const urls = [
   [`${SITE}/about`, 'public/about.html'],
   [`${SITE}/features`, 'public/features.html'],
   [`${SITE}/blog`, 'public/blog.html'],
+  // Built by scripts/build-quotes-page.js; dated from its data file, which is
+  // what a reader would call the page changing (a template tweak is not).
+  [`${SITE}/buffett-munger-quotes`, 'content/quotes/buffett-munger.json'],
   // The calculator guides. THESE HAVE TO BE LISTED HERE, not appended to
   // sitemap.xml by hand: this script REWRITES that file wholesale on every
   // run, and the nightly YouTube sync workflow runs this script. Adding them

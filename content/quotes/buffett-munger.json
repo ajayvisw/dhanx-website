@@ -1,0 +1,490 @@
+{
+  "_readme": [
+    "Source of truth for /buffett-munger-quotes. Run `node scripts/build-quotes-page.js` after editing.",
+    "EVERY ENTRY IS CHECKED WORD FOR WORD against the source it cites: Berkshire Hathaway shareholder letters",
+    "(berkshirehathaway.com/letters) or Poor Charlie's Almanack (stripe.press/poor-charlies-almanack).",
+    "Square brackets mark words added for sense; an ellipsis marks words left out. Nothing else is changed.",
+    "Do NOT add a quote because it is popular. Many of the most-shared 'Buffett' and 'Munger' lines have no",
+    "primary source (e.g. 'Rule No. 1: never lose money' as a written source, 'the stock market is a device for",
+    "transferring money from the impatient to the patient', 'the big money is not in the buying and selling').",
+    "Find the letter, talk or book page first, and link to it.",
+    "letter: a Berkshire letter year, linked by the build script. url: any other source."
+  ],
+  "quotes": [
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2008,
+      "text": "Long ago, Ben Graham taught me that \"Price is what you pay; value is what you get.\" Whether we're talking about socks or stocks, I like buying quality merchandise when it is marked down."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 1986,
+      "text": "We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 1988,
+      "text": "When we own portions of outstanding businesses with outstanding managements, our favorite holding period is forever."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1989,
+      "text": "It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1989,
+      "text": "Time is the friend of the wonderful business, the enemy of the mediocre."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1989,
+      "text": "When a management with a reputation for brilliance tackles a business with a reputation for bad economics, it is the reputation of the business that remains intact."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 1985,
+      "text": "Should you find yourself in a chronically-leaking boat, energy devoted to changing vessels is likely to be more productive than energy devoted to patching leaks."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 1992,
+      "text": "It's only when the tide goes out that you learn who's been swimming naked."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 2002,
+      "text": "Derivatives are financial weapons of mass destruction, carrying dangers that, while now latent, are potentially lethal."
+    },
+    {
+      "who": "buffett",
+      "topic": "Forecasts",
+      "letter": 1991,
+      "text": "In the business world, unfortunately, the rear-view mirror is always clearer than the windshield."
+    },
+    {
+      "who": "buffett",
+      "topic": "Forecasts",
+      "letter": 1980,
+      "text": "The forecasts may tell you a great deal about the forecaster; they tell you nothing about the future."
+    },
+    {
+      "who": "buffett",
+      "topic": "Forecasts",
+      "letter": 1992,
+      "text": "We've long felt that the only value of stock forecasters is to make fortune tellers look good."
+    },
+    {
+      "who": "buffett",
+      "topic": "Forecasts",
+      "letter": 1994,
+      "text": "We will continue to ignore political and economic forecasts, which are an expensive distraction for many investors and businessmen."
+    },
+    {
+      "who": "buffett",
+      "topic": "Forecasts",
+      "letter": 2013,
+      "text": "Forming macro opinions or listening to the macro or market predictions of others is a waste of time."
+    },
+    {
+      "who": "buffett",
+      "topic": "Character",
+      "letter": 2010,
+      "text": "We can afford to lose money — even a lot of money. But we can't afford to lose reputation — even a shred of reputation."
+    },
+    {
+      "who": "buffett",
+      "topic": "Character",
+      "letter": 2025,
+      "source": "Testimony to the US Congress on Salomon Brothers, 1991 — quoted in the 2025 Berkshire Hathaway shareholder letter",
+      "text": "Lose money for the firm, and I will be understanding; lose a shred of reputation for the firm, and I will be ruthless."
+    },
+    {
+      "who": "buffett",
+      "topic": "Costs & index funds",
+      "letter": 2004,
+      "text": "Investors should remember that excitement and expenses are their enemies."
+    },
+    {
+      "who": "buffett",
+      "topic": "Costs & index funds",
+      "letter": 1996,
+      "text": "Most investors, both institutional and individual, will find that the best way to own common stocks is through an index fund that charges minimal fees."
+    },
+    {
+      "who": "buffett",
+      "topic": "Costs & index funds",
+      "letter": 2017,
+      "text": "Performance comes, performance goes. Fees never falter."
+    },
+    {
+      "who": "buffett",
+      "topic": "Costs & index funds",
+      "letter": 2016,
+      "text": "If a statue is ever erected to honor the person who has done the most for American investors, the hands-down choice should be Jack Bogle."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 1996,
+      "text": "If you aren't willing to own a stock for ten years, don't even think about owning it for ten minutes."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 1996,
+      "text": "Inactivity strikes us as intelligent behavior."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 2017,
+      "text": "Stick with big, \"easy\" decisions and eschew activity."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 1985,
+      "text": "No matter how great the talent or effort, some things just take time: you can't produce a baby in one month by getting nine women pregnant."
+    },
+    {
+      "who": "buffett",
+      "topic": "Patience",
+      "letter": 1989,
+      "text": "Charlie and I have never been in a big hurry: We enjoy the process far more than the proceeds — though we have learned to live with those also."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2000,
+      "text": "Nothing sedates rationality like large doses of effortless money."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2000,
+      "text": "A pin lies in wait for every bubble."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 1989,
+      "text": "As happens in Wall Street all too often, what the wise do in the beginning, fools do in the end."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2008,
+      "text": "Beware of geeks bearing formulas."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 1990,
+      "text": "The most common cause of low prices is pessimism — sometimes pervasive, sometimes specific to a company or industry. We want to do business in such an environment, not because we like pessimism but because we like the prices it produces. It's optimism that is the enemy of the rational buyer."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 1990,
+      "text": "A contrarian approach is just as foolish as a follow-the-crowd strategy. What's required is thinking rather than polling."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 1987,
+      "text": "Mr. Market is there to serve you, not to guide you. It is his pocketbook, not his wisdom, that you will find useful."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2013,
+      "text": "Games are won by players who focus on the playing field — not by those whose eyes are glued to the scoreboard."
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2013,
+      "text": "Those people who can sit quietly for decades when they own a farm or apartment house too often become frenetic when they are exposed to a stream of stock quotations and accompanying commentators delivering an implied message of \"Don't just sit there, do something.\""
+    },
+    {
+      "who": "buffett",
+      "topic": "Markets & temperament",
+      "letter": 2020,
+      "text": "Our unwavering conclusion: Never bet against America."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2009,
+      "text": "When it's raining gold, reach for a bucket, not a thimble."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1993,
+      "text": "Charlie and I decided long ago that in an investment lifetime it's just too hard to make hundreds of smart decisions."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2022,
+      "text": "The weeds wither away in significance as the flowers bloom. Over time, it takes just a few winners to work wonders."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2013,
+      "text": "You don't need to be an expert in order to achieve satisfactory investment returns."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1996,
+      "text": "Your goal as an investor should simply be to purchase, at a rational price, a part interest in an easily-understandable business whose earnings are virtually certain to be materially higher five, ten and twenty years from now."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1996,
+      "text": "You only have to be able to evaluate companies within your circle of competence. The size of that circle is not very important; knowing its boundaries, however, is vital."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1993,
+      "text": "Paradoxically, when \"dumb\" money acknowledges its limitations, it ceases to be dumb."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1989,
+      "text": "After 25 years of buying and supervising a great variety of businesses, Charlie and I have not learned how to solve difficult business problems. What we have learned is to avoid them."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2007,
+      "text": "A moat that must be continuously rebuilt will eventually be no moat at all."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1989,
+      "text": "In a difficult business, no sooner is one problem solved than another surfaces — never is there just one cockroach in the kitchen."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 1997,
+      "text": "If a CEO is enthused about a particularly foolish acquisition, both his internal staff and his outside advisors will come up with whatever projections are needed to justify his stance."
+    },
+    {
+      "who": "buffett",
+      "topic": "Investing",
+      "letter": 2014,
+      "text": "Cash, though, is to a business as oxygen is to an individual: never thought about when it is present, the only thing in mind when it is absent."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 2009,
+      "text": "We will never become dependent on the kindness of strangers."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 2001,
+      "text": "I violated the Noah rule: Predicting rain doesn't count; building arks does."
+    },
+    {
+      "who": "buffett",
+      "topic": "Risk & mistakes",
+      "letter": 2024,
+      "text": "The cardinal sin is delaying the correction of mistakes or what Charlie Munger called \"thumb-sucking.\""
+    },
+    {
+      "who": "buffett",
+      "topic": "Character",
+      "letter": 2023,
+      "text": "In reality, Charlie was the \"architect\" of the present Berkshire, and I acted as the \"general contractor\" to carry out the day-by-day construction of his vision."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "USC Gould School of Law commencement address, 13 May 2007 (Poor Charlie's Almanack, Talk Ten)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-ten",
+      "text": "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent. But they are learning machines. They go to bed every night a little wiser than they were that morning. And boy, does that habit help, particularly when you have a long run ahead of you."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "USC Gould School of Law commencement address, 13 May 2007 (Poor Charlie's Almanack, Talk Ten)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-ten",
+      "text": "The safest way to try to get what you want is to try to deserve what you want."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "USC Gould School of Law commencement address, 13 May 2007 (Poor Charlie's Almanack, Talk Ten)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-ten",
+      "text": "Generally speaking, envy, resentment, revenge, and self-pity are disastrous modes of thought."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "USC Gould School of Law commencement address, 13 May 2007 (Poor Charlie's Almanack, Talk Ten)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-ten",
+      "text": "Another thing you have to do is have a lot of assiduity. I like that word because to me it means \"Sit down on your ass until you do it.\""
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Interview with Peter Kaufman, Poor Charlie's Almanack (Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "Spend each day trying to be a little wiser than you were when you woke up. Discharge your duties faithfully and well. Step by step you get ahead, but not necessarily in fast spurts."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Interview with Peter Kaufman, Poor Charlie's Almanack (Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "Life and its various passages can be hard, brutally hard. The three things I have found helpful in coping with its challenges are: Have low expectations. Have a sense of humor. Surround yourself with the love of friends and family."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Interview with Peter Kaufman, Poor Charlie's Almanack (Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "I have three basic rules — meeting all three is nearly impossible, but you should try anyway: Don't sell anything you wouldn't buy yourself. Don't work for anyone you don't respect and admire. Work only with people you enjoy."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Quoted by Warren Buffett as \"Charlie's dictum\" — 1996 Berkshire Hathaway shareholder letter",
+      "letter": 1996,
+      "text": "All I want to know is where I'm going to die so I'll never go there."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Harvard School commencement speech, 13 June 1986 (Poor Charlie's Almanack, Talk One)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-one",
+      "text": "It is in the nature of things, as Jacobi knew, that many hard problems are best solved only when they are addressed backward."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "You can't really know anything if you just remember isolated facts and try and bang 'em back. If the facts don't hang together on a latticework of theory, you don't have them in a usable form."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "You've got to have multiple models — because if you have just one or two that you're using, the nature of human psychology is such that you'll torture reality so that it fits your models, or at least you'll think it does."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "\"The Psychology of Human Misjudgment\" (Poor Charlie's Almanack, Talk Eleven, 2005 revision)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-eleven",
+      "text": "Never, ever, think about something else when you should be thinking about the power of incentives."
+    },
+    {
+      "who": "munger",
+      "topic": "Learning & thinking",
+      "source": "Poor Charlie's Almanack, Chapter Three: The Munger Approach",
+      "url": "https://stripe.press/poor-charlies-almanack/chapter-three",
+      "text": "It's kind of fun to sit there and outthink people who are way smarter than you are because you've trained yourself to be more objective and more multidisciplinary."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "Over the long term, it's hard for a stock to earn a much better return than the business that underlies it earns. If the business earns 6 percent on capital over 40 years and you hold it for that 40 years, you're not going to make much different than a 6 percent return, even if you originally buy it at a huge discount."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "The wise ones bet heavily when the world offers them that opportunity. They bet big when they have the odds. And the rest of the time, they don't. It's just that simple."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "You have to figure out what your own aptitudes are. If you play games where other people have the aptitudes and you don't, you're going to lose. And that's as close to certain as any prediction you can make."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "\"A Lesson on Elementary, Worldly Wisdom\", USC Business School, 14 April 1994 (Poor Charlie's Almanack, Talk Two)",
+      "url": "https://stripe.press/poor-charlies-almanack/talk-two",
+      "text": "If you sit on your ass for long, long stretches in great companies, you can get a huge edge from nothing but the way income taxes work."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "Poor Charlie's Almanack, Chapter Three: The Munger Approach",
+      "url": "https://stripe.press/poor-charlies-almanack/chapter-three",
+      "text": "We have three baskets for investing: yes, no, and too tough to understand."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "Poor Charlie's Almanack, Chapter Three: The Munger Approach",
+      "url": "https://stripe.press/poor-charlies-almanack/chapter-three",
+      "text": "The only way to win is to work, work, work, work, and hope to have a few insights."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "Poor Charlie's Almanack, Chapter Three: The Munger Approach",
+      "url": "https://stripe.press/poor-charlies-almanack/chapter-three",
+      "text": "[I practice] extreme patience combined with extreme decisiveness."
+    },
+    {
+      "who": "munger",
+      "topic": "Investing",
+      "source": "Munger's advice as recalled by Warren Buffett — 2014 Berkshire Hathaway shareholder letter",
+      "letter": 2014,
+      "text": "Forget what you know about buying fair businesses at wonderful prices; instead, buy wonderful businesses at fair prices."
+    },
+    {
+      "who": "munger",
+      "topic": "Character",
+      "source": "As quoted by Warren Buffett — 1994 Berkshire Hathaway shareholder letter",
+      "letter": 1994,
+      "text": "If something is not worth doing at all, it's not worth doing well."
+    },
+    {
+      "who": "munger",
+      "topic": "Character",
+      "source": "\"Charlie's dictum\", as quoted by Warren Buffett — 1995 Berkshire Hathaway shareholder letter",
+      "letter": 1995,
+      "text": "Just tell me the bad news; the good news will take care of itself."
+    },
+    {
+      "who": "munger",
+      "topic": "Character",
+      "source": "As recalled by Warren Buffett — 2014 Berkshire Hathaway shareholder letter",
+      "letter": 2014,
+      "text": "Warren, think it over and you'll agree with me because you're smart and I'm right."
+    }
+  ]
+}
