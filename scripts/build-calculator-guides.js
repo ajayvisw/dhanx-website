@@ -177,6 +177,7 @@ const NAV = (active) => `<nav>
     <a class="nav-link${active === 'calculators' ? ' active' : ''}" href="/calculators/">Free calculators</a>
     <a class="nav-link" href="/features">Features</a>
     <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/buffett-munger-quotes">Quotes</a>
     <a class="nav-link" href="/about">About</a>
     <a class="nav-cta" href="/early-access">Get early access</a>
   </div>
@@ -203,6 +204,7 @@ ${GUIDES.map((g) => `      <a href="/calculators/${g.slug}">${esc(g.h1)}</a>`).j
     <div class="footer-col">
       <h4>Company</h4>
       <a href="/about">About</a>
+      <a href="/buffett-munger-quotes">Buffett &amp; Munger quotes</a>
       <a href="/blog">Blogs &amp; Media</a>
     </div>
   </div>

@@ -205,6 +205,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     <a class="nav-link" href="features.html">Features</a>
     <a class="nav-link" href="blog.html">Blogs &amp; Media</a>
     <a class="nav-link" href="pricing.html">Pricing</a>
+    <a class="nav-link active" href="/buffett-munger-quotes">Quotes</a>
     <a class="nav-link" href="about.html">About</a>
     <a class="nav-link" href="early-access.html">Early access</a>
     <a class="nav-cta" href="early-access.html">Get early access</a>
