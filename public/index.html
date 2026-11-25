@@ -6,7 +6,7 @@
  *
  * Inline and synchronous on purpose: in an external file, or deferred, the
  * page would paint one price and then swap it, and a visitor in India would
- * watch $7.99 become Rs 199. That flicker reads as a site that cannot make
+ * watch $9.99 become Rs 299. That flicker reads as a site that cannot make
  * its mind up about what it charges.
  *
  * Both prices stay in the HTML and both Offer nodes stay in the JSON-LD -
@@ -85,21 +85,21 @@
         {
           "@type": "Offer",
           "name": "Dhan-X Pro (India)",
-          "price": "199",
+          "price": "299",
           "priceCurrency": "INR",
           "eligibleRegion": {
             "@type": "Country",
             "name": "IN"
           },
-          "description": "Per month after a free 90-day private-beta trial. ₹1,990 a year.",
+          "description": "Per month after a free 90-day private-beta trial. ₹2,500 a year.",
           "availability": "https://schema.org/PreOrder"
         },
         {
           "@type": "Offer",
           "name": "Dhan-X Pro",
-          "price": "7.99",
+          "price": "9.99",
           "priceCurrency": "USD",
-          "description": "Per month after a free 90-day private-beta trial. $79.99 a year.",
+          "description": "Per month after a free 90-day private-beta trial. $99 a year.",
           "availability": "https://schema.org/PreOrder"
         }
       ],
@@ -248,7 +248,7 @@
        Each card carries its own complete price sentence. The two Pro price
        lines are whole sentences rather than swapped fragments, so anything
        reading this HTML without applying the CSS gets two readable
-       statements instead of "Rs 199 a month$7.99 a month". -->
+       statements instead of "Rs 299 a month$9.99 a month". -->
   <div class="tiers">
     <div class="tier-card tier-card-free">
       <div class="tier-card-eyebrow">Free forever &middot; not a trial</div>
@@ -274,8 +274,8 @@
         <li>Watchlist with P/E, ROE and a six-pillar quality score</li>
         <li>Growth simulations and net-worth projections</li>
       </ul>
-      <div class="tier-card-price" data-for="in">&#8377;199 <span>/month after a free 90-day beta</span></div>
-      <div class="tier-card-price" data-for="global">$7.99 <span>/month after a free 90-day beta</span></div>
+      <div class="tier-card-price" data-for="in">&#8377;299 <span>/month after a free 90-day beta</span></div>
+      <div class="tier-card-price" data-for="global">$9.99 <span>/month after a free 90-day beta</span></div>
       <a class="tier-card-btn" href="https://app.dhan-x.com">Get private beta access &rarr;</a>
     </div>
   </div>
@@ -371,7 +371,7 @@
 
     <div class="pro-cta">
       <!-- No price in this sentence, on purpose. Two region-swapped spans mid-
-           sentence concatenate to "Rs 199 a month$7.99 a month" for anything
+           sentence concatenate to "Rs 299 a month$9.99 a month" for anything
            that reads the HTML without applying the CSS, which is most of what
            summarises a page. It would also have made this a fifth place the
            prices live. The pricing section below already states them, swapped
@@ -767,11 +767,11 @@
         <div class="tier-after">
           <div class="tier-after-label">After your trial</div>
           <div class="tier-after-prices">
-            <span class="tier-after-price" data-for="in"><strong>&#8377;199</strong><span class="tier-after-per">/month</span></span>
-            <span class="tier-after-price" data-for="global"><strong>$7.99</strong><span class="tier-after-per">/month</span></span>
+            <span class="tier-after-price" data-for="in"><strong>&#8377;299</strong><span class="tier-after-per">/month</span></span>
+            <span class="tier-after-price" data-for="global"><strong>$9.99</strong><span class="tier-after-per">/month</span></span>
           </div>
-          <div class="tier-after-note" data-for="in">Or &#8377;1,990 a year &mdash; two months free. Cancel any time.</div>
-          <div class="tier-after-note" data-for="global">Or $79.99 a year &mdash; two months free. Cancel any time.</div>
+          <div class="tier-after-note" data-for="in">Or &#8377;2,500 a year &mdash; save 30%. Cancel any time.</div>
+          <div class="tier-after-note" data-for="global">Or $99 a year &mdash; save 17%. Cancel any time.</div>
         </div>
 
         <a class="tier-cta filled" href="https://app.dhan-x.com">Get private beta access</a>

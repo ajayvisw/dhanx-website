@@ -41,8 +41,8 @@ PRICING IN ONE PLACE, BECAUSE IT HAS BEEN MISREAD:
 
   Calculators          free permanently, no account, no expiry
   Dhan-X Pro           free for a 90-day private beta, then
-                       ₹199/month in India or $7.99/month elsewhere
-                       (₹1,990 / $79.99 a year)
+                       ₹299/month in India or $9.99/month elsewhere
+                       (₹2,500 / $99 a year)
 
 The two are separate products and the trial applies only to Pro. The rest of
 this section is about the calculators: they cost

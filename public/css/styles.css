@@ -486,7 +486,7 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
 
 /* ── Post-trial price, inside the Pro tier ───────────────────────────────
    Set apart from the trial headline above it so the eye does not read
-   "90 days ... ₹199" as one price. Muted panel rather than another accent
+   "90 days ... ₹299" as one price. Muted panel rather than another accent
    block: the free tier already owns the teal on this page, and a second
    bright element here would compete with it. */
 .tier-after {
