@@ -167,7 +167,7 @@ function faqFromBlock(body) {
 
 const NAV = (active) => `<nav>
   <a href="/" class="nav-logo">
-    <img src="/images/dhanx-logo-transparent.png" alt="Dhan-X">
+    <img src="/images/dhanx-logo-nav.png" alt="Dhan-X">
   </a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>

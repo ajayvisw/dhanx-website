@@ -268,7 +268,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 <!-- SHARED NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="images/dhanx-logo-transparent.png" alt="Dhan-X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img src="images/dhanx-logo-nav.png" alt="Dhan-X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="nav-logo-fallback" style="display:none">
       <div class="nav-logo-icon">X</div>
       <div class="nav-logo-text">Dhan<span>-X</span></div>
