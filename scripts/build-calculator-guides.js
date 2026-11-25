@@ -241,6 +241,14 @@ function head(title, desc, canonical, jsonld) {
 <script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8YY70JNNB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F8YY70JNNB');
+</script>
 </head>
 <body>
 ${NAV('calculators')}`;

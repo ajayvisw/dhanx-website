@@ -255,12 +255,12 @@ ${JSON.stringify(jsonLd, null, 2)}
   }
 </style>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YS94SZRWD"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8YY70JNNB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-8YS94SZRWD');
+  gtag('config', 'G-F8YY70JNNB');
 </script>
 </head>
 <body>
