@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Dhan-X in Claude or ChatGPT (MCP) — Dhan-X</title>
+<link rel="canonical" href="https://dhan-x.com/ai-assistant"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://dhan-x.com/ai-assistant#page",
+      "url": "https://dhan-x.com/ai-assistant",
+      "isPartOf": {
+        "@id": "https://dhan-x.com/#website"
+      },
+      "publisher": {
+        "@id": "https://dhan-x.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dhan-x.com/#org",
+      "name": "Dhan-X",
+      "url": "https://dhan-x.com/",
+      "logo": "https://dhan-x.com/images/dhanx-logo-transparent.png",
+      "description": "Personal-finance planning for people whose money sits in more than one country. Brings Indian and US investments into one net-worth view.",
+      "areaServed": [
+        "IN",
+        "US"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dhan-x.com/#website",
+      "url": "https://dhan-x.com/",
+      "name": "Dhan-X",
+      "publisher": {
+        "@id": "https://dhan-x.com/#org"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+
+<meta name="description" content="Connect Dhan-X to Claude or ChatGPT through MCP and ask questions grounded in your own portfolio, watchlist and planning data. Read-only, with your sign-in and consent.">
+<meta property="og:title" content="Use Dhan-X in Claude or ChatGPT">
+<meta property="og:description" content="Ask your own AI assistant about your own money. Read-only, with your consent.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dhan-x.com/ai-assistant">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YS94SZRWD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8YS94SZRWD');
+</script>
+</head>
+<body>
+
+<!-- SHARED NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="images/dhanx-logo-transparent.png" alt="Dhan-X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="nav-logo-fallback" style="display:none">
+      <div class="nav-logo-icon">X</div>
+      <div class="nav-logo-text">Dhan<span>-X</span></div>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="/calculators/">Free calculators</a>
+    <a class="nav-link" href="/#pricing">Pricing</a>
+    <a class="nav-link" href="/blog">Blogs &amp; Media</a>
+    <a class="nav-link" href="/buffett-munger-quotes">Inspiring quotes</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="early-access.html">Get early access</a>
+  </div>
+</nav>
+
+<main>
+  <section class="section mcp-section" id="mcp" aria-labelledby="mcp-title">
+    <div class="mcp-header">
+      <div>
+        <div class="section-label">Dhan-X MCP</div>
+        <h2 class="section-title" id="mcp-title">Bring your wealth context<br>into <span class="accent">the chat you already use.</span></h2>
+      </div>
+      <p class="section-sub">Connect Dhan-X to a compatible AI client through the Model Context Protocol (MCP), then ask questions grounded in your own portfolio, research and planning data.</p>
+    </div>
+
+    <p class="mcp-prerequisite"><strong>Before you begin:</strong> sign in to Dhan-X and make sure the accounts you want to discuss have been added. You will approve the AI connection separately.</p>
+
+    <div class="mcp-client-grid">
+      <article class="mcp-client-card">
+        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark chatgpt-mark"><img src="images/openai-symbol.svg" alt="OpenAI"></span><span>ChatGPT</span></div><span class="mcp-status">MCP connection</span></div>
+        <h3>Connect Dhan-X in ChatGPT</h3>
+        <ol class="mcp-instructions">
+          <li><strong>Open Apps in ChatGPT settings.</strong> Choose the option to add a custom app or connector.</li>
+          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and choose Connect.</li>
+          <li><strong>Sign in and approve.</strong> Log in to Dhan-X and consent to the read-only access request.</li>
+        </ol>
+      </article>
+      <article class="mcp-client-card">
+        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark claude-mark"><img src="images/claude-symbol.svg" alt="Claude"></span><span>Claude <small>by Anthropic</small></span></div><span class="mcp-status">MCP connection</span></div>
+        <h3>Connect Dhan-X in Claude</h3>
+        <ol class="mcp-instructions">
+          <li><strong>Open Connectors in Claude settings.</strong> Choose to add a custom connector.</li>
+          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and continue to Dhan-X sign-in.</li>
+          <li><strong>Approve read-only access.</strong> Return to Claude and ask a portfolio, research or planning question.</li>
+        </ol>
+      </article>
+    </div>
+
+    <div class="mcp-flow" aria-label="How the Dhan-X MCP connection works">
+      <div class="mcp-step"><span class="mcp-number">01</span><div><h3>Connect your account</h3><p>Sign in to Dhan-X from your AI client and explicitly approve the connection.</p></div></div>
+      <div class="mcp-step"><span class="mcp-number">02</span><div><h3>Choose the question</h3><p>Ask about your holdings, allocation, watchlist, net worth or saved planning scenarios.</p></div></div>
+      <div class="mcp-step"><span class="mcp-number">03</span><div><h3>Get a grounded answer</h3><p>Your assistant can use the Dhan-X tools you authorised to answer with relevant context.</p></div></div>
+    </div>
+
+    <div class="mcp-safety">
+      <span class="mcp-lock">⌁</span>
+      <p><strong>Your connection stays in your control.</strong> Dhan-X MCP is read-only, requires your sign-in and consent, and can be disconnected whenever you choose.</p>
+      <a class="mcp-cta" href="https://app.dhan-x.com">Connect Dhan-X <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<div class="disclaimer">Dhan-X is a financial planning and analysis tool for informational and educational purposes only. It does not constitute investment advice, tax advice, or a solicitation to buy or sell any security. Please consult a qualified financial adviser before making investment decisions.</div>
+
+<!-- SHARED FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/dhanx-logo-transparent.png" alt="Dhan-X" onerror="this.style.display='none'">
+      <p>Your personal finance coach — for every account, every market, every decision.</p>
+      <p class="footer-tagline">Your Wealth Deserves the X Factor</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/calculators/">Free calculators</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="early-access.html">Early access</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="/buffett-munger-quotes">Buffett &amp; Munger quotes</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Dhan-X. All rights reserved.</p>
+    <p>dhan-x.com</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

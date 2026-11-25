@@ -21,6 +21,7 @@ https://app.dhan-x.com/llms.txt
 - [Home](https://dhan-x.com/): What Dhan-X does, who it is for, and pricing.
 - [Features](https://dhan-x.com/features): Every tool in the product, described one by one.
 - [About](https://dhan-x.com/about): Why it exists, who builds it, and the privacy stance.
+- [Use Dhan-X in Claude or ChatGPT](https://dhan-x.com/ai-assistant): How to connect Dhan-X to an AI assistant over MCP — read-only, with the user's sign-in and consent.
 - [Warren Buffett & Charlie Munger quotes](https://dhan-x.com/buffett-munger-quotes): 75 quotes, each checked word for word against the Berkshire Hathaway shareholder letter or Munger talk it comes from, with a link to that source.
 - [Blogs & Media](https://dhan-x.com/blog): Written companions to the API TO ROI video archive — explainers on investing, markets and personal finance.
 

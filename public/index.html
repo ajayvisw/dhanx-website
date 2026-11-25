@@ -178,6 +178,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YS94SZRWD"></script>
 <script>
@@ -191,7 +192,7 @@
 
 <!-- SHARED NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="images/dhanx-logo-transparent.png" alt="Dhan-X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="nav-logo-fallback" style="display:none">
       <div class="nav-logo-icon">X</div>
@@ -202,446 +203,232 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a class="nav-link active" href="index.html">Home</a><a class="nav-link" href="/calculators/">Free calculators</a>
-    <a class="nav-link" href="features.html">Features</a>
-    <a class="nav-link" href="#mcp">MCP</a>
-    <a class="nav-link" href="blog.html">Blogs &amp; Media</a>
-    <a class="nav-link" href="#pricing">Pricing</a>
-    <a class="nav-link" href="/buffett-munger-quotes">Quotes</a>
-    <a class="nav-link" href="about.html">About</a>
-    <a class="nav-link" href="#feedback">Product feedback</a>
-    <a class="nav-cta" href="https://app.dhan-x.com">Get Private Beta Access</a>
+    <a class="nav-link" href="/calculators/">Free calculators</a>
+    <a class="nav-link" href="/#pricing">Pricing</a>
+    <a class="nav-link" href="/blog">Blogs &amp; Media</a>
+    <a class="nav-link" href="/buffett-munger-quotes">Inspiring quotes</a>
+    <a class="nav-link" href="/about">About</a>
+    <a class="nav-cta" href="https://app.dhan-x.com">Get early access</a>
   </div>
 </nav>
 
-<!-- HOME -->
-<main>
-  <div class="hero">
-    <div class="badge">&#10024; Your personal finance coach</div>
-    <h1>For every account.<br>Every market.<br><span class="accent">Every decision.</span></h1>
-    <div class="hero-sub">YOUR WEALTH DESERVES THE X FACTOR</div>
-    <p>Dhan-X brings all your investments together — mutual funds, US stocks, real estate, gold — and gives you an AI coach to make sense of it all.</p>
-    <div class="hero-btns single">
-      <a class="btn-primary" href="https://app.dhan-x.com">Get Private Beta Access &rarr;</a>
-    </div>
-    <p class="hero-cta-note">Two products below: calculators that are <strong>free forever</strong>, and <strong>Dhan-X Pro</strong> in private beta.</p>
-    <div class="hero-trust">
-      <span class="trust-item"><span class="ic">&#128274;</span> AES-256 encrypted</span>
-      <span class="trust-item"><span class="ic">&#128737;&#65039;</span> SOC 2 certified partners</span>
-      <span class="trust-item"><span class="ic">&#128273;</span> Zero credential storage</span>
-    </div>
-  </div>
+<!-- HOME
+     Redesigned 2026-11: one message per screen, larger type (css/home.css).
+     Order: three tools -> what each includes -> questions -> pricing ->
+     quotes -> feedback. The MCP setup guide moved to /ai-assistant. -->
+<main class="hp">
+  <div class="hp-wrap">
 
-  <!-- THE TWO TIERS, SIDE BY SIDE
-       Dhan-X is two products and the page has to say so before it says
-       anything else. The calculators are free permanently and need no
-       account; Dhan-X Pro is the paid product, currently a free 90-day beta.
-       Showing them as one pair, in one glance, is what stops "90 days" being
-       read as the price of everything - which is exactly the mistake an
-       assistant made when asked to compare Dhan-X with other tools, and the
-       reason it declined to say anything here was free.
+    <!-- 1. THREE TOOLS IN ONE -->
+    <section class="hp-hero" aria-labelledby="hp-title">
+      <h1 id="hp-title">Three tools.<br><span class="accent">One home for your wealth.</span></h1>
+      <p class="hp-hero-lede">Add your US and Indian investments, find great stocks anywhere in the world, and plan your big decisions — all in Dhan-X.</p>
 
-       The free card keeps the teal. Pro takes the orange so the two read as
-       a choice between two things rather than a headline and a footnote;
-       neither outranks the other visually.
+      <div class="hp-tools">
+        <a class="hp-tool" href="#investments">
+          <div class="hp-tool-top"><span class="hp-num">01</span><span class="hp-tag">Pro</span></div>
+          <h2>Track all your investments</h2>
+          <p>Add your US and Indian accounts and see them as one net worth.</p>
+          <span class="hp-tool-more">What's included &darr;</span>
+        </a>
+        <a class="hp-tool" href="#discover">
+          <div class="hp-tool-top"><span class="hp-num">02</span><span class="hp-tag">Pro</span></div>
+          <h2>Discover great stocks</h2>
+          <p>Tell us what you want. We find stocks that match, wherever in the world they're listed.</p>
+          <span class="hp-tool-more">What's included &darr;</span>
+        </a>
+        <a class="hp-tool hp-tool-free" href="#plan">
+          <div class="hp-tool-top"><span class="hp-num">03</span><span class="hp-tag hp-tag-free">Free</span></div>
+          <h2>Plan big decisions</h2>
+          <p>Calculators for buying a home, retiring early and more. No sign-up.</p>
+          <span class="hp-tool-more">What's included &darr;</span>
+        </a>
+      </div>
 
-       Each card carries its own complete price sentence. The two Pro price
-       lines are whole sentences rather than swapped fragments, so anything
-       reading this HTML without applying the CSS gets two readable
-       statements instead of "Rs 299 a month$9.99 a month". -->
-  <div class="tiers">
-    <div class="tier-card tier-card-free">
-      <div class="tier-card-eyebrow">Free forever &middot; not a trial</div>
-      <h2 class="tier-card-title">Seven financial calculators</h2>
-      <p class="tier-card-copy">Rent vs buy, FIRE, property XIRR, real estate vs equities and budgeting &mdash; built for Indian and US investors.</p>
-      <ul class="tier-card-list">
-        <li>No sign-up to get a result</li>
-        <li>No credit card, ever</li>
-        <li>No time limit &mdash; free today, free later</li>
-      </ul>
-      <div class="tier-card-price" data-for="in">&#8377;0 <span>forever</span></div>
-      <div class="tier-card-price" data-for="global">$0 <span>forever</span></div>
-      <a class="tier-card-btn" href="/calculators/">Open the free calculators &rarr;</a>
-    </div>
+      <div class="hp-hero-cta">
+        <a class="hp-btn" href="https://app.dhan-x.com">Get early access</a>
+        <span class="hp-trust">Pro is free for 90 days &middot; AES-256 encrypted &middot; We never store your passwords</span>
+      </div>
+    </section>
 
-    <div class="tier-card tier-card-pro">
-      <div class="tier-card-eyebrow">Dhan-X Pro &middot; private beta</div>
-      <h2 class="tier-card-title">Your real accounts, not assumptions</h2>
-      <p class="tier-card-copy">A calculator works on numbers you type in. Pro works on the money you actually hold, across India and the US, and keeps answering as it moves.</p>
-      <ul class="tier-card-list">
-        <li>US brokerages and India funds in one net worth</li>
-        <li>Ask for stocks in plain English &mdash; screener finds them</li>
-        <li>Watchlist with P/E, ROE and a six-pillar quality score</li>
-        <li>Growth simulations and net-worth projections</li>
-      </ul>
-      <div class="tier-card-price" data-for="in">&#8377;299 <span>/month after a free 90-day beta</span></div>
-      <div class="tier-card-price" data-for="global">$9.99 <span>/month after a free 90-day beta</span></div>
-      <a class="tier-card-btn" href="https://app.dhan-x.com">Get private beta access &rarr;</a>
-    </div>
-  </div>
+    <!-- 2. WHAT EACH TOOL INCLUDES -->
+    <section class="hp-modules" aria-labelledby="hp-modules-title">
+      <div class="hp-section-head">
+        <h2 id="hp-modules-title">What&rsquo;s inside <span class="accent">each tool</span></h2>
+        <p>Use one, or all three together.</p>
+      </div>
 
-  <!-- DASHBOARD PREVIEW
-       Now below the two tiers rather than above them. It is a picture of
-       Pro, so it was previously doing the job of a headline - a large net
-       worth figure, with no label, before the reader had been told what
-       product it belonged to or that anything here was free.
-
-       The caption is what stops it reading as a claim about the visitor's
-       own money, which a bare "$1,364,289" at the top of a page invites. -->
-  <p class="dashboard-caption">A look at Dhan-X Pro &mdash; sample data</p>
-  <div class="dashboard">
-    <div class="dash-card">
-      <div class="dash-top">
+      <section class="hp-module" id="investments" aria-labelledby="hp-m1">
         <div>
-          <div class="dash-label">Total net worth</div>
-          <div class="dash-value" data-for="in">&#8377;11.46 Cr</div>
-          <div class="dash-value" data-for="global">$1,364,289</div>
+          <div class="hp-module-head"><span class="hp-num">01</span><span class="hp-tag">Pro</span></div>
+          <h3 class="hp-module-title" id="hp-m1">Track all your investments, US&nbsp;+&nbsp;India</h3>
+          <p class="hp-module-lede">Add every account you hold in the US and in India. Dhan-X adds them up into one net worth and keeps it current.</p>
+          <div class="hp-sample" aria-label="Sample net worth">
+            <div class="hp-sample-cap">Total net worth &middot; sample data</div>
+            <div class="hp-sample-big">&#8377;11.46 Cr</div>
+            <div class="hp-bar" aria-hidden="true">
+              <span style="flex:47;background:var(--teal)"></span><span style="flex:21;background:#00a886"></span><span style="flex:20;background:var(--orange)"></span><span style="flex:12;background:#6b7a8d"></span>
+            </div>
+            <div class="hp-bar-key"><span>US equity &#8377;5.39 Cr</span><span>India MFs &#8377;2.41 Cr</span><span>Real estate &#8377;2.31 Cr</span><span>ETFs &#8377;1.34 Cr</span></div>
+          </div>
         </div>
-        <span class="dash-pill">+12.4% YTD</span>
-      </div>
-      <div class="dash-breakdown">
-        <div class="dash-cell"><div class="k">US Equity</div><div class="v" data-for="in">&#8377;5.39 Cr</div><div class="v" data-for="global">$642K</div></div>
-        <div class="dash-cell"><div class="k">India MF</div><div class="v" data-for="in">&#8377;2.41 Cr</div><div class="v" data-for="global">$287K</div></div>
-        <div class="dash-cell"><div class="k">Real estate</div><div class="v" data-for="in">&#8377;2.31 Cr</div><div class="v" data-for="global">$275K</div></div>
-        <div class="dash-cell"><div class="k">ETFs</div><div class="v" data-for="in">&#8377;1.34 Cr</div><div class="v" data-for="global">$160K</div></div>
-      </div>
-      <div class="dash-insights">
-        <div class="ai-insight amber">
-          <span class="ic">&#10024;</span>
-          <div><strong>AI Insight:</strong> MSFT represents 31% of your portfolio. Consider diversifying to reduce concentration risk.</div>
-        </div>
-        <div class="ai-insight green">
-          <span class="ic">&#10024;</span>
-          <div data-for="in"><strong>AI Insight:</strong> Your Bengaluru flat yields 3.1% gross rental income — below the 3.8% you would get from a comparable US suburb.</div>
-          <div data-for="global"><strong>AI Insight:</strong> Your Dallas property yields 4.2% gross rental income — above the 3.8% US average for comparable suburbs.</div>
-        </div>
-        <div class="ai-insight purple">
-          <span class="ic">&#10024;</span>
-          <div><strong>AI Insight:</strong> VOO and CSPX have 0.03% and 0.07% expense ratios — well-optimized. Consider consolidating similar S&amp;P 500 exposure to reduce overlap.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHAT DHAN-X PRO IS
-       Sits directly under the dashboard, which is a picture of Pro: the page
-       showed what the paid product looks like without ever saying what it is
-       or who it is for. The free band above answers that for the
-       calculators; this is its counterpart.
-
-       It also fixes a quieter problem. Every "Get Private Beta Access" button
-       on the page - the nav, the hero, the pricing tier - reads as access to
-       Dhan-X generally, which made the private beta sound like the only way
-       in. The calculators need no account at all. Saying "the private beta is
-       Dhan-X Pro" once, plainly, is what separates the two. -->
-  <div class="section pro-intro">
-    <div class="section-label">Dhan-X Pro</div>
-    <div class="section-title">Your real accounts, not <span class="accent">assumptions.</span></div>
-    <div class="section-sub">A calculator works on the numbers you type into it. Dhan-X Pro works on the money you actually hold &mdash; Indian funds, US brokerages, property and the rest &mdash; and keeps answering as those balances move.</div>
-
-    <div class="pro-grid">
-      <div class="pro-col">
-        <div class="pro-col-label">Your complete financial picture</div>
-        <ul class="pro-list">
-          <li>US brokerage sync</li>
-          <li>India mutual funds via CAS</li>
-          <li>Real estate &amp; offline assets</li>
-          <li>Net worth in 6 currencies</li>
+        <ul class="hp-includes">
+          <li><strong>US investments</strong><span>Connect brokerages like Schwab and Vanguard securely.</span></li>
+          <li><strong>Indian investments</strong><span>Mutual funds and demat holdings, read straight from your CAS statement email.</span></li>
+          <li><strong>Property, gold and the rest</strong><span>Add anything offline so the total is truly total.</span></li>
+          <li><strong>Net worth in 6 currencies</strong><span>One number in rupees, dollars or four others.</span></li>
+          <li><strong>True XIRR on every account</strong><span>Your real annual return, not a simple gain.</span></li>
+          <li><strong>Fund fees laid bare</strong><span>What regular plans cost you against direct ones.</span></li>
         </ul>
-      </div>
-      <div class="pro-col">
-        <div class="pro-col-label">Find and follow stocks</div>
-        <ul class="pro-list">
-          <li>Plain-English screener &mdash; &ldquo;profitable Indian banks with low debt&rdquo;</li>
-          <li>Watchlist with P/E, ROE and revenue side by side</li>
-          <li>Six-pillar quality score from audited financials</li>
-          <li>US and Indian listings in the same search</li>
+      </section>
+
+      <section class="hp-module" id="discover" aria-labelledby="hp-m2">
+        <div>
+          <div class="hp-module-head"><span class="hp-num">02</span><span class="hp-tag">Pro</span></div>
+          <h3 class="hp-module-title" id="hp-m2">Discover great stocks, anywhere in the world</h3>
+          <p class="hp-module-lede">Describe what you&rsquo;re looking for in plain English. Dhan-X finds the stocks that fit, wherever they&rsquo;re listed, and helps you follow them.</p>
+          <div class="hp-sample" aria-label="Sample screener result">
+            <div class="hp-sample-cap">&ldquo;Profitable Indian banks with low debt&rdquo;</div>
+            <div class="hp-row"><span>HDFC Bank &middot; ROE 16.8%</span><b>8.6 / 10</b></div>
+            <div class="hp-row"><span>ICICI Bank &middot; ROE 18.2%</span><b>8.3 / 10</b></div>
+            <div class="hp-row"><span>Kotak Mahindra &middot; ROE 15.1%</span><b>7.7 / 10</b></div>
+          </div>
+        </div>
+        <ul class="hp-includes">
+          <li><strong>Found for you, from your criteria</strong><span>Ask in plain English; the AI screener does the searching.</span></li>
+          <li><strong>Listed anywhere in the world</strong><span>US, Indian and other markets in one search, compared on the same terms.</span></li>
+          <li><strong>Six-pillar quality score</strong><span>Every stock scored out of 10 from audited financials.</span></li>
+          <li><strong>Watchlist with fundamentals</strong><span>P/E, ROE and revenue growth side by side.</span></li>
+          <li><strong>Price and move alerts</strong><span>An email when a stock hits your price or moves sharply.</span></li>
+          <li><strong>Growth of &#8377;1 vs the index</strong><span>See whether a stock really beat the Nifty or the S&amp;P 500.</span></li>
         </ul>
-      </div>
-      <div class="pro-col">
-        <div class="pro-col-label">See it compound</div>
-        <ul class="pro-list">
-          <li>Growth of a single rupee or dollar, since inception</li>
-          <li>Net-worth projection across decades</li>
-          <li>XIRR across every account you hold</li>
-          <li>TER analysis on Indian funds</li>
+      </section>
+
+      <section class="hp-module" id="plan" aria-labelledby="hp-m3">
+        <div>
+          <div class="hp-module-head"><span class="hp-num">03</span><span class="hp-tag hp-tag-free">Free forever</span></div>
+          <h3 class="hp-module-title" id="hp-m3">Plan big decisions</h3>
+          <p class="hp-module-lede">Seven calculators built for investors in India and the US. No sign-up, no card, no time limit.</p>
+          <a class="hp-btn" href="/calculators/" style="margin-top:32px">Open the calculators</a>
+        </div>
+        <ul class="hp-includes">
+          <li><strong>Rent vs buy</strong><span>When buying a home actually beats renting.</span></li>
+          <li><strong>Financial independence</strong><span>Your number, and how many years away it is.</span></li>
+          <li><strong>Investment XIRR</strong><span>Your true return on SIPs and irregular investments.</span></li>
+          <li><strong>Property XIRR</strong><span>What a property really earned, rent and costs included.</span></li>
+          <li><strong>Real estate vs equities</strong><span>Four property strategies against investing the money.</span></li>
+          <li><strong>Budget planner</strong><span>What you earn, spend, and can comfortably invest.</span></li>
         </ul>
+      </section>
+
+      <div class="hp-ai">
+        <div>
+          <h3>Works with your AI assistant</h3>
+          <p>Connect Dhan-X to Claude or ChatGPT and ask about all three &mdash; read-only, with your consent.</p>
+        </div>
+        <a class="hp-btn-ghost" href="/ai-assistant">How it works</a>
       </div>
-    </div>
+    </section>
 
-    <div class="pro-cta">
-      <!-- No price in this sentence, on purpose. Two region-swapped spans mid-
-           sentence concatenate to "Rs 299 a month$9.99 a month" for anything
-           that reads the HTML without applying the CSS, which is most of what
-           summarises a page. It would also have made this a fifth place the
-           prices live. The pricing section below already states them, swapped
-           by region, in a panel built for it. -->
-      <p class="pro-cta-text"><strong>The private beta is Dhan-X Pro.</strong> Free for 90 days, no credit card, and you see the price before it ends. The seven calculators stay free either way and never need an account.</p>
-      <a class="pro-cta-btn" href="https://app.dhan-x.com">Get private beta access &rarr;</a>
-    </div>
-  </div>
-
-  <!-- SAMPLE PRODUCT VIEWS
-       The page described Pro in bullet points and showed one net-worth card.
-       Bullets do not convey what a screener feels like to use, and "AI
-       portfolio analysis" means nothing until you have seen a question go in
-       and stocks come out.
-
-       These are hand-built HTML, not screenshots, for the same reason the
-       dashboard above is: a screenshot goes stale the moment the UI moves,
-       cannot be read by a crawler, carries no text to index, and looks soft
-       on a retina display. Everything here is real markup and real type.
-
-       The figures are illustrative and labelled as such on every panel.
-       Nothing here should be read as a return anyone actually earned. -->
-  <div class="section showcase">
-    <div class="section-label">See it in action</div>
-    <div class="section-title">What Pro actually <span class="accent">looks like.</span></div>
-    <div class="section-sub">Three of the views you get on day one. Sample data throughout.</div>
-
-    <div class="shots">
-
-      <!-- 1. Natural-language screener -->
-      <figure class="shot">
-        <div class="shot-chrome"><span></span><span></span><span></span><em>Stock screener</em></div>
-        <div class="shot-body">
-          <div class="shot-prompt">
-            <span class="shot-prompt-ic">&#10024;</span>
-            <span>Profitable Indian banks with low debt and ROE above 15%</span>
-          </div>
-          <div class="shot-rows">
-            <div class="shot-row shot-row-head"><span>Company</span><span>ROE</span><span>D/E</span><span>Score /10</span></div>
-            <div class="shot-row"><span>HDFC Bank</span><span>16.8%</span><span>0.21</span><span class="pill good">8.6</span></div>
-            <div class="shot-row"><span>ICICI Bank</span><span>18.2%</span><span>0.28</span><span class="pill good">8.3</span></div>
-            <div class="shot-row"><span>Kotak Mahindra</span><span>15.1%</span><span>0.19</span><span class="pill ok">7.7</span></div>
-          </div>
-        </div>
-        <figcaption>Ask in plain English. Dhan-X reads audited financials, not forum sentiment.</figcaption>
-      </figure>
-
-      <!-- 2. Watchlist with fundamentals -->
-      <figure class="shot">
-        <div class="shot-chrome"><span></span><span></span><span></span><em>Watchlist</em></div>
-        <div class="shot-body">
-          <div class="shot-rows">
-            <div class="shot-row shot-row-head wl"><span>Ticker</span><span>P/E</span><span>ROE</span><span>Rev growth</span><span>Quality /10</span></div>
-            <div class="shot-row wl"><span>MSFT</span><span>34.2</span><span>35.1%</span><span>+15.7%</span><span class="pill good">9.1</span></div>
-            <div class="shot-row wl"><span>TCS</span><span>28.6</span><span>46.3%</span><span>+6.8%</span><span class="pill good">8.8</span></div>
-            <div class="shot-row wl"><span>AAPL</span><span>31.9</span><span>147%</span><span>+4.1%</span><span class="pill good">8.4</span></div>
-            <div class="shot-row wl"><span>RELIANCE</span><span>24.1</span><span>9.2%</span><span>+7.4%</span><span class="pill ok">6.9</span></div>
-          </div>
-        </div>
-        <figcaption>US and Indian listings in one list, scored on the same six pillars.</figcaption>
-      </figure>
-
-      <!-- 3. Growth since inception -->
-      <figure class="shot">
-        <div class="shot-chrome"><span></span><span></span><span></span><em>Growth of <span data-for="in">&#8377;1</span><span data-for="global">$1</span></em></div>
-        <div class="shot-body">
-          <div class="shot-bars">
-            <div class="bar-row"><span class="bar-name">TCS</span><span class="bar-track"><span class="bar-fill" style="width:92%"></span></span><span class="bar-val"><span data-for="in">&#8377;41</span><span data-for="global">$41</span></span></div>
-            <div class="bar-row"><span class="bar-name">AAPL</span><span class="bar-track"><span class="bar-fill" style="width:78%"></span></span><span class="bar-val"><span data-for="in">&#8377;34</span><span data-for="global">$34</span></span></div>
-            <div class="bar-row"><span class="bar-name">HDFC Bank</span><span class="bar-track"><span class="bar-fill" style="width:52%"></span></span><span class="bar-val"><span data-for="in">&#8377;23</span><span data-for="global">$23</span></span></div>
-            <div class="bar-row"><span class="bar-name">NIFTY 50</span><span class="bar-track"><span class="bar-fill muted" style="width:27%"></span></span><span class="bar-val"><span data-for="in">&#8377;12</span><span data-for="global">$12</span></span></div>
-            <div class="bar-row"><span class="bar-name">S&amp;P 500</span><span class="bar-track"><span class="bar-fill muted" style="width:23%"></span></span><span class="bar-val"><span data-for="in">&#8377;10</span><span data-for="global">$10</span></span></div>
-          </div>
-        </div>
-        <figcaption>One unit invested 20 years ago, against the index it should have beaten.</figcaption>
-      </figure>
-
-    </div>
-    <p class="shots-note">Illustrative figures for layout. Live values come from audited financials and market data once you connect an account.</p>
-  </div>
-
-  <!-- ONE PLATFORM. EVERY ASSET. -->
-  <div class="section">
-    <div class="section-label">One platform</div>
-    <div class="section-title">One platform. Every asset.</div>
-    <div class="section-sub">X-ray for all your investments and decisions.</div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon icon-emerald">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
-            <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
-          </svg>
-        </div>
-        <h3>Consolidated view</h3>
-        <p>Schwab, Vanguard, India MFs, real estate — all in one clean dashboard.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon icon-purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3 L14.26 9.74 L21 12 L14.26 14.26 L12 21 L9.74 14.26 L3 12 L9.74 9.74 Z"/>
-          </svg>
-        </div>
-        <h3>AI portfolio analysis</h3>
-        <p>Ask Claude about your portfolio in plain English. Get insights, not spreadsheets.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon icon-amber">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-        <h3>Buffett-Graham scoring</h3>
-        <p>Proprietary quality score on any stock. Six pillars, one clear verdict.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRUSTED DATA INFRASTRUCTURE -->
-  <div class="section section-alt">
-    <div class="section-label">Security &amp; compliance</div>
-    <div class="section-title">Trusted data infrastructure</div>
-    <div class="partners">
-      <div class="partner-group">
-        <div class="partner-group-label">SOC 2 certified data partners</div>
-        <div class="partner-row">
-          <div class="partner"><span class="partner-name">Sophtron</span><span class="partner-role">US brokerage aggregation</span></div>
-          <div class="partner"><span class="partner-name">CASParser</span><span class="partner-role">India mutual fund data</span></div>
-          <div class="partner"><span class="partner-name">Clerk</span><span class="partner-role">Authentication</span></div>
-          <div class="partner"><span class="partner-name">Anthropic</span><span class="partner-role">AI infrastructure</span></div>
-        </div>
-      </div>
-      <div class="partner-divider"></div>
-      <div class="partner-group">
-        <div class="partner-group-label">ISO 27001-aligned market data</div>
-        <div class="partner-row">
-          <div class="partner"><span class="partner-name">Twelve Data</span><span class="partner-role">Real-time stock prices and fundamentals — aligns with ISO/IEC 27001, NIST CSF, CIS Controls, and follows GDPR/PDPA.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MCP CONNECTORS -->
-  <section class="section mcp-section" id="mcp" aria-labelledby="mcp-title">
-    <div class="mcp-header">
+    <!-- 3. REAL QUESTIONS -->
+    <section class="hp-questions" aria-labelledby="hp-q-title">
       <div>
-        <div class="section-label">Dhan-X MCP</div>
-        <h2 class="section-title" id="mcp-title">Bring your wealth context<br>into <span class="accent">the chat you already use.</span></h2>
+        <h2 id="hp-q-title">Real questions.<br><span class="accent">Real answers.</span></h2>
+        <p class="hp-questions-lede">From big life decisions to small portfolio tweaks, Dhan-X gives you the numbers and the context to decide.</p>
       </div>
-      <p class="section-sub">Connect Dhan-X to a compatible AI client through the Model Context Protocol (MCP), then ask questions grounded in your own portfolio, research and planning data.</p>
-    </div>
+      <div>
+        <details class="hp-q" open>
+          <summary>Should I buy a house now or keep renting?</summary>
+          <div class="hp-q-body"><p>Dhan-X runs the full rent vs buy analysis with your actual rent, home price and investment return, and tells you when buying makes sense.</p><a class="hp-link" href="/calculators/rent-vs-buy">Rent vs buy calculator &rarr;</a></div>
+        </details>
+        <details class="hp-q">
+          <summary>Am I paying too much in mutual fund fees?</summary>
+          <div class="hp-q-body"><p>See how much regular plans cost you against direct plans, and exactly how much you would save by switching.</p><a class="hp-link" href="https://app.dhan-x.com">Check your fund fees &rarr;</a></div>
+        </details>
+        <details class="hp-q">
+          <summary>What is my real net worth across every account?</summary>
+          <div class="hp-q-body"><p>Connect your Indian funds and US brokerage, add property and gold, and get one number in rupees or dollars.</p><a class="hp-link" href="#investments">Track all your investments &rarr;</a></div>
+        </details>
+        <details class="hp-q">
+          <summary>How much do I need to retire?</summary>
+          <div class="hp-q-body"><p>Enter your monthly expenses, expected returns and inflation. The calculator gives you your number and how many years away it is.</p><a class="hp-link" href="/calculators/financial-independence">Financial independence calculator &rarr;</a></div>
+        </details>
+        <details class="hp-q">
+          <summary>Which stocks should I be watching?</summary>
+          <div class="hp-q-body"><p>Ask in plain English. The screener finds stocks that match, with live prices, fundamentals and a 30-day chart.</p><a class="hp-link" href="#discover">Discover great stocks &rarr;</a></div>
+        </details>
+        <details class="hp-q">
+          <summary>Am I spending too much this month?</summary>
+          <div class="hp-q-body"><p>The budget planner shows income against expenses, your savings rate, and how much you can comfortably invest.</p><a class="hp-link" href="/calculators/budget-planner">Budget planner &rarr;</a></div>
+        </details>
+      </div>
+    </section>
 
-    <p class="mcp-prerequisite"><strong>Before you begin:</strong> sign in to Dhan-X and make sure the accounts you want to discuss have been added. You will approve the AI connection separately.</p>
+    <!-- 4. PRICING
+         Keep these figures in step with PLANS in WealthPath-FINAL's
+         wealthpath/pricing.js and with the Offer nodes in this page's JSON-LD.
+         Both currencies stay in the HTML; the region script only chooses which
+         is visible, so a crawler or assistant can describe both. -->
+    <section class="hp-pricing" id="pricing" aria-labelledby="hp-price-title">
+      <div class="hp-section-head">
+        <h2 id="hp-price-title">Simple <span class="accent">pricing</span></h2>
+        <p>The calculators are free forever. Pro is free for your first 90 days.</p>
+      </div>
+      <div class="hp-plans">
+        <div class="hp-plan">
+          <div class="hp-plan-label">Always free</div>
+          <h3>Planning calculators</h3>
+          <div class="hp-plan-price hp-price-swap"><span data-for="in">&#8377;0 <small>forever</small></span><span data-for="global">$0 <small>forever</small></span></div>
+          <p>All seven calculators. No account, no credit card, no expiry.</p>
+          <a class="hp-btn-ghost" href="/calculators/">Open the calculators</a>
+        </div>
+        <div class="hp-plan hp-plan-pro">
+          <div class="hp-plan-label">Dhan-X Pro &middot; private beta</div>
+          <h3>Free for 90 days</h3>
+          <div class="hp-plan-price hp-price-swap">
+            <span data-for="in">&#8377;299 <small>/ month after</small><span class="hp-plan-alt">or &#8377;2,500 a year &mdash; save 30%</span></span>
+            <span data-for="global">$9.99 <small>/ month after</small><span class="hp-plan-alt">or $99 a year &mdash; save 17%</span></span>
+          </div>
+          <p>Everything in Track all your investments and Discover great stocks, plus your AI assistant connection. No credit card to start.</p>
+          <a class="hp-btn" href="https://app.dhan-x.com">Get early access</a>
+        </div>
+      </div>
+      <p class="hp-plan-note">The 90-day trial applies to Dhan-X Pro only. You&rsquo;ll see the plan details before your trial ends, and can cancel any time.</p>
+      <div class="hp-partners" aria-label="Data partners">
+        <span><strong>Sophtron</strong> US brokerage data (SOC 2)</span>
+        <span><strong>CASParser</strong> Indian fund data (SOC 2)</span>
+        <span><strong>Twelve Data</strong> market prices (ISO 27001-aligned)</span>
+        <span><strong>Clerk</strong> sign-in</span>
+        <span><strong>Anthropic</strong> AI</span>
+      </div>
+    </section>
 
-    <div class="mcp-client-grid">
-      <article class="mcp-client-card">
-        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark chatgpt-mark"><img src="images/openai-symbol.svg" alt="OpenAI"></span><span>ChatGPT</span></div><span class="mcp-status">MCP connection</span></div>
-        <h3>Connect Dhan-X in ChatGPT</h3>
-        <ol class="mcp-instructions">
-          <li><strong>Open Apps in ChatGPT settings.</strong> Choose the option to add a custom app or connector.</li>
-          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and choose Connect.</li>
-          <li><strong>Sign in and approve.</strong> Log in to Dhan-X and consent to the read-only access request.</li>
-        </ol>
-      </article>
-      <article class="mcp-client-card">
-        <div class="mcp-client-top"><div class="mcp-client-identity"><span class="mcp-client-mark claude-mark"><img src="images/claude-symbol.svg" alt="Claude"></span><span>Claude <small>by Anthropic</small></span></div><span class="mcp-status">MCP connection</span></div>
-        <h3>Connect Dhan-X in Claude</h3>
-        <ol class="mcp-instructions">
-          <li><strong>Open Connectors in Claude settings.</strong> Choose to add a custom connector.</li>
-          <li><strong>Paste the Dhan-X MCP URL.</strong> Enter <code>https://app.dhan-x.com/mcp/v2</code> and continue to Dhan-X sign-in.</li>
-          <li><strong>Approve read-only access.</strong> Return to Claude and ask a portfolio, research or planning question.</li>
-        </ol>
-      </article>
-    </div>
-
-    <div class="mcp-flow" aria-label="How the Dhan-X MCP connection works">
-      <div class="mcp-step"><span class="mcp-number">01</span><div><h3>Connect your account</h3><p>Sign in to Dhan-X from your AI client and explicitly approve the connection.</p></div></div>
-      <div class="mcp-step"><span class="mcp-number">02</span><div><h3>Choose the question</h3><p>Ask about your holdings, allocation, watchlist, net worth or saved planning scenarios.</p></div></div>
-      <div class="mcp-step"><span class="mcp-number">03</span><div><h3>Get a grounded answer</h3><p>Your assistant can use the Dhan-X tools you authorised to answer with relevant context.</p></div></div>
-    </div>
-
-    <div class="mcp-safety">
-      <span class="mcp-lock">⌁</span>
-      <p><strong>Your connection stays in your control.</strong> Dhan-X MCP is read-only, requires your sign-in and consent, and can be disconnected whenever you choose.</p>
-      <a class="mcp-cta" href="https://app.dhan-x.com">Connect Dhan-X <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
-  <div class="section">
-    <div class="section-label">What Dhan-X does</div>
-    <div class="section-title">Everything in one place.<br><span class="accent">Finally.</span></div>
-    <div class="section-sub">Whether you have one account or ten, in India or across the world — Dhan-X gives you clarity, context, and a coach.</div>
-    <div class="grid-3">
-      <div class="card"><div class="card-icon">&#128200;</div><h3>Portfolio tracker</h3><p>India MFs, US stocks, real estate, gold, bonds — all in one dashboard with true XIRR returns.</p></div>
-      <div class="card"><div class="card-icon">&#129504;</div><h3>AI wealth coach</h3><p>Ask any financial question. Get personalised insights based on your actual numbers, not generic advice.</p></div>
-      <div class="card"><div class="card-icon">&#128269;</div><h3>Stock screener</h3><p>Search stocks in plain English. "Show me profitable Indian banks" — and get live prices, P/E, ROE instantly.</p></div>
-      <div class="card"><div class="card-icon">&#128203;</div><h3>Watchlist and alerts</h3><p>Track stocks you care about. Set price alerts and get notified the moment they hit your target.</p></div>
-      <div class="card"><div class="card-icon">&#129518;</div><h3>Financial calculators</h3><p>Rent vs buy, FI number, RE returns, budget planner — built for real decisions, not textbook examples.</p></div>
-      <div class="card"><div class="card-icon">&#128176;</div><h3>Budget planner</h3><p>Plan your monthly income and expenses. Know exactly what you can invest and where your money goes.</p></div>
-    </div>
+    <!-- 5. BUFFETT & MUNGER. Three lines from /buffett-munger-quotes, each
+         verified against the source it cites there; keep the wording identical. -->
+    <section class="hp-quotes" aria-labelledby="hp-quotes-title">
+      <div class="hp-section-head">
+        <h2 id="hp-quotes-title">Inspiring <span class="accent">quotes</span></h2>
+        <p>Warren Buffett and Charlie Munger in their own words &mdash; 75 quotes, each checked against the original.</p>
+      </div>
+      <div class="hp-quote-grid">
+        <figure class="hp-quote">
+          <blockquote>&ldquo;Time is the friend of the wonderful business, the enemy of the mediocre.&rdquo;</blockquote>
+          <figcaption><strong>Warren Buffett</strong> &middot; Shareholder letter, 1989</figcaption>
+        </figure>
+        <figure class="hp-quote hp-quote-m">
+          <blockquote>&ldquo;The safest way to try to get what you want is to try to deserve what you want.&rdquo;</blockquote>
+          <figcaption><strong>Charlie Munger</strong> &middot; USC Law School, 2007</figcaption>
+        </figure>
+        <figure class="hp-quote">
+          <blockquote>&ldquo;Investors should remember that excitement and expenses are their enemies.&rdquo;</blockquote>
+          <figcaption><strong>Warren Buffett</strong> &middot; Shareholder letter, 2004</figcaption>
+        </figure>
+      </div>
+      <div class="hp-center"><a class="hp-btn-ghost" href="/buffett-munger-quotes">Read all 75 quotes</a></div>
+    </section>
   </div>
 
-  <div class="section section-alt">
-    <div class="section-label">Real questions. Real answers.</div>
-    <div class="section-title">Your AI coach is ready<br>for any decision</div>
-    <div class="section-sub">From big life decisions to small portfolio tweaks — Dhan-X gives you the numbers and the context to decide with confidence.</div>
-    <div class="grid-3">
-      <div class="scenario-card"><div class="scenario-q">"Should I buy a house now or keep renting?"</div><div class="scenario-a">Dhan-X runs the full rent vs buy analysis with your actual rent, home price, and investment return — and tells you exactly when buying makes sense.</div></div>
-      <div class="scenario-card"><div class="scenario-q">"Am I paying too much in mutual fund fees?"</div><div class="scenario-a">Dhan-X shows your TER leakage — how much regular plans cost vs direct — and calculates exactly how much you'd save by switching.</div></div>
-      <div class="scenario-card"><div class="scenario-q">"What's my actual net worth across all accounts?"</div><div class="scenario-a">Connect your India MFs, US brokerage, and add real estate and gold. Dhan-X gives you one number — in rupees or dollars.</div></div>
-      <div class="scenario-card"><div class="scenario-q">"How much do I need to retire?"</div><div class="scenario-a">The FI calculator takes your monthly expenses, expected returns, and inflation — and tells you your number and how many years away you are.</div></div>
-      <div class="scenario-card"><div class="scenario-q">"Which stocks should I be watching?"</div><div class="scenario-a">Ask in plain English. The AI screener finds stocks matching your criteria — with live prices, fundamentals, and a 30-day chart.</div></div>
-      <div class="scenario-card"><div class="scenario-q">"Am I spending too much this month?"</div><div class="scenario-a">The budget planner tracks income vs expenses and shows your savings rate, guilt-free spending, and how much you can invest.</div></div>
-    </div>
-  </div>
-
-  <!-- Buffett & Munger: three lines from /buffett-munger-quotes. Each is
-       verified against the source it cites there; keep the wording identical. -->
-  <div class="section section-alt home-quotes">
-    <div class="section-label">Motivation</div>
-    <div class="section-title">Buffett &amp; Munger, <span class="accent">in their own words.</span></div>
-    <div class="section-sub">75 quotes from four decades of Berkshire Hathaway letters and Charlie Munger&#8217;s talks &mdash; every one checked against the original, with a link to it.</div>
-    <div class="grid-3">
-      <figure class="card home-quote">
-        <blockquote>&#8220;Time is the friend of the wonderful business, the enemy of the mediocre.&#8221;</blockquote>
-        <figcaption><strong class="hq-b">Warren Buffett</strong> &middot; Berkshire letter, 1989</figcaption>
-      </figure>
-      <figure class="card home-quote">
-        <blockquote>&#8220;I constantly see people rise in life who are not the smartest, sometimes not even the most diligent. But they are learning machines.&#8221;</blockquote>
-        <figcaption><strong class="hq-m">Charlie Munger</strong> &middot; USC Law commencement, 2007</figcaption>
-      </figure>
-      <figure class="card home-quote">
-        <blockquote>&#8220;Investors should remember that excitement and expenses are their enemies.&#8221;</blockquote>
-        <figcaption><strong class="hq-b">Warren Buffett</strong> &middot; Berkshire letter, 2004</figcaption>
-      </figure>
-    </div>
-    <div style="text-align:center;margin-top:28px">
-      <a class="btn-secondary" href="/buffett-munger-quotes">Read all 75 quotes &rarr;</a>
-    </div>
-  </div>
-  <style>
-    .home-quote { margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
-    .home-quote blockquote { font-family: var(--font-head); font-size: 17px; line-height: 1.5; color: var(--text); margin: 0; }
-    .home-quote figcaption { font-size: 12.5px; color: var(--text3); }
-    .home-quote .hq-b { color: var(--teal); font-weight: 600; }
-    .home-quote .hq-m { color: var(--orange); font-weight: 600; }
-    .home-quotes .section-label, .home-quotes .section-title, .home-quotes .section-sub { max-width: 1120px; margin-left: auto; margin-right: auto; }
-    .home-quotes .grid-3 { max-width: 1120px; margin: 0 auto; }
-  </style>
-
-  <div class="section">
-    <div class="section-label">Everything included</div>
-    <div class="section-title">12+ tools. One place.</div>
-    <div class="section-sub">Private beta members receive full Dhan-X access for their 90-day trial — no feature-by-feature add-ons.</div>
-    <div class="module-grid">
-      <div class="module-pill"><span>&#128200;</span><span>India portfolio</span></div>
-      <div class="module-pill"><span>&#127970;</span><span>US portfolio</span></div>
-      <div class="module-pill"><span>&#128185;</span><span>XIRR calculator</span></div>
-      <div class="module-pill"><span>&#128178;</span><span>TER analyser</span></div>
-      <div class="module-pill"><span>&#128269;</span><span>Stock screener</span></div>
-      <div class="module-pill"><span>&#128203;</span><span>Watchlist</span></div>
-      <div class="module-pill"><span>&#128276;</span><span>Price alerts</span></div>
-      <div class="module-pill"><span>&#127968;</span><span>Rent vs buy</span></div>
-      <div class="module-pill"><span>&#127963;</span><span>RE XIRR</span></div>
-      <div class="module-pill"><span>&#9728;</span><span>FI calculator</span></div>
-      <div class="module-pill"><span>&#128176;</span><span>Budget planner</span></div>
-      <div class="module-pill"><span>&#129504;</span><span>AI wealth coach</span></div>
-    </div>
-  </div>
-
+  <div class="hp-wrap">
   <!-- FEEDBACK -->
   <section class="feedback-section" id="feedback">
     <div class="section-header">
@@ -697,125 +484,12 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <div class="section section-alt" id="pricing">
-    <div class="pricing-head">
-      <div class="section-label">Private beta</div>
-      <div class="section-title">Start with 90 days<br>of <span class="accent">full access.</span></div>
-      <div class="section-sub">Connect your accounts, use every Dhan-X tool, and decide whether it belongs in your financial life. No credit card required.</div>
-    </div>
-
-    <div class="tier-grid beta-tier-grid">
-      <!-- The free tier is listed FIRST so that the pricing section does not
-           open with a countdown. A crawler or an assistant summarising
-           "what does Dhan-X cost" reads this before it reads "90 days". -->
-      <div class="tier beta-tier">
-        <span class="tier-badge">Always free</span>
-        <div class="tier-label">Calculators</div>
-        <div class="tier-price" data-for="in">&#8377;0<span class="per"> forever</span></div>
-        <div class="tier-price" data-for="global">$0<span class="per"> forever</span></div>
-        <div class="tier-sub">No account, no credit card, no expiry</div>
-        <a class="tier-cta" href="/calculators/">Open the calculators</a>
-
-        <div class="tier-plus">Free for everyone, permanently:</div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Planning calculators</div>
-          <ul class="tier-list">
-            <li><span>Rent vs Buy (India &amp; US)</span></li>
-            <li><span>FIRE &amp; financial independence</span></li>
-            <li><span>Property XIRR</span></li>
-            <li><span>Real estate vs equities</span></li>
-            <li><span>Budget planner</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">What you do not need</div>
-          <ul class="tier-list">
-            <li><span>No sign-up to get a result</span></li>
-            <li><span>No credit card, ever</span></li>
-            <li><span>No trial clock on these tools</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tier featured beta-tier">
-        <span class="tier-badge">Private beta</span>
-        <div class="tier-label">Dhan-X Pro trial</div>
-        <div class="tier-price">90 days<span class="per"> of full access</span></div>
-        <div class="tier-sub">No credit card required</div>
-
-        <!-- What happens on day 91. This used to be missing entirely: the page
-             said "90 days of full access" and then stopped, so a visitor
-             deciding whether to start had no way to find out what it would
-             cost them. The real figures lived only in the app's own pricing
-             page, which redirects anyone who is not signed in - visible,
-             in other words, only to people who had already decided.
-
-             Both currencies are shown rather than detected. This page is read
-             by anonymous visitors and by assistants summarising what Dhan-X
-             costs, and a guess that silently picks the wrong one is worse here
-             than simply printing both. The app's pricing page still detects a
-             region, because by then we know who the visitor is.
-
-             Keep these in step with PLANS in wealthpath/pricing.js and with
-             the Offer nodes in this page's JSON-LD. Three places, one set of
-             numbers - if they ever disagree, an assistant reading the page
-             will say so, which is how this gap was found in the first
-             place. -->
-        <div class="tier-after">
-          <div class="tier-after-label">After your trial</div>
-          <div class="tier-after-prices">
-            <span class="tier-after-price" data-for="in"><strong>&#8377;299</strong><span class="tier-after-per">/month</span></span>
-            <span class="tier-after-price" data-for="global"><strong>$9.99</strong><span class="tier-after-per">/month</span></span>
-          </div>
-          <div class="tier-after-note" data-for="in">Or &#8377;2,500 a year &mdash; save 30%. Cancel any time.</div>
-          <div class="tier-after-note" data-for="global">Or $99 a year &mdash; save 17%. Cancel any time.</div>
-        </div>
-
-        <a class="tier-cta filled" href="https://app.dhan-x.com">Get private beta access</a>
-
-        <div class="tier-plus">Included throughout your trial:</div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Your complete financial picture</div>
-          <ul class="tier-list">
-            <li><span>US brokerage sync</span></li>
-            <li><span>India mutual funds via CAS</span></li>
-            <li><span>Real estate &amp; offline assets</span></li>
-            <li><span>Net worth in 6 currencies</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Research and AI intelligence</div>
-          <ul class="tier-list">
-            <li><span>AI portfolio analysis</span></li>
-            <li><span>Natural-language stock screener</span></li>
-            <li><span>MCP access for compatible AI clients</span></li>
-          </ul>
-        </div>
-
-        <div class="tier-cat">
-          <div class="tier-cat-label">Planning and performance tools</div>
-          <ul class="tier-list">
-            <li><span>XIRR across all accounts</span></li>
-            <li><span>TER analysis on India MFs</span></li>
-            <li><span>FI, real estate and budget planning</span></li>
-            <li><span>Watchlist, quality scores and research</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <p class="beta-plan-note"><strong>The 90-day trial applies to Dhan-X Pro only.</strong> The calculators above are free permanently and are not part of it. We are using the private beta to shape Dhan-X’s long-term Pro offering, and you will receive plan details before your 90-day Pro trial ends.</p>
   </div>
 
   <div class="cta-banner">
     <h2>Start understanding your money better</h2>
-    <p>Join the private beta — 90 days of full access, no credit card required.</p>
-    <a class="btn-dark" href="https://app.dhan-x.com">Get Private Beta Access</a>
+    <p>Join the private beta &mdash; 90 days of full access, no credit card required.</p>
+    <a class="btn-dark" href="https://app.dhan-x.com">Get early access</a>
   </div>
 </main>
 
@@ -834,13 +508,15 @@
       <a href="/calculators/">Free calculators</a>
       <a href="features.html">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="/ai-assistant">Use with Claude or ChatGPT</a>
       <a href="https://app.dhan-x.com">Private beta</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="about.html">About</a>
       <a href="/buffett-munger-quotes">Buffett &amp; Munger quotes</a>
-      <a href="#">Blog</a>
+      <a href="/blog">Blog</a>
+      <a href="#feedback">Product feedback</a>
       <a href="mailto:support@dhan-x.com" class="mail">support@dhan-x.com</a>
     </div>
     <div class="footer-col">

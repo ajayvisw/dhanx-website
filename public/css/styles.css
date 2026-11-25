@@ -30,7 +30,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(10,12,15,0.92); b
 .nav-logo-text { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--text); }
 .nav-logo-text span { color: var(--teal); }
 .nav-links { display: flex; gap: 2px; align-items: center; }
-.nav-link { padding: 6px 14px; font-size: 14px; color: var(--text2); border-radius: 6px; cursor: pointer; border: none; background: none; font-family: var(--font-body); transition: all 0.2s; text-decoration: none; display: block; }
+.nav-link { padding: 6px 14px; font-size: 15px; color: var(--text2); border-radius: 6px; cursor: pointer; border: none; background: none; font-family: var(--font-body); transition: all 0.2s; text-decoration: none; display: block; }
 .nav-link:hover, .nav-link.active { color: var(--text); background: var(--bg3); }
 .nav-cta { background: var(--teal); color: #0a0c0f; border: none; padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: opacity 0.2s; text-decoration: none; display: inline-block; }
 .nav-cta:hover { opacity: 0.9; }
@@ -428,7 +428,7 @@ footer { box-shadow: 0 0 0 100vmax var(--bg2); border-top: none; }
   .feedback-section h2 { font-size: 26px; }
   .mcp-client-grid { grid-template-columns: 1fr; }
   .mcp-safety { align-items: flex-start; flex-wrap: wrap; }
-  .mcp-cta { width: 100%; margin-left: 39px; }
+  .mcp-cta { flex-basis: 100%; margin-left: 39px; max-width: calc(100% - 39px); }
 }
 
 /* SCROLLBAR */
